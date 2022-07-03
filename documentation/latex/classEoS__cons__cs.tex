@@ -1,0 +1,96 @@
+\hypertarget{classEoS__cons__cs}{}\doxysection{Eo\+S\+\_\+cons\+\_\+cs Class Reference}
+\label{classEoS__cons__cs}\index{EoS\_cons\_cs@{EoS\_cons\_cs}}
+
+
+{\ttfamily \#include $<$eos.\+hpp$>$}
+
+
+
+Inheritance diagram for Eo\+S\+\_\+cons\+\_\+cs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classEoS__cons__cs__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Eo\+S\+\_\+cons\+\_\+cs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classEoS__cons__cs__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classEoS__cons__cs_a64aa25f4844fa80acb2f3be822cf8041}{update\+\_\+eos}} (double ppar\mbox{[}$\,$\mbox{]}, int len\+\_\+par, int extra\+\_\+par, double h\+\_\+max, const char init\+\_\+function\+\_\+type\mbox{[}$\,$\mbox{]})
+\item 
+double \mbox{\hyperlink{classEoS__cons__cs_ab8d449722c082c84e482b9e6edba1b66}{gamma\+\_\+interp}} (double h, double p, double e)
+\begin{DoxyCompactList}\small\item\em Calculate gamma in the constant speed of sound model. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEoS__cons__cs_a52ecb84f4178c2e810b146693741cc3e}{Eo\+S\+\_\+hybrid}} (double ee\mbox{[}$\,$\mbox{]}, double pp\mbox{[}$\,$\mbox{]}, const int len\+\_\+eos)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 612 of file eos.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEoS__cons__cs_a52ecb84f4178c2e810b146693741cc3e}\label{classEoS__cons__cs_a52ecb84f4178c2e810b146693741cc3e}} 
+\index{EoS\_cons\_cs@{EoS\_cons\_cs}!EoS\_hybrid@{EoS\_hybrid}}
+\index{EoS\_hybrid@{EoS\_hybrid}!EoS\_cons\_cs@{EoS\_cons\_cs}}
+\doxysubsubsection{\texorpdfstring{EoS\_hybrid()}{EoS\_hybrid()}}
+{\footnotesize\ttfamily Eo\+S\+\_\+hybrid\+::\+Eo\+S\+\_\+hybrid\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 96 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__cons__cs_ab8d449722c082c84e482b9e6edba1b66}\label{classEoS__cons__cs_ab8d449722c082c84e482b9e6edba1b66}} 
+\index{EoS\_cons\_cs@{EoS\_cons\_cs}!gamma\_interp@{gamma\_interp}}
+\index{gamma\_interp@{gamma\_interp}!EoS\_cons\_cs@{EoS\_cons\_cs}}
+\doxysubsubsection{\texorpdfstring{gamma\_interp()}{gamma\_interp()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+cons\+\_\+cs\+::gamma\+\_\+interp (\begin{DoxyParamCaption}\item[{double}]{h,  }\item[{double}]{p,  }\item[{double}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Calculate gamma in the constant speed of sound model. 
+
+\begin{DoxyAttention}{Attention}
+Define v$^\wedge$2=dp/drho, and p=K$\ast$rho$^\wedge$\{gamma\}. 
+\end{DoxyAttention}
+
+
+Reimplemented from \mbox{\hyperlink{classEoS__hybrid_aed0918e0e3b59cc09ad48b0215ef795f}{Eo\+S\+\_\+hybrid}}.
+
+
+
+Definition at line 631 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__cons__cs_a64aa25f4844fa80acb2f3be822cf8041}\label{classEoS__cons__cs_a64aa25f4844fa80acb2f3be822cf8041}} 
+\index{EoS\_cons\_cs@{EoS\_cons\_cs}!update\_eos@{update\_eos}}
+\index{update\_eos@{update\_eos}!EoS\_cons\_cs@{EoS\_cons\_cs}}
+\doxysubsubsection{\texorpdfstring{update\_eos()}{update\_eos()}}
+{\footnotesize\ttfamily bool Eo\+S\+\_\+cons\+\_\+cs\+::update\+\_\+eos (\begin{DoxyParamCaption}\item[{double}]{ppar\mbox{[}$\,$\mbox{]},  }\item[{int}]{len\+\_\+par,  }\item[{int}]{extra\+\_\+par,  }\item[{double}]{h\+\_\+max,  }\item[{const char}]{init\+\_\+function\+\_\+type\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classEoS_a67410571586d25fd9d5ec68720d3cf69}{EoS}}.
+
+
+
+Definition at line 615 of file eos.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+eostool/\mbox{\hyperlink{eos_8hpp}{eos.\+hpp}}\end{DoxyCompactItemize}

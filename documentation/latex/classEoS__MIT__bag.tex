@@ -1,0 +1,290 @@
+\hypertarget{classEoS__MIT__bag}{}\doxysection{Eo\+S\+\_\+\+MIT\+\_\+bag Class Reference}
+\label{classEoS__MIT__bag}\index{EoS\_MIT\_bag@{EoS\_MIT\_bag}}
+
+
+{\ttfamily \#include $<$eos.\+hpp$>$}
+
+
+
+Inheritance diagram for Eo\+S\+\_\+\+MIT\+\_\+bag\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{classEoS__MIT__bag__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Eo\+S\+\_\+\+MIT\+\_\+bag\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{classEoS__MIT__bag__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structEoS__MIT__bag_1_1quark__params}{quark\+\_\+params}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEoS__MIT__bag_ac3a8fd7990ce2d84e6c7815368a06495}{Eo\+S\+\_\+\+MIT\+\_\+bag}} ()
+\item 
+bool \mbox{\hyperlink{classEoS__MIT__bag_a12ea7474b02f37fe0fb62d6a3759bf39}{update\+\_\+eos}} (double ppar\mbox{[}$\,$\mbox{]}, int len\+\_\+par, int extra\+\_\+par, double h\+\_\+max, const char init\+\_\+function\+\_\+type\mbox{[}$\,$\mbox{]})
+\item 
+double \mbox{\hyperlink{classEoS__MIT__bag_a89681e8bec5d6d876a3f8dbd9f4b43d2}{ph}} (double h)
+\item 
+double \mbox{\hyperlink{classEoS__MIT__bag_aff7cb086458db42f1e788a8f81067665}{eh}} (double h)
+\item 
+double \mbox{\hyperlink{classEoS__MIT__bag_a63d62f3ba81bb61b714efaeb4cbdbbb2}{rhoh}} (double h, double p, double e)
+\item 
+double \mbox{\hyperlink{classEoS__MIT__bag_a5d782a53c577af0a232288034b2f9980}{gamma}} (double h, double p, double e)
+\item 
+double \mbox{\hyperlink{classEoS__MIT__bag_aa11eb49d4bf98148d9186892e358455c}{ph\+\_\+qks\+\_\+org}} (double h)
+\item 
+double \mbox{\hyperlink{classEoS__MIT__bag_a48ee3c29e3a63808fac7625ef75e722a}{eh\+\_\+qks\+\_\+org}} (double h, double p)
+\item 
+double \mbox{\hyperlink{classEoS__MIT__bag_acc7bbf60bbbf8b29a57eceb9ae56906c}{Omega\+\_\+\+CFL}} (double mu, double a4, double Beff, double egap)
+\item 
+double \mbox{\hyperlink{classEoS__MIT__bag_a1f05ac1db22dd89ef3c69c4c36acf8af}{n\+\_\+\+CFL}} (double mu, double a4, double Beff, double egap)
+\item 
+double \mbox{\hyperlink{classEoS__MIT__bag_afce807f2dee52c91002a64d067ad2622}{solve\+\_\+surface\+\_\+h}} (double lower\+\_\+h, double upper\+\_\+h, int max\+\_\+iter=100)
+\item 
+void \mbox{\hyperlink{classEoS__MIT__bag_a98caca9bcd7709760bfa1ef603e18a13}{make\+\_\+eos\+\_\+table}} (double h\+\_\+begin, double h\+\_\+end, int n\+\_\+table, string unit=\char`\"{}MeV\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \mbox{\hyperlink{classEoS__MIT__bag_a14e8a3e64c25ca7249591b9c043dba37}{minfunc\+\_\+qks}} (double h, void $\ast$params)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr double \mbox{\hyperlink{classEoS__MIT__bag_a6303b783848973395d6c0686408eb51d}{m\+\_\+qk}} = 100.
+\begin{DoxyCompactList}\small\item\em mass of strange quark in MeV \end{DoxyCompactList}\item 
+static constexpr double \mbox{\hyperlink{classEoS__MIT__bag_a90bd3a13ff242a6c86f9037bfc3598de}{m\+\_\+br}} = 930.
+\begin{DoxyCompactList}\small\item\em rest baryon mass on stellar surface in MeV \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 466 of file eos.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEoS__MIT__bag_ac3a8fd7990ce2d84e6c7815368a06495}\label{classEoS__MIT__bag_ac3a8fd7990ce2d84e6c7815368a06495}} 
+\index{EoS\_MIT\_bag@{EoS\_MIT\_bag}!EoS\_MIT\_bag@{EoS\_MIT\_bag}}
+\index{EoS\_MIT\_bag@{EoS\_MIT\_bag}!EoS\_MIT\_bag@{EoS\_MIT\_bag}}
+\doxysubsubsection{\texorpdfstring{EoS\_MIT\_bag()}{EoS\_MIT\_bag()}}
+{\footnotesize\ttfamily Eo\+S\+\_\+\+MIT\+\_\+bag\+::\+Eo\+S\+\_\+\+MIT\+\_\+bag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 471 of file eos.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEoS__MIT__bag_aff7cb086458db42f1e788a8f81067665}\label{classEoS__MIT__bag_aff7cb086458db42f1e788a8f81067665}} 
+\index{EoS\_MIT\_bag@{EoS\_MIT\_bag}!eh@{eh}}
+\index{eh@{eh}!EoS\_MIT\_bag@{EoS\_MIT\_bag}}
+\doxysubsubsection{\texorpdfstring{eh()}{eh()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+\+MIT\+\_\+bag\+::eh (\begin{DoxyParamCaption}\item[{double}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classEoS_a331009fa0cb7867c6b453a781c56fd22}{EoS}}.
+
+
+
+Definition at line 489 of file eos.\+hpp.
+
+
+
+References Me\+V4\+\_\+to\+\_\+dmls.
+
+\mbox{\Hypertarget{classEoS__MIT__bag_a48ee3c29e3a63808fac7625ef75e722a}\label{classEoS__MIT__bag_a48ee3c29e3a63808fac7625ef75e722a}} 
+\index{EoS\_MIT\_bag@{EoS\_MIT\_bag}!eh\_qks\_org@{eh\_qks\_org}}
+\index{eh\_qks\_org@{eh\_qks\_org}!EoS\_MIT\_bag@{EoS\_MIT\_bag}}
+\doxysubsubsection{\texorpdfstring{eh\_qks\_org()}{eh\_qks\_org()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+\+MIT\+\_\+bag\+::eh\+\_\+qks\+\_\+org (\begin{DoxyParamCaption}\item[{double}]{h,  }\item[{double}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 499 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__MIT__bag_a5d782a53c577af0a232288034b2f9980}\label{classEoS__MIT__bag_a5d782a53c577af0a232288034b2f9980}} 
+\index{EoS\_MIT\_bag@{EoS\_MIT\_bag}!gamma@{gamma}}
+\index{gamma@{gamma}!EoS\_MIT\_bag@{EoS\_MIT\_bag}}
+\doxysubsubsection{\texorpdfstring{gamma()}{gamma()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+\+MIT\+\_\+bag\+::gamma (\begin{DoxyParamCaption}\item[{double}]{h,  }\item[{double}]{p,  }\item[{double}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classEoS_a05bfac12f882be3aaa68ae663c048257}{EoS}}.
+
+
+
+Definition at line 491 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__MIT__bag_a98caca9bcd7709760bfa1ef603e18a13}\label{classEoS__MIT__bag_a98caca9bcd7709760bfa1ef603e18a13}} 
+\index{EoS\_MIT\_bag@{EoS\_MIT\_bag}!make\_eos\_table@{make\_eos\_table}}
+\index{make\_eos\_table@{make\_eos\_table}!EoS\_MIT\_bag@{EoS\_MIT\_bag}}
+\doxysubsubsection{\texorpdfstring{make\_eos\_table()}{make\_eos\_table()}}
+{\footnotesize\ttfamily void Eo\+S\+\_\+\+MIT\+\_\+bag\+::make\+\_\+eos\+\_\+table (\begin{DoxyParamCaption}\item[{double}]{h\+\_\+begin,  }\item[{double}]{h\+\_\+end,  }\item[{int}]{n\+\_\+table,  }\item[{string}]{unit = {\ttfamily \char`\"{}MeV\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 544 of file eos.\+hpp.
+
+
+
+References Me\+V3\+\_\+to\+\_\+ifm3, Me\+VEifm3\+\_\+to\+\_\+erg\+Eicm3, and Me\+VEifm3\+\_\+to\+\_\+g\+Eicm3.
+
+\mbox{\Hypertarget{classEoS__MIT__bag_a14e8a3e64c25ca7249591b9c043dba37}\label{classEoS__MIT__bag_a14e8a3e64c25ca7249591b9c043dba37}} 
+\index{EoS\_MIT\_bag@{EoS\_MIT\_bag}!minfunc\_qks@{minfunc\_qks}}
+\index{minfunc\_qks@{minfunc\_qks}!EoS\_MIT\_bag@{EoS\_MIT\_bag}}
+\doxysubsubsection{\texorpdfstring{minfunc\_qks()}{minfunc\_qks()}}
+{\footnotesize\ttfamily static double Eo\+S\+\_\+\+MIT\+\_\+bag\+::minfunc\+\_\+qks (\begin{DoxyParamCaption}\item[{double}]{h,  }\item[{void $\ast$}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 504 of file eos.\+hpp.
+
+
+
+References Eo\+S\+\_\+\+MIT\+\_\+bag\+::quark\+\_\+params\+::a4, Eo\+S\+\_\+\+MIT\+\_\+bag\+::quark\+\_\+params\+::\+Beff, and Eo\+S\+\_\+\+MIT\+\_\+bag\+::quark\+\_\+params\+::egap.
+
+\mbox{\Hypertarget{classEoS__MIT__bag_a1f05ac1db22dd89ef3c69c4c36acf8af}\label{classEoS__MIT__bag_a1f05ac1db22dd89ef3c69c4c36acf8af}} 
+\index{EoS\_MIT\_bag@{EoS\_MIT\_bag}!n\_CFL@{n\_CFL}}
+\index{n\_CFL@{n\_CFL}!EoS\_MIT\_bag@{EoS\_MIT\_bag}}
+\doxysubsubsection{\texorpdfstring{n\_CFL()}{n\_CFL()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+\+MIT\+\_\+bag\+::n\+\_\+\+CFL (\begin{DoxyParamCaption}\item[{double}]{mu,  }\item[{double}]{a4,  }\item[{double}]{Beff,  }\item[{double}]{egap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 502 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__MIT__bag_acc7bbf60bbbf8b29a57eceb9ae56906c}\label{classEoS__MIT__bag_acc7bbf60bbbf8b29a57eceb9ae56906c}} 
+\index{EoS\_MIT\_bag@{EoS\_MIT\_bag}!Omega\_CFL@{Omega\_CFL}}
+\index{Omega\_CFL@{Omega\_CFL}!EoS\_MIT\_bag@{EoS\_MIT\_bag}}
+\doxysubsubsection{\texorpdfstring{Omega\_CFL()}{Omega\_CFL()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+\+MIT\+\_\+bag\+::\+Omega\+\_\+\+CFL (\begin{DoxyParamCaption}\item[{double}]{mu,  }\item[{double}]{a4,  }\item[{double}]{Beff,  }\item[{double}]{egap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 500 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__MIT__bag_a89681e8bec5d6d876a3f8dbd9f4b43d2}\label{classEoS__MIT__bag_a89681e8bec5d6d876a3f8dbd9f4b43d2}} 
+\index{EoS\_MIT\_bag@{EoS\_MIT\_bag}!ph@{ph}}
+\index{ph@{ph}!EoS\_MIT\_bag@{EoS\_MIT\_bag}}
+\doxysubsubsection{\texorpdfstring{ph()}{ph()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+\+MIT\+\_\+bag\+::ph (\begin{DoxyParamCaption}\item[{double}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classEoS_a2924df9d149e460c6c4c4b12ea92ab27}{EoS}}.
+
+
+
+Definition at line 488 of file eos.\+hpp.
+
+
+
+References Me\+V4\+\_\+to\+\_\+dmls.
+
+\mbox{\Hypertarget{classEoS__MIT__bag_aa11eb49d4bf98148d9186892e358455c}\label{classEoS__MIT__bag_aa11eb49d4bf98148d9186892e358455c}} 
+\index{EoS\_MIT\_bag@{EoS\_MIT\_bag}!ph\_qks\_org@{ph\_qks\_org}}
+\index{ph\_qks\_org@{ph\_qks\_org}!EoS\_MIT\_bag@{EoS\_MIT\_bag}}
+\doxysubsubsection{\texorpdfstring{ph\_qks\_org()}{ph\_qks\_org()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+\+MIT\+\_\+bag\+::ph\+\_\+qks\+\_\+org (\begin{DoxyParamCaption}\item[{double}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 498 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__MIT__bag_a63d62f3ba81bb61b714efaeb4cbdbbb2}\label{classEoS__MIT__bag_a63d62f3ba81bb61b714efaeb4cbdbbb2}} 
+\index{EoS\_MIT\_bag@{EoS\_MIT\_bag}!rhoh@{rhoh}}
+\index{rhoh@{rhoh}!EoS\_MIT\_bag@{EoS\_MIT\_bag}}
+\doxysubsubsection{\texorpdfstring{rhoh()}{rhoh()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+\+MIT\+\_\+bag\+::rhoh (\begin{DoxyParamCaption}\item[{double}]{h,  }\item[{double}]{p,  }\item[{double}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classEoS_a9d418d78c384f52516623d37a0383ad5}{EoS}}.
+
+
+
+Definition at line 490 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__MIT__bag_afce807f2dee52c91002a64d067ad2622}\label{classEoS__MIT__bag_afce807f2dee52c91002a64d067ad2622}} 
+\index{EoS\_MIT\_bag@{EoS\_MIT\_bag}!solve\_surface\_h@{solve\_surface\_h}}
+\index{solve\_surface\_h@{solve\_surface\_h}!EoS\_MIT\_bag@{EoS\_MIT\_bag}}
+\doxysubsubsection{\texorpdfstring{solve\_surface\_h()}{solve\_surface\_h()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+\+MIT\+\_\+bag\+::solve\+\_\+surface\+\_\+h (\begin{DoxyParamCaption}\item[{double}]{lower\+\_\+h,  }\item[{double}]{upper\+\_\+h,  }\item[{int}]{max\+\_\+iter = {\ttfamily 100} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 510 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__MIT__bag_a12ea7474b02f37fe0fb62d6a3759bf39}\label{classEoS__MIT__bag_a12ea7474b02f37fe0fb62d6a3759bf39}} 
+\index{EoS\_MIT\_bag@{EoS\_MIT\_bag}!update\_eos@{update\_eos}}
+\index{update\_eos@{update\_eos}!EoS\_MIT\_bag@{EoS\_MIT\_bag}}
+\doxysubsubsection{\texorpdfstring{update\_eos()}{update\_eos()}}
+{\footnotesize\ttfamily bool Eo\+S\+\_\+\+MIT\+\_\+bag\+::update\+\_\+eos (\begin{DoxyParamCaption}\item[{double}]{ppar\mbox{[}$\,$\mbox{]},  }\item[{int}]{len\+\_\+par,  }\item[{int}]{extra\+\_\+par,  }\item[{double}]{h\+\_\+max,  }\item[{const char}]{init\+\_\+function\+\_\+type\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+$<$ push back where the pressure(h)=0
+
+Reimplemented from \mbox{\hyperlink{classEoS_a67410571586d25fd9d5ec68720d3cf69}{EoS}}.
+
+
+
+Definition at line 472 of file eos.\+hpp.
+
+
+
+References verbose.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classEoS__MIT__bag_a90bd3a13ff242a6c86f9037bfc3598de}\label{classEoS__MIT__bag_a90bd3a13ff242a6c86f9037bfc3598de}} 
+\index{EoS\_MIT\_bag@{EoS\_MIT\_bag}!m\_br@{m\_br}}
+\index{m\_br@{m\_br}!EoS\_MIT\_bag@{EoS\_MIT\_bag}}
+\doxysubsubsection{\texorpdfstring{m\_br}{m\_br}}
+{\footnotesize\ttfamily constexpr double Eo\+S\+\_\+\+MIT\+\_\+bag\+::m\+\_\+br = 930.\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+rest baryon mass on stellar surface in MeV 
+
+
+
+Definition at line 469 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__MIT__bag_a6303b783848973395d6c0686408eb51d}\label{classEoS__MIT__bag_a6303b783848973395d6c0686408eb51d}} 
+\index{EoS\_MIT\_bag@{EoS\_MIT\_bag}!m\_qk@{m\_qk}}
+\index{m\_qk@{m\_qk}!EoS\_MIT\_bag@{EoS\_MIT\_bag}}
+\doxysubsubsection{\texorpdfstring{m\_qk}{m\_qk}}
+{\footnotesize\ttfamily constexpr double Eo\+S\+\_\+\+MIT\+\_\+bag\+::m\+\_\+qk = 100.\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+mass of strange quark in MeV 
+
+
+
+Definition at line 468 of file eos.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+eostool/\mbox{\hyperlink{eos_8hpp}{eos.\+hpp}}\end{DoxyCompactItemize}

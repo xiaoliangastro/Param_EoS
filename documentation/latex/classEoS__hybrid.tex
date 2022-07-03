@@ -1,0 +1,285 @@
+\hypertarget{classEoS__hybrid}{}\doxysection{Eo\+S\+\_\+hybrid Class Reference}
+\label{classEoS__hybrid}\index{EoS\_hybrid@{EoS\_hybrid}}
+
+
+{\ttfamily \#include $<$eos.\+hpp$>$}
+
+
+
+Inheritance diagram for Eo\+S\+\_\+hybrid\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEoS__hybrid__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Eo\+S\+\_\+hybrid\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classEoS__hybrid__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEoS__hybrid_a52ecb84f4178c2e810b146693741cc3e}{Eo\+S\+\_\+hybrid}} (double ee\mbox{[}$\,$\mbox{]}, double pp\mbox{[}$\,$\mbox{]}, const int len\+\_\+eos)
+\item 
+double \mbox{\hyperlink{classEoS__hybrid_aadacda0ab907d9e8457420c7cc8a55e8}{ph}} (double h)
+\begin{DoxyCompactList}\small\item\em Calculate pressure using h only. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classEoS__hybrid_a67e2d65672f30c6f5ff9aa2518942987}{eh}} (double h)
+\begin{DoxyCompactList}\small\item\em Calculate energy density using h only. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classEoS__hybrid_a884a369454d9ab0dc83697050d2ee8c0}{rhoh}} (double h, double p, double e)
+\begin{DoxyCompactList}\small\item\em Calculate mass density using h only. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classEoS__hybrid_a94e0a8bc225538472f6ee77aeab466f9}{gamma}} (double h, double p, double e)
+\begin{DoxyCompactList}\small\item\em Calculate gamma. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classEoS__hybrid_afb9d3da06c5cb991c52f70663d8d82c2}{ph\+\_\+interp}} (double h)
+\item 
+double \mbox{\hyperlink{classEoS__hybrid_a2eaefcd38676495c846b5ab5456030f2}{eh\+\_\+interp}} (double h)
+\item 
+double \mbox{\hyperlink{classEoS__hybrid_ad4bd0e612b82596afb8867ef9e42f125}{rhoh\+\_\+interp}} (double h)
+\item 
+virtual double \mbox{\hyperlink{classEoS__hybrid_aed0918e0e3b59cc09ad48b0215ef795f}{gamma\+\_\+interp}} (double h, double p, double e)
+\item 
+void \mbox{\hyperlink{classEoS__hybrid_a7a480ae8ddf0120a0e7723b705c30128}{update\+\_\+h0\+\_\+related\+\_\+variables}} ()
+\begin{DoxyCompactList}\small\item\em update global variables h\+\_\+0, p\+\_\+0, e\+\_\+0, and rho\+\_\+0 with the last term of the coefficient table \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEoS__hybrid_a09357b5e8ae4c78dc51fe22cb918463c}{cal\+\_\+eos\+\_\+table}} (double h\+\_\+max, const char init\+\_\+function\+\_\+type\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em calculate eos tables as list of interpolating functions and store them \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEoS__hybrid_a3f059dcba2fc2bcb238afaa41944e083}{init\+\_\+interp\+\_\+coeff\+\_\+through\+\_\+ep\+\_\+array}} (double ee\mbox{[}$\,$\mbox{]}, double pp\mbox{[}$\,$\mbox{]}, const int len\+\_\+eos)
+\begin{DoxyCompactList}\small\item\em transform ep table to get interpolation coefficients (see Appendix B of 10.\+1103/\+Phys\+RevD.86.\+084003) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classEoS__hybrid_a78db23ea484d1f2e4f73ea911c2bfcea}{h\+\_\+border}} =\mbox{\hyperlink{global__variable__constants_8hpp_afdd85d40368fa2581d636316d0ef143c}{h\+\_\+0}}
+\begin{DoxyCompactList}\small\item\em the border that seperate apart the interpolated part and the tabulated part. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 93 of file eos.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEoS__hybrid_a52ecb84f4178c2e810b146693741cc3e}\label{classEoS__hybrid_a52ecb84f4178c2e810b146693741cc3e}} 
+\index{EoS\_hybrid@{EoS\_hybrid}!EoS\_hybrid@{EoS\_hybrid}}
+\index{EoS\_hybrid@{EoS\_hybrid}!EoS\_hybrid@{EoS\_hybrid}}
+\doxysubsubsection{\texorpdfstring{EoS\_hybrid()}{EoS\_hybrid()}}
+{\footnotesize\ttfamily Eo\+S\+\_\+hybrid\+::\+Eo\+S\+\_\+hybrid (\begin{DoxyParamCaption}\item[{double}]{ee\mbox{[}$\,$\mbox{]},  }\item[{double}]{pp\mbox{[}$\,$\mbox{]},  }\item[{const int}]{len\+\_\+eos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 96 of file eos.\+hpp.
+
+
+
+References h\+\_\+0.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEoS__hybrid_a09357b5e8ae4c78dc51fe22cb918463c}\label{classEoS__hybrid_a09357b5e8ae4c78dc51fe22cb918463c}} 
+\index{EoS\_hybrid@{EoS\_hybrid}!cal\_eos\_table@{cal\_eos\_table}}
+\index{cal\_eos\_table@{cal\_eos\_table}!EoS\_hybrid@{EoS\_hybrid}}
+\doxysubsubsection{\texorpdfstring{cal\_eos\_table()}{cal\_eos\_table()}}
+{\footnotesize\ttfamily void Eo\+S\+\_\+hybrid\+::cal\+\_\+eos\+\_\+table (\begin{DoxyParamCaption}\item[{double}]{h\+\_\+max,  }\item[{const char}]{init\+\_\+function\+\_\+type\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+calculate eos tables as list of interpolating functions and store them 
+
+
+
+Definition at line 137 of file eos.\+hpp.
+
+
+
+References cal\+\_\+eos(), controlled\+\_\+stepper\+\_\+cal\+\_\+eos(), e\+\_\+0, h\+\_\+0, p\+\_\+0, rho\+\_\+0, sg\+\_\+step, and vverbose.
+
+\mbox{\Hypertarget{classEoS__hybrid_a67e2d65672f30c6f5ff9aa2518942987}\label{classEoS__hybrid_a67e2d65672f30c6f5ff9aa2518942987}} 
+\index{EoS\_hybrid@{EoS\_hybrid}!eh@{eh}}
+\index{eh@{eh}!EoS\_hybrid@{EoS\_hybrid}}
+\doxysubsubsection{\texorpdfstring{eh()}{eh()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+hybrid\+::eh (\begin{DoxyParamCaption}\item[{double}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Calculate energy density using h only. 
+
+
+
+Implements \mbox{\hyperlink{classEoS_a331009fa0cb7867c6b453a781c56fd22}{EoS}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classEoS__param__mu__cs_a8f478cf7b357f9a537e07b7dd3964029}{Eo\+S\+\_\+param\+\_\+mu\+\_\+cs}}.
+
+
+
+Definition at line 107 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__hybrid_a2eaefcd38676495c846b5ab5456030f2}\label{classEoS__hybrid_a2eaefcd38676495c846b5ab5456030f2}} 
+\index{EoS\_hybrid@{EoS\_hybrid}!eh\_interp@{eh\_interp}}
+\index{eh\_interp@{eh\_interp}!EoS\_hybrid@{EoS\_hybrid}}
+\doxysubsubsection{\texorpdfstring{eh\_interp()}{eh\_interp()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+hybrid\+::eh\+\_\+interp (\begin{DoxyParamCaption}\item[{double}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 122 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__hybrid_a94e0a8bc225538472f6ee77aeab466f9}\label{classEoS__hybrid_a94e0a8bc225538472f6ee77aeab466f9}} 
+\index{EoS\_hybrid@{EoS\_hybrid}!gamma@{gamma}}
+\index{gamma@{gamma}!EoS\_hybrid@{EoS\_hybrid}}
+\doxysubsubsection{\texorpdfstring{gamma()}{gamma()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+hybrid\+::gamma (\begin{DoxyParamCaption}\item[{double}]{h,  }\item[{double}]{p,  }\item[{double}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Calculate gamma. 
+
+
+
+Implements \mbox{\hyperlink{classEoS_a05bfac12f882be3aaa68ae663c048257}{EoS}}.
+
+
+
+Definition at line 117 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__hybrid_aed0918e0e3b59cc09ad48b0215ef795f}\label{classEoS__hybrid_aed0918e0e3b59cc09ad48b0215ef795f}} 
+\index{EoS\_hybrid@{EoS\_hybrid}!gamma\_interp@{gamma\_interp}}
+\index{gamma\_interp@{gamma\_interp}!EoS\_hybrid@{EoS\_hybrid}}
+\doxysubsubsection{\texorpdfstring{gamma\_interp()}{gamma\_interp()}}
+{\footnotesize\ttfamily virtual double Eo\+S\+\_\+hybrid\+::gamma\+\_\+interp (\begin{DoxyParamCaption}\item[{double}]{h,  }\item[{double}]{p,  }\item[{double}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classEoS__param__mu__cs_a1c0292fc0da16fe39f040588456bb080}{Eo\+S\+\_\+param\+\_\+mu\+\_\+cs}}, \mbox{\hyperlink{classEoS__ph__sp__pt__css_a55154aa55f038e5e07e77c1dd0e6648c}{Eo\+S\+\_\+ph\+\_\+sp\+\_\+pt\+\_\+css}}, \mbox{\hyperlink{classEoS__pw__sp__pt__css_a250040d72d666d09b5e6c1919b92fdff}{Eo\+S\+\_\+pw\+\_\+sp\+\_\+pt\+\_\+css}}, \mbox{\hyperlink{classEoS__cons__cs_ab8d449722c082c84e482b9e6edba1b66}{Eo\+S\+\_\+cons\+\_\+cs}}, \mbox{\hyperlink{classEoS__adp__pw_a0655b42112361dfd83e353469078d4f3}{Eo\+S\+\_\+adp\+\_\+pw}}, \mbox{\hyperlink{classEoS__pwg__pt_a1934e813a664e08340f04069988dd57d}{Eo\+S\+\_\+pwg\+\_\+pt}}, \mbox{\hyperlink{classEoS__spectral__hbase_a47b39fd6b5a46dc976542a643d162bdb}{Eo\+S\+\_\+spectral\+\_\+hbase}}, \mbox{\hyperlink{classEoS__piecewise__pressure_a59f22388e020f1e1bb555f1e7c4bd3d7}{Eo\+S\+\_\+piecewise\+\_\+pressure}}, and \mbox{\hyperlink{classEoS__piecewise__gamma_a00a77c080083e0864adda67133270d4f}{Eo\+S\+\_\+piecewise\+\_\+gamma}}.
+
+
+
+Definition at line 124 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__hybrid_a3f059dcba2fc2bcb238afaa41944e083}\label{classEoS__hybrid_a3f059dcba2fc2bcb238afaa41944e083}} 
+\index{EoS\_hybrid@{EoS\_hybrid}!init\_interp\_coeff\_through\_ep\_array@{init\_interp\_coeff\_through\_ep\_array}}
+\index{init\_interp\_coeff\_through\_ep\_array@{init\_interp\_coeff\_through\_ep\_array}!EoS\_hybrid@{EoS\_hybrid}}
+\doxysubsubsection{\texorpdfstring{init\_interp\_coeff\_through\_ep\_array()}{init\_interp\_coeff\_through\_ep\_array()}}
+{\footnotesize\ttfamily void Eo\+S\+\_\+hybrid\+::init\+\_\+interp\+\_\+coeff\+\_\+through\+\_\+ep\+\_\+array (\begin{DoxyParamCaption}\item[{double}]{ee\mbox{[}$\,$\mbox{]},  }\item[{double}]{pp\mbox{[}$\,$\mbox{]},  }\item[{const int}]{len\+\_\+eos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+transform ep table to get interpolation coefficients (see Appendix B of 10.\+1103/\+Phys\+RevD.86.\+084003) 
+
+
+
+Definition at line 186 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__hybrid_aadacda0ab907d9e8457420c7cc8a55e8}\label{classEoS__hybrid_aadacda0ab907d9e8457420c7cc8a55e8}} 
+\index{EoS\_hybrid@{EoS\_hybrid}!ph@{ph}}
+\index{ph@{ph}!EoS\_hybrid@{EoS\_hybrid}}
+\doxysubsubsection{\texorpdfstring{ph()}{ph()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+hybrid\+::ph (\begin{DoxyParamCaption}\item[{double}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Calculate pressure using h only. 
+
+
+
+Implements \mbox{\hyperlink{classEoS_a2924df9d149e460c6c4c4b12ea92ab27}{EoS}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classEoS__param__mu__cs_a1b38aa6ba1293cf227bcd54f38013b67}{Eo\+S\+\_\+param\+\_\+mu\+\_\+cs}}.
+
+
+
+Definition at line 102 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__hybrid_afb9d3da06c5cb991c52f70663d8d82c2}\label{classEoS__hybrid_afb9d3da06c5cb991c52f70663d8d82c2}} 
+\index{EoS\_hybrid@{EoS\_hybrid}!ph\_interp@{ph\_interp}}
+\index{ph\_interp@{ph\_interp}!EoS\_hybrid@{EoS\_hybrid}}
+\doxysubsubsection{\texorpdfstring{ph\_interp()}{ph\_interp()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+hybrid\+::ph\+\_\+interp (\begin{DoxyParamCaption}\item[{double}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 121 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__hybrid_a884a369454d9ab0dc83697050d2ee8c0}\label{classEoS__hybrid_a884a369454d9ab0dc83697050d2ee8c0}} 
+\index{EoS\_hybrid@{EoS\_hybrid}!rhoh@{rhoh}}
+\index{rhoh@{rhoh}!EoS\_hybrid@{EoS\_hybrid}}
+\doxysubsubsection{\texorpdfstring{rhoh()}{rhoh()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+hybrid\+::rhoh (\begin{DoxyParamCaption}\item[{double}]{h,  }\item[{double}]{p,  }\item[{double}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Calculate mass density using h only. 
+
+
+
+Implements \mbox{\hyperlink{classEoS_a9d418d78c384f52516623d37a0383ad5}{EoS}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classEoS__param__mu__cs_aea5e1972cfd0889f3e04562b418395db}{Eo\+S\+\_\+param\+\_\+mu\+\_\+cs}}.
+
+
+
+Definition at line 112 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__hybrid_ad4bd0e612b82596afb8867ef9e42f125}\label{classEoS__hybrid_ad4bd0e612b82596afb8867ef9e42f125}} 
+\index{EoS\_hybrid@{EoS\_hybrid}!rhoh\_interp@{rhoh\_interp}}
+\index{rhoh\_interp@{rhoh\_interp}!EoS\_hybrid@{EoS\_hybrid}}
+\doxysubsubsection{\texorpdfstring{rhoh\_interp()}{rhoh\_interp()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+hybrid\+::rhoh\+\_\+interp (\begin{DoxyParamCaption}\item[{double}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 123 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__hybrid_a7a480ae8ddf0120a0e7723b705c30128}\label{classEoS__hybrid_a7a480ae8ddf0120a0e7723b705c30128}} 
+\index{EoS\_hybrid@{EoS\_hybrid}!update\_h0\_related\_variables@{update\_h0\_related\_variables}}
+\index{update\_h0\_related\_variables@{update\_h0\_related\_variables}!EoS\_hybrid@{EoS\_hybrid}}
+\doxysubsubsection{\texorpdfstring{update\_h0\_related\_variables()}{update\_h0\_related\_variables()}}
+{\footnotesize\ttfamily void Eo\+S\+\_\+hybrid\+::update\+\_\+h0\+\_\+related\+\_\+variables (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+update global variables h\+\_\+0, p\+\_\+0, e\+\_\+0, and rho\+\_\+0 with the last term of the coefficient table 
+
+
+
+Definition at line 127 of file eos.\+hpp.
+
+
+
+References e\+\_\+0, h\+\_\+0, p\+\_\+0, rho\+\_\+0, and verbose.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classEoS__hybrid_a78db23ea484d1f2e4f73ea911c2bfcea}\label{classEoS__hybrid_a78db23ea484d1f2e4f73ea911c2bfcea}} 
+\index{EoS\_hybrid@{EoS\_hybrid}!h\_border@{h\_border}}
+\index{h\_border@{h\_border}!EoS\_hybrid@{EoS\_hybrid}}
+\doxysubsubsection{\texorpdfstring{h\_border}{h\_border}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+hybrid\+::h\+\_\+border =\mbox{\hyperlink{global__variable__constants_8hpp_afdd85d40368fa2581d636316d0ef143c}{h\+\_\+0}}}
+
+
+
+the border that seperate apart the interpolated part and the tabulated part. 
+
+
+
+Definition at line 95 of file eos.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+eostool/\mbox{\hyperlink{eos_8hpp}{eos.\+hpp}}\end{DoxyCompactItemize}

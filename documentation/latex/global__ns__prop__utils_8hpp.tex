@@ -1,0 +1,438 @@
+\hypertarget{global__ns__prop__utils_8hpp}{}\doxysection{eostool/global\+\_\+ns\+\_\+prop\+\_\+utils.hpp File Reference}
+\label{global__ns__prop__utils_8hpp}\index{eostool/global\_ns\_prop\_utils.hpp@{eostool/global\_ns\_prop\_utils.hpp}}
+{\ttfamily \#include \char`\"{}eos\+\_\+utils.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+Include dependency graph for global\+\_\+ns\+\_\+prop\+\_\+utils.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{global__ns__prop__utils_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{global__ns__prop__utils_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{global__ns__prop__utils_8hpp_aa95912737d8a32368c191b1444488943}{fail\+\_\+process\+\_\+check\+\_\+mmax}}(message)
+\item 
+\#define \mbox{\hyperlink{global__ns__prop__utils_8hpp_a8aa2f9a4f71b7bbd8fae00386d6908b8}{fail\+\_\+process\+\_\+check\+\_\+mmax\+\_\+gd}}(message)
+\item 
+\#define \mbox{\hyperlink{global__ns__prop__utils_8hpp_aaf6ac0194fd22cadb691f6944933626e}{fail\+\_\+process\+\_\+check\+\_\+mmax\+\_\+pt\+\_\+two\+\_\+branch}}(message)
+\item 
+\#define \mbox{\hyperlink{global__ns__prop__utils_8hpp_a42ee396afdc4cc44456b696ee28f5787}{fail\+\_\+process\+\_\+find\+\_\+global\+\_\+prop}}()~$\ast$h\+\_\+closest = -\/1; $\ast$unknown=0; return false;
+\item 
+\#define \mbox{\hyperlink{global__ns__prop__utils_8hpp_a42ee396afdc4cc44456b696ee28f5787}{fail\+\_\+process\+\_\+find\+\_\+global\+\_\+prop}}()~$\ast$h\+\_\+closest = -\/1; $\ast$unknown=0; return false;
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double $\ast$ \mbox{\hyperlink{global__ns__prop__utils_8hpp_a868be24c590ade0f629c8d2135ab0229}{get\+\_\+mrl}} (double hc)
+\begin{DoxyCompactList}\small\item\em Python interface function for integrating the whole structure of the star. \end{DoxyCompactList}\item 
+double $\ast$ \mbox{\hyperlink{global__ns__prop__utils_8hpp_ad367f0fee61e524c121e3d3bf7b89768}{calculate\+\_\+internal\+\_\+structure}} (double h)
+\item 
+double $\ast$ \mbox{\hyperlink{global__ns__prop__utils_8hpp_a628c977b4ca9c60fc96dd36808d1b430}{get\+\_\+mr\+\_\+with\+\_\+specific\+\_\+hsurf}} (double hc, double h\+\_\+surf)
+\item 
+bool \mbox{\hyperlink{global__ns__prop__utils_8hpp_a1c00f2db057b9df0147cdf0e2ca313bc}{check\+\_\+mmax\+\_\+gd}} (double $\ast$hc, double $\ast$M\+\_\+max, double h\+\_\+start=\mbox{\hyperlink{global__variable__constants_8hpp_ae9cfab24e001e4f7106a462498292d6b}{EOS}}-\/$>$suggested\+\_\+hc\+\_\+star+0.\+08, bool compare\+\_\+ftype\+\_\+is\+\_\+less=true, double jump\+\_\+size=0.\+1, bool check\+\_\+ok=true)
+\item 
+bool \mbox{\hyperlink{global__ns__prop__utils_8hpp_a71f840131552a42389deefaa84ca8b7f}{check\+\_\+mmax\+\_\+pt\+\_\+two\+\_\+branch}} (double $\ast$h1, double $\ast$h2, double $\ast$h3, double $\ast$h\+\_\+max, double $\ast$m1, double $\ast$m2, double $\ast$m3, double $\ast$m\+\_\+max, double rho\+\_\+tr, double drho)
+\begin{DoxyCompactList}\small\item\em Find maximum mass in the case that there are two branches of M-\/R (phase transition of \mbox{\hyperlink{classEoS}{EoS}}). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{global__ns__prop__utils_8hpp_a1066f9cdaa5d99581234c9d133d34877}{find\+\_\+closest\+\_\+global\+\_\+property}} (double m\+\_\+aim, double h\+\_\+i, double h\+\_\+max, double $\ast$h\+\_\+closest, double $\ast$lambda, bool use\+\_\+user\+\_\+start\+\_\+point)
+\begin{DoxyCompactList}\small\item\em Find a global property a with another global property b. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{global__ns__prop__utils_8hpp_a4f9d27ae94b49f22ca8b3c3d2bede808}{find\+\_\+closest\+\_\+global\+\_\+property\+\_\+with\+\_\+maxm\+\_\+known}} (double known\+\_\+aim, double h\+\_\+i, double h\+\_\+max, double $\ast$h\+\_\+closest, double $\ast$unknown, int get\+\_\+type, bool use\+\_\+user\+\_\+start\+\_\+point)
+\begin{DoxyCompactList}\small\item\em Find a global property a with another global property b after knowing the maximum central specific enthalpy h\+\_\+max. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{global__ns__prop__utils_8hpp_ab3c5a1a854e42b8e307ade519a977980}{get\+\_\+unknowns\+\_\+from\+\_\+knowns}} (double known1, double known2, double $\ast$unknown1, double $\ast$unknown2, double $\ast$h\+\_\+max, int get\+\_\+type)
+\begin{DoxyCompactList}\small\item\em In a BNS system\+: Find nearest known global properties, return corresponding unknown global ones. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{global__ns__prop__utils_8hpp_aa717631a3c73a7dcbd88148527088b18}{make\+\_\+hmrl\+\_\+tool\+\_\+table}} (double minh, double maxh, double dh)
+\item 
+bool \mbox{\hyperlink{global__ns__prop__utils_8hpp_aa37949172ba05597e66aa00834ac54f1}{check\+\_\+mmax\+\_\+old}} (double $\ast$hc, double $\ast$M\+\_\+max, double h\+\_\+start, bool compare\+\_\+ftype\+\_\+is\+\_\+less, double jump\+\_\+size, bool check\+\_\+ok)
+\begin{DoxyCompactList}\small\item\em Find non-\/rotating maximum supported mass of an \mbox{\hyperlink{classEoS}{EoS}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{global__ns__prop__utils_8hpp_a0d2adaa5482bf4c2430cfc2be276f1bd}{find\+\_\+closest\+\_\+global\+\_\+property\+\_\+with\+\_\+maxm\+\_\+known\+\_\+old}} (double known\+\_\+aim, double h\+\_\+i, double h\+\_\+max, double $\ast$h\+\_\+closest, double $\ast$unknown, int get\+\_\+type, bool use\+\_\+user\+\_\+start\+\_\+point)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{global__ns__prop__utils_8hpp_aa95912737d8a32368c191b1444488943}\label{global__ns__prop__utils_8hpp_aa95912737d8a32368c191b1444488943}} 
+\index{global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}!fail\_process\_check\_mmax@{fail\_process\_check\_mmax}}
+\index{fail\_process\_check\_mmax@{fail\_process\_check\_mmax}!global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{fail\_process\_check\_mmax}{fail\_process\_check\_mmax}}
+{\footnotesize\ttfamily \#define fail\+\_\+process\+\_\+check\+\_\+mmax(\begin{DoxyParamCaption}\item[{}]{message }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{        *hc = -\/1; *M\_max=0.; \(\backslash\)}
+\DoxyCodeLine{        if (\mbox{\hyperlink{global__variable__constants_8hpp_ab3f078684998b83967d507d0f453f454}{verbose}}) \{ \(\backslash\)}
+\DoxyCodeLine{            cout<<message<<\textcolor{stringliteral}{"{}, with h="{}}<<h<<\textcolor{stringliteral}{"{}, h\_guard="{}}<<h+h\_guard<<\textcolor{stringliteral}{"{}, h\_check\_again="{}}<<h+h\_check\_again; \(\backslash\)}
+\DoxyCodeLine{            cout<<\textcolor{stringliteral}{"{}, M="{}}<<M<<\textcolor{stringliteral}{"{}, M\_guard="{}}<<M\_guard<<\textcolor{stringliteral}{"{}, M\_check\_again="{}}<<M\_check\_again<<endl;\(\backslash\)}
+\DoxyCodeLine{        \} \(\backslash\)}
+\DoxyCodeLine{        return \textcolor{keyword}{false};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{global__ns__prop__utils_8hpp_a8aa2f9a4f71b7bbd8fae00386d6908b8}\label{global__ns__prop__utils_8hpp_a8aa2f9a4f71b7bbd8fae00386d6908b8}} 
+\index{global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}!fail\_process\_check\_mmax\_gd@{fail\_process\_check\_mmax\_gd}}
+\index{fail\_process\_check\_mmax\_gd@{fail\_process\_check\_mmax\_gd}!global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{fail\_process\_check\_mmax\_gd}{fail\_process\_check\_mmax\_gd}}
+{\footnotesize\ttfamily \#define fail\+\_\+process\+\_\+check\+\_\+mmax\+\_\+gd(\begin{DoxyParamCaption}\item[{}]{message }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{        *hc = -\/1; *M\_max=0.; \(\backslash\)}
+\DoxyCodeLine{        if (\mbox{\hyperlink{global__variable__constants_8hpp_ab3f078684998b83967d507d0f453f454}{verbose}}) \{ \(\backslash\)}
+\DoxyCodeLine{            cout<<message<<\textcolor{stringliteral}{"{}, with h="{}}<<h<<\textcolor{stringliteral}{"{}, h\_guard="{}}<<h+h\_guard; \(\backslash\)}
+\DoxyCodeLine{            cout<<\textcolor{stringliteral}{"{}, M="{}}<<M<<\textcolor{stringliteral}{"{}, M\_guard="{}}<<M\_guard<<endl;\(\backslash\)}
+\DoxyCodeLine{        \} \(\backslash\)}
+\DoxyCodeLine{        return \textcolor{keyword}{false};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{global__ns__prop__utils_8hpp_aaf6ac0194fd22cadb691f6944933626e}\label{global__ns__prop__utils_8hpp_aaf6ac0194fd22cadb691f6944933626e}} 
+\index{global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}!fail\_process\_check\_mmax\_pt\_two\_branch@{fail\_process\_check\_mmax\_pt\_two\_branch}}
+\index{fail\_process\_check\_mmax\_pt\_two\_branch@{fail\_process\_check\_mmax\_pt\_two\_branch}!global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{fail\_process\_check\_mmax\_pt\_two\_branch}{fail\_process\_check\_mmax\_pt\_two\_branch}}
+{\footnotesize\ttfamily \#define fail\+\_\+process\+\_\+check\+\_\+mmax\+\_\+pt\+\_\+two\+\_\+branch(\begin{DoxyParamCaption}\item[{}]{message }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{        *h1 = -\/1, *h2 = -\/1, *h3 = -\/1, *h\_max = -\/1, *m1 = 0., *m2 = 0., *m3 = 0., *m\_max=0.; \(\backslash\)}
+\DoxyCodeLine{        if (\mbox{\hyperlink{global__variable__constants_8hpp_ab3f078684998b83967d507d0f453f454}{verbose}}) cout<<message<<endl; \(\backslash\)}
+\DoxyCodeLine{        return \textcolor{keyword}{false};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{global__ns__prop__utils_8hpp_a42ee396afdc4cc44456b696ee28f5787}\label{global__ns__prop__utils_8hpp_a42ee396afdc4cc44456b696ee28f5787}} 
+\index{global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}!fail\_process\_find\_global\_prop@{fail\_process\_find\_global\_prop}}
+\index{fail\_process\_find\_global\_prop@{fail\_process\_find\_global\_prop}!global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{fail\_process\_find\_global\_prop}{fail\_process\_find\_global\_prop}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define fail\+\_\+process\+\_\+find\+\_\+global\+\_\+prop(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~$\ast$h\+\_\+closest = -\/1; $\ast$unknown=0; return false;}
+
+\mbox{\Hypertarget{global__ns__prop__utils_8hpp_a42ee396afdc4cc44456b696ee28f5787}\label{global__ns__prop__utils_8hpp_a42ee396afdc4cc44456b696ee28f5787}} 
+\index{global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}!fail\_process\_find\_global\_prop@{fail\_process\_find\_global\_prop}}
+\index{fail\_process\_find\_global\_prop@{fail\_process\_find\_global\_prop}!global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{fail\_process\_find\_global\_prop}{fail\_process\_find\_global\_prop}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define fail\+\_\+process\+\_\+find\+\_\+global\+\_\+prop(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~$\ast$h\+\_\+closest = -\/1; $\ast$unknown=0; return false;}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{global__ns__prop__utils_8hpp_ad367f0fee61e524c121e3d3bf7b89768}\label{global__ns__prop__utils_8hpp_ad367f0fee61e524c121e3d3bf7b89768}} 
+\index{global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}!calculate\_internal\_structure@{calculate\_internal\_structure}}
+\index{calculate\_internal\_structure@{calculate\_internal\_structure}!global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{calculate\_internal\_structure()}{calculate\_internal\_structure()}}
+{\footnotesize\ttfamily double $\ast$ calculate\+\_\+internal\+\_\+structure (\begin{DoxyParamCaption}\item[{double}]{h }\end{DoxyParamCaption})}
+
+
+
+Definition at line 64 of file global\+\_\+ns\+\_\+prop\+\_\+utils.\+hpp.
+
+
+
+References structure\+\_\+function\+\_\+h\+\_\+base, structure\+\_\+mr, and verbose.
+
+\mbox{\Hypertarget{global__ns__prop__utils_8hpp_a1c00f2db057b9df0147cdf0e2ca313bc}\label{global__ns__prop__utils_8hpp_a1c00f2db057b9df0147cdf0e2ca313bc}} 
+\index{global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}!check\_mmax\_gd@{check\_mmax\_gd}}
+\index{check\_mmax\_gd@{check\_mmax\_gd}!global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{check\_mmax\_gd()}{check\_mmax\_gd()}}
+{\footnotesize\ttfamily bool check\+\_\+mmax\+\_\+gd (\begin{DoxyParamCaption}\item[{double $\ast$}]{hc,  }\item[{double $\ast$}]{M\+\_\+max,  }\item[{double}]{h\+\_\+start = {\ttfamily \mbox{\hyperlink{global__variable__constants_8hpp_ae9cfab24e001e4f7106a462498292d6b}{EOS}}-\/$>$suggested\+\_\+hc\+\_\+star+0.08},  }\item[{bool}]{compare\+\_\+ftype\+\_\+is\+\_\+less = {\ttfamily true},  }\item[{double}]{jump\+\_\+size = {\ttfamily 0.1},  }\item[{bool}]{check\+\_\+ok = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 198 of file global\+\_\+ns\+\_\+prop\+\_\+utils.\+hpp.
+
+
+
+References check\+\_\+causal, cool\+\_\+eos(), EOS, Eo\+S\+::eos\+\_\+table\+\_\+max\+\_\+h, fail\+\_\+process\+\_\+check\+\_\+mmax\+\_\+gd, int\+\_\+whole\+\_\+star(), maxm\+\_\+tov, minm\+\_\+tov, and verbose.
+
+
+
+Referenced by check\+\_\+mmax\+\_\+pt\+\_\+two\+\_\+branch(), and get\+\_\+unknowns\+\_\+from\+\_\+knowns().
+
+\mbox{\Hypertarget{global__ns__prop__utils_8hpp_aa37949172ba05597e66aa00834ac54f1}\label{global__ns__prop__utils_8hpp_aa37949172ba05597e66aa00834ac54f1}} 
+\index{global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}!check\_mmax\_old@{check\_mmax\_old}}
+\index{check\_mmax\_old@{check\_mmax\_old}!global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{check\_mmax\_old()}{check\_mmax\_old()}}
+{\footnotesize\ttfamily bool check\+\_\+mmax\+\_\+old (\begin{DoxyParamCaption}\item[{double $\ast$}]{hc,  }\item[{double $\ast$}]{M\+\_\+max,  }\item[{double}]{h\+\_\+start,  }\item[{bool}]{compare\+\_\+ftype\+\_\+is\+\_\+less,  }\item[{double}]{jump\+\_\+size,  }\item[{bool}]{check\+\_\+ok }\end{DoxyParamCaption})}
+
+
+
+Find non-\/rotating maximum supported mass of an \mbox{\hyperlink{classEoS}{EoS}}. 
+
+The challenge is the \char`\"{}noise\char`\"{} or none monotonicity property, the solution is\+:
+\begin{DoxyEnumerate}
+\item A bigger guard to check again, 2. Judge whether a step before is larger. error\+: $\sim$0.005 M\+\_\+sun 
+\begin{DoxyParams}{Parameters}
+{\em hc} & Pointer to the central enthalpy, return -\/1 if finding error. \\
+\hline
+{\em M\+\_\+max} & Pointer to the maximum mass, return 0 if finding error. \\
+\hline
+{\em h\+\_\+start} & Where to start finding the maximum mass. \\
+\hline
+{\em compare\+\_\+ftype\+\_\+is\+\_\+less} & Find mimimum or maximum, set to true if maximum is wanted. \\
+\hline
+{\em jump\+\_\+size} & Set the initial jump size of h to find the maximum mass. \\
+\hline
+{\em check\+\_\+ok} & Whether to set the (mtov\+\_\+min, mtov\+\_\+max) constraint or not. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em bool} & whether finding process correctly worked. \\
+\hline
+\end{DoxyRetVals}
+
+\end{DoxyEnumerate}
+
+Definition at line 117 of file global\+\_\+ns\+\_\+prop\+\_\+utils.\+hpp.
+
+
+
+References check\+\_\+causal, cool\+\_\+eos(), EOS, Eo\+S\+::eos\+\_\+table\+\_\+max\+\_\+h, fail\+\_\+process\+\_\+check\+\_\+mmax, int\+\_\+whole\+\_\+star(), maxm\+\_\+tov, minm\+\_\+tov, and verbose.
+
+\mbox{\Hypertarget{global__ns__prop__utils_8hpp_a71f840131552a42389deefaa84ca8b7f}\label{global__ns__prop__utils_8hpp_a71f840131552a42389deefaa84ca8b7f}} 
+\index{global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}!check\_mmax\_pt\_two\_branch@{check\_mmax\_pt\_two\_branch}}
+\index{check\_mmax\_pt\_two\_branch@{check\_mmax\_pt\_two\_branch}!global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{check\_mmax\_pt\_two\_branch()}{check\_mmax\_pt\_two\_branch()}}
+{\footnotesize\ttfamily bool check\+\_\+mmax\+\_\+pt\+\_\+two\+\_\+branch (\begin{DoxyParamCaption}\item[{double $\ast$}]{h1,  }\item[{double $\ast$}]{h2,  }\item[{double $\ast$}]{h3,  }\item[{double $\ast$}]{h\+\_\+max,  }\item[{double $\ast$}]{m1,  }\item[{double $\ast$}]{m2,  }\item[{double $\ast$}]{m3,  }\item[{double $\ast$}]{m\+\_\+max,  }\item[{double}]{rho\+\_\+tr,  }\item[{double}]{drho }\end{DoxyParamCaption})}
+
+
+
+Find maximum mass in the case that there are two branches of M-\/R (phase transition of \mbox{\hyperlink{classEoS}{EoS}}). 
+
+Need the transition density and strenth to find three critical structure and output the corresponding hc and mass. 
+\begin{DoxyParams}{Parameters}
+{\em h1} & Pointer to the central enthalpy of first peak in M-\/R graph, return -\/1 if finding error. \\
+\hline
+{\em h2} & Pointer to the central enthalpy of first valley in M-\/R graph, return -\/1 if finding error. \\
+\hline
+{\em h3} & Pointer to the central enthalpy of second peak in M-\/R graph, return -\/1 if finding error. \\
+\hline
+{\em h\+\_\+max} & Pointer to the central enthalpy of maximum mass in M-\/R graph, return -\/1 if finding error. \\
+\hline
+{\em m1} & Pointer to the mass corresponding to h1, return 0 if finding error. \\
+\hline
+{\em m2} & Pointer to the mass corresponding to h2, return 0 if finding error. \\
+\hline
+{\em m3} & Pointer to the mass corresponding to h3, return 0 if finding error. \\
+\hline
+{\em m\+\_\+max} & Pointer to the mass corresponding to h\+\_\+max, return 0 if finding error. \\
+\hline
+{\em rho\+\_\+tr} & The starting mass density of phase transition, to boost the finding process. \\
+\hline
+{\em drho} & The length of mass density of phase transition, to boost the finding process. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em bool} & whether finding process correctly worked. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 290 of file global\+\_\+ns\+\_\+prop\+\_\+utils.\+hpp.
+
+
+
+References check\+\_\+causal, check\+\_\+mmax\+\_\+gd(), cool\+\_\+eos(), EOS, Eo\+S\+::eos\+\_\+table\+\_\+function\+\_\+rho\+\_\+base, fail\+\_\+process\+\_\+check\+\_\+mmax\+\_\+pt\+\_\+two\+\_\+branch, int\+\_\+whole\+\_\+star(), maxm\+\_\+tov, minm\+\_\+tov, and verbose.
+
+\mbox{\Hypertarget{global__ns__prop__utils_8hpp_a1066f9cdaa5d99581234c9d133d34877}\label{global__ns__prop__utils_8hpp_a1066f9cdaa5d99581234c9d133d34877}} 
+\index{global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}!find\_closest\_global\_property@{find\_closest\_global\_property}}
+\index{find\_closest\_global\_property@{find\_closest\_global\_property}!global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{find\_closest\_global\_property()}{find\_closest\_global\_property()}}
+{\footnotesize\ttfamily bool find\+\_\+closest\+\_\+global\+\_\+property (\begin{DoxyParamCaption}\item[{double}]{m\+\_\+aim,  }\item[{double}]{h\+\_\+i,  }\item[{double}]{h\+\_\+max,  }\item[{double $\ast$}]{h\+\_\+closest,  }\item[{double $\ast$}]{lambda,  }\item[{bool}]{use\+\_\+user\+\_\+start\+\_\+point }\end{DoxyParamCaption})}
+
+
+
+Find a global property a with another global property b. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em known\+\_\+aim} & Global\+\_\+b. \\
+\hline
+{\em h\+\_\+i} & Initial guess. \\
+\hline
+{\em h\+\_\+closest} & Pointer to the closest enthalpy, return -\/1 if finding error. \\
+\hline
+{\em unknown} & Pointer to the global\+\_\+a to be found, return 0 if finding error. \\
+\hline
+{\em get\+\_\+type} & 1. using mass to find lambda; 2. using mass to find radius; 3. using lambda to find mass. \\
+\hline
+{\em use\+\_\+user\+\_\+start\+\_\+point} & Whether to use user specified initial guess h\+\_\+i or use system default value. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em bool} & whether finding process correctly worked. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 356 of file global\+\_\+ns\+\_\+prop\+\_\+utils.\+hpp.
+
+
+
+References cal\+\_\+lambda(), EOS, int\+\_\+whole\+\_\+star(), Eo\+S\+::minimum\+\_\+allowed\+\_\+h, Eo\+S\+::suggested\+\_\+hc\+\_\+star, and verbose.
+
+\mbox{\Hypertarget{global__ns__prop__utils_8hpp_a4f9d27ae94b49f22ca8b3c3d2bede808}\label{global__ns__prop__utils_8hpp_a4f9d27ae94b49f22ca8b3c3d2bede808}} 
+\index{global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}!find\_closest\_global\_property\_with\_maxm\_known@{find\_closest\_global\_property\_with\_maxm\_known}}
+\index{find\_closest\_global\_property\_with\_maxm\_known@{find\_closest\_global\_property\_with\_maxm\_known}!global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{find\_closest\_global\_property\_with\_maxm\_known()}{find\_closest\_global\_property\_with\_maxm\_known()}}
+{\footnotesize\ttfamily bool find\+\_\+closest\+\_\+global\+\_\+property\+\_\+with\+\_\+maxm\+\_\+known (\begin{DoxyParamCaption}\item[{double}]{known\+\_\+aim,  }\item[{double}]{h\+\_\+i,  }\item[{double}]{h\+\_\+max,  }\item[{double $\ast$}]{h\+\_\+closest,  }\item[{double $\ast$}]{unknown,  }\item[{int}]{get\+\_\+type,  }\item[{bool}]{use\+\_\+user\+\_\+start\+\_\+point }\end{DoxyParamCaption})}
+
+
+
+Find a global property a with another global property b after knowing the maximum central specific enthalpy h\+\_\+max. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em known\+\_\+aim} & Global\+\_\+b. \\
+\hline
+{\em h\+\_\+i} & Initial guess. \\
+\hline
+{\em h\+\_\+max} & Known maximum enthalpy. \\
+\hline
+{\em h\+\_\+closest} & Pointer to the closest enthalpy, return -\/1 if finding error. \\
+\hline
+{\em unknown} & Pointer to the global\+\_\+a to be found, return 0 if finding error. \\
+\hline
+{\em get\+\_\+type} & 1. using mass to find lambda; 2. using mass to find radius; 3. using lambda to find mass. \\
+\hline
+{\em use\+\_\+user\+\_\+start\+\_\+point} & Whether to use user specified initial guess h\+\_\+i or use system default value. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em bool} & whether finding process correctly worked. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 426 of file global\+\_\+ns\+\_\+prop\+\_\+utils.\+hpp.
+
+
+
+References cal\+\_\+lambda(), EOS, fail\+\_\+process\+\_\+find\+\_\+global\+\_\+prop, int\+\_\+whole\+\_\+star(), Eo\+S\+::minimum\+\_\+allowed\+\_\+h, r\+\_\+trans, Eo\+S\+::suggested\+\_\+hc\+\_\+star, and verbose.
+
+
+
+Referenced by get\+\_\+unknowns\+\_\+from\+\_\+knowns().
+
+\mbox{\Hypertarget{global__ns__prop__utils_8hpp_a0d2adaa5482bf4c2430cfc2be276f1bd}\label{global__ns__prop__utils_8hpp_a0d2adaa5482bf4c2430cfc2be276f1bd}} 
+\index{global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}!find\_closest\_global\_property\_with\_maxm\_known\_old@{find\_closest\_global\_property\_with\_maxm\_known\_old}}
+\index{find\_closest\_global\_property\_with\_maxm\_known\_old@{find\_closest\_global\_property\_with\_maxm\_known\_old}!global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{find\_closest\_global\_property\_with\_maxm\_known\_old()}{find\_closest\_global\_property\_with\_maxm\_known\_old()}}
+{\footnotesize\ttfamily bool find\+\_\+closest\+\_\+global\+\_\+property\+\_\+with\+\_\+maxm\+\_\+known\+\_\+old (\begin{DoxyParamCaption}\item[{double}]{known\+\_\+aim,  }\item[{double}]{h\+\_\+i,  }\item[{double}]{h\+\_\+max,  }\item[{double $\ast$}]{h\+\_\+closest,  }\item[{double $\ast$}]{unknown,  }\item[{int}]{get\+\_\+type,  }\item[{bool}]{use\+\_\+user\+\_\+start\+\_\+point }\end{DoxyParamCaption})}
+
+
+
+Definition at line 483 of file global\+\_\+ns\+\_\+prop\+\_\+utils.\+hpp.
+
+
+
+References cal\+\_\+lambda(), EOS, fail\+\_\+process\+\_\+find\+\_\+global\+\_\+prop, int\+\_\+whole\+\_\+star(), Eo\+S\+::minimum\+\_\+allowed\+\_\+h, r\+\_\+trans, Eo\+S\+::suggested\+\_\+hc\+\_\+star, and verbose.
+
+\mbox{\Hypertarget{global__ns__prop__utils_8hpp_a628c977b4ca9c60fc96dd36808d1b430}\label{global__ns__prop__utils_8hpp_a628c977b4ca9c60fc96dd36808d1b430}} 
+\index{global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}!get\_mr\_with\_specific\_hsurf@{get\_mr\_with\_specific\_hsurf}}
+\index{get\_mr\_with\_specific\_hsurf@{get\_mr\_with\_specific\_hsurf}!global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{get\_mr\_with\_specific\_hsurf()}{get\_mr\_with\_specific\_hsurf()}}
+{\footnotesize\ttfamily double $\ast$ get\+\_\+mr\+\_\+with\+\_\+specific\+\_\+hsurf (\begin{DoxyParamCaption}\item[{double}]{hc,  }\item[{double}]{h\+\_\+surf }\end{DoxyParamCaption})}
+
+
+
+Definition at line 50 of file global\+\_\+ns\+\_\+prop\+\_\+utils.\+hpp.
+
+
+
+References int\+\_\+whole\+\_\+star(), r\+\_\+trans, structure\+\_\+mr, and verbose.
+
+\mbox{\Hypertarget{global__ns__prop__utils_8hpp_a868be24c590ade0f629c8d2135ab0229}\label{global__ns__prop__utils_8hpp_a868be24c590ade0f629c8d2135ab0229}} 
+\index{global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}!get\_mrl@{get\_mrl}}
+\index{get\_mrl@{get\_mrl}!global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{get\_mrl()}{get\_mrl()}}
+{\footnotesize\ttfamily double $\ast$ get\+\_\+mrl (\begin{DoxyParamCaption}\item[{double}]{hc }\end{DoxyParamCaption})}
+
+
+
+Python interface function for integrating the whole structure of the star. 
+
+Give h\+\_\+c, get M/\+M\+\_\+sun, R/km and L, which are stored in global variable double $\ast$mrl\+\_\+result. \begin{DoxyAttention}{Attention}
+Use this for python control only, because double$\ast$ is convenient for python, and global variable is needed, ~\newline
+ which may cause confuse problem if used in c++ main, so please use int\+\_\+whole\+\_\+star instead for c++, because that do not need to return global variable. 
+\end{DoxyAttention}
+
+\begin{DoxyParams}{Parameters}
+{\em hc} & enthalpy at the center of the compact star. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em double$\ast$} & A double array of \mbox{[}mass, radius, tidal-\/deformability\mbox{]}. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 35 of file global\+\_\+ns\+\_\+prop\+\_\+utils.\+hpp.
+
+
+
+References cal\+\_\+lambda(), int\+\_\+whole\+\_\+star(), mrl\+\_\+result, r\+\_\+trans, and verbose.
+
+
+
+Referenced by get\+\_\+unknowns\+\_\+from\+\_\+knowns().
+
+\mbox{\Hypertarget{global__ns__prop__utils_8hpp_ab3c5a1a854e42b8e307ade519a977980}\label{global__ns__prop__utils_8hpp_ab3c5a1a854e42b8e307ade519a977980}} 
+\index{global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}!get\_unknowns\_from\_knowns@{get\_unknowns\_from\_knowns}}
+\index{get\_unknowns\_from\_knowns@{get\_unknowns\_from\_knowns}!global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{get\_unknowns\_from\_knowns()}{get\_unknowns\_from\_knowns()}}
+{\footnotesize\ttfamily bool get\+\_\+unknowns\+\_\+from\+\_\+knowns (\begin{DoxyParamCaption}\item[{double}]{known1,  }\item[{double}]{known2,  }\item[{double $\ast$}]{unknown1,  }\item[{double $\ast$}]{unknown2,  }\item[{double $\ast$}]{h\+\_\+max,  }\item[{int}]{get\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+In a BNS system\+: Find nearest known global properties, return corresponding unknown global ones. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em known1} & Known global property 1 to find with. \\
+\hline
+{\em known2} & Known global property 2 to find with. \\
+\hline
+{\em unknown1} & Unknown global property 1 to be found. \\
+\hline
+{\em unknown2} & Unknown global property 2 to be found. \\
+\hline
+{\em h\+\_\+max} & Pointer to stare maximum enthalpy, this should be the output also, this means this function also try to find the maximum mass. \\
+\hline
+{\em get\+\_\+type} & 1. using mass to find lambda; 2. using mass to find radius; 3. using lambda to find mass. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em bool} & Whether finding process correctly worked. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 550 of file global\+\_\+ns\+\_\+prop\+\_\+utils.\+hpp.
+
+
+
+References check\+\_\+mmax\+\_\+gd(), EOS, find\+\_\+closest\+\_\+global\+\_\+property\+\_\+with\+\_\+maxm\+\_\+known(), get\+\_\+mrl(), mrl\+\_\+result, and Eo\+S\+::suggested\+\_\+hc\+\_\+star.
+
+\mbox{\Hypertarget{global__ns__prop__utils_8hpp_aa717631a3c73a7dcbd88148527088b18}\label{global__ns__prop__utils_8hpp_aa717631a3c73a7dcbd88148527088b18}} 
+\index{global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}!make\_hmrl\_tool\_table@{make\_hmrl\_tool\_table}}
+\index{make\_hmrl\_tool\_table@{make\_hmrl\_tool\_table}!global\_ns\_prop\_utils.hpp@{global\_ns\_prop\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{make\_hmrl\_tool\_table()}{make\_hmrl\_tool\_table()}}
+{\footnotesize\ttfamily void make\+\_\+hmrl\+\_\+tool\+\_\+table (\begin{DoxyParamCaption}\item[{double}]{minh,  }\item[{double}]{maxh,  }\item[{double}]{dh }\end{DoxyParamCaption})}
+
+
+
+Definition at line 77 of file global\+\_\+ns\+\_\+prop\+\_\+utils.\+hpp.
+
+
+
+References cal\+\_\+lambda(), int\+\_\+whole\+\_\+star(), and r\+\_\+trans.
+

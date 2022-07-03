@@ -1,0 +1,130 @@
+\hypertarget{classEoS__piecewise__pressure}{}\doxysection{Eo\+S\+\_\+piecewise\+\_\+pressure Class Reference}
+\label{classEoS__piecewise__pressure}\index{EoS\_piecewise\_pressure@{EoS\_piecewise\_pressure}}
+
+
+{\ttfamily \#include $<$eos.\+hpp$>$}
+
+
+
+Inheritance diagram for Eo\+S\+\_\+piecewise\+\_\+pressure\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classEoS__piecewise__pressure__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Eo\+S\+\_\+piecewise\+\_\+pressure\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classEoS__piecewise__pressure__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classEoS__piecewise__pressure_a1abc8632d2eef75c7a883869b7fda797}{update\+\_\+eos}} (double ppar\mbox{[}$\,$\mbox{]}, int len\+\_\+par, int extra\+\_\+par, double h\+\_\+max, const char init\+\_\+function\+\_\+type\mbox{[}$\,$\mbox{]})
+\item 
+double \mbox{\hyperlink{classEoS__piecewise__pressure_a59f22388e020f1e1bb555f1e7c4bd3d7}{gamma\+\_\+interp}} (double h, double p, double e)
+\begin{DoxyCompactList}\small\item\em Calculate gamma in the pressure piecewise model. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEoS__piecewise__pressure_a52ecb84f4178c2e810b146693741cc3e}{Eo\+S\+\_\+hybrid}} (double ee\mbox{[}$\,$\mbox{]}, double pp\mbox{[}$\,$\mbox{]}, const int len\+\_\+eos)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \mbox{\hyperlink{classEoS__piecewise__pressure_abd6d03c6e85f228dc48a19ef627bb67a}{e\+\_\+borders}}
+\item 
+\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \mbox{\hyperlink{classEoS__piecewise__pressure_a7bacdafa1f8afdf3d22a3fd7dbab56a2}{rho\+\_\+borders}} \{1.$\ast$\mbox{\hyperlink{global__variable__constants_8hpp_adaca891a2fc36d0856c3e9112c5476b3}{rho\+\_\+sat}}, 1.\+85$\ast$\mbox{\hyperlink{global__variable__constants_8hpp_adaca891a2fc36d0856c3e9112c5476b3}{rho\+\_\+sat}}, 3.\+7$\ast$\mbox{\hyperlink{global__variable__constants_8hpp_adaca891a2fc36d0856c3e9112c5476b3}{rho\+\_\+sat}}, 7.\+4$\ast$\mbox{\hyperlink{global__variable__constants_8hpp_adaca891a2fc36d0856c3e9112c5476b3}{rho\+\_\+sat}}\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 356 of file eos.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEoS__piecewise__pressure_a52ecb84f4178c2e810b146693741cc3e}\label{classEoS__piecewise__pressure_a52ecb84f4178c2e810b146693741cc3e}} 
+\index{EoS\_piecewise\_pressure@{EoS\_piecewise\_pressure}!EoS\_hybrid@{EoS\_hybrid}}
+\index{EoS\_hybrid@{EoS\_hybrid}!EoS\_piecewise\_pressure@{EoS\_piecewise\_pressure}}
+\doxysubsubsection{\texorpdfstring{EoS\_hybrid()}{EoS\_hybrid()}}
+{\footnotesize\ttfamily Eo\+S\+\_\+hybrid\+::\+Eo\+S\+\_\+hybrid\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 96 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__piecewise__pressure_a59f22388e020f1e1bb555f1e7c4bd3d7}\label{classEoS__piecewise__pressure_a59f22388e020f1e1bb555f1e7c4bd3d7}} 
+\index{EoS\_piecewise\_pressure@{EoS\_piecewise\_pressure}!gamma\_interp@{gamma\_interp}}
+\index{gamma\_interp@{gamma\_interp}!EoS\_piecewise\_pressure@{EoS\_piecewise\_pressure}}
+\doxysubsubsection{\texorpdfstring{gamma\_interp()}{gamma\_interp()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+piecewise\+\_\+pressure\+::gamma\+\_\+interp (\begin{DoxyParamCaption}\item[{double}]{h,  }\item[{double}]{p,  }\item[{double}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Calculate gamma in the pressure piecewise model. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classEoS__hybrid_aed0918e0e3b59cc09ad48b0215ef795f}{Eo\+S\+\_\+hybrid}}.
+
+
+
+Definition at line 377 of file eos.\+hpp.
+
+
+
+References p\+\_\+0, and rho\+\_\+0.
+
+\mbox{\Hypertarget{classEoS__piecewise__pressure_a1abc8632d2eef75c7a883869b7fda797}\label{classEoS__piecewise__pressure_a1abc8632d2eef75c7a883869b7fda797}} 
+\index{EoS\_piecewise\_pressure@{EoS\_piecewise\_pressure}!update\_eos@{update\_eos}}
+\index{update\_eos@{update\_eos}!EoS\_piecewise\_pressure@{EoS\_piecewise\_pressure}}
+\doxysubsubsection{\texorpdfstring{update\_eos()}{update\_eos()}}
+{\footnotesize\ttfamily bool Eo\+S\+\_\+piecewise\+\_\+pressure\+::update\+\_\+eos (\begin{DoxyParamCaption}\item[{double}]{ppar\mbox{[}$\,$\mbox{]},  }\item[{int}]{len\+\_\+par,  }\item[{int}]{extra\+\_\+par,  }\item[{double}]{h\+\_\+max,  }\item[{const char}]{init\+\_\+function\+\_\+type\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classEoS_a67410571586d25fd9d5ec68720d3cf69}{EoS}}.
+
+
+
+Definition at line 361 of file eos.\+hpp.
+
+
+
+References cal\+\_\+eborders().
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classEoS__piecewise__pressure_abd6d03c6e85f228dc48a19ef627bb67a}\label{classEoS__piecewise__pressure_abd6d03c6e85f228dc48a19ef627bb67a}} 
+\index{EoS\_piecewise\_pressure@{EoS\_piecewise\_pressure}!e\_borders@{e\_borders}}
+\index{e\_borders@{e\_borders}!EoS\_piecewise\_pressure@{EoS\_piecewise\_pressure}}
+\doxysubsubsection{\texorpdfstring{e\_borders}{e\_borders}}
+{\footnotesize\ttfamily \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} Eo\+S\+\_\+piecewise\+\_\+pressure\+::e\+\_\+borders}
+
+
+
+Definition at line 358 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__piecewise__pressure_a7bacdafa1f8afdf3d22a3fd7dbab56a2}\label{classEoS__piecewise__pressure_a7bacdafa1f8afdf3d22a3fd7dbab56a2}} 
+\index{EoS\_piecewise\_pressure@{EoS\_piecewise\_pressure}!rho\_borders@{rho\_borders}}
+\index{rho\_borders@{rho\_borders}!EoS\_piecewise\_pressure@{EoS\_piecewise\_pressure}}
+\doxysubsubsection{\texorpdfstring{rho\_borders}{rho\_borders}}
+{\footnotesize\ttfamily \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} Eo\+S\+\_\+piecewise\+\_\+pressure\+::rho\+\_\+borders \{1.$\ast$\mbox{\hyperlink{global__variable__constants_8hpp_adaca891a2fc36d0856c3e9112c5476b3}{rho\+\_\+sat}}, 1.\+85$\ast$\mbox{\hyperlink{global__variable__constants_8hpp_adaca891a2fc36d0856c3e9112c5476b3}{rho\+\_\+sat}}, 3.\+7$\ast$\mbox{\hyperlink{global__variable__constants_8hpp_adaca891a2fc36d0856c3e9112c5476b3}{rho\+\_\+sat}}, 7.\+4$\ast$\mbox{\hyperlink{global__variable__constants_8hpp_adaca891a2fc36d0856c3e9112c5476b3}{rho\+\_\+sat}}\}}
+
+
+
+Definition at line 359 of file eos.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+eostool/\mbox{\hyperlink{eos_8hpp}{eos.\+hpp}}\end{DoxyCompactItemize}

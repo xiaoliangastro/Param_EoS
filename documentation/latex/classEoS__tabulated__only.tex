@@ -1,0 +1,176 @@
+\hypertarget{classEoS__tabulated__only}{}\doxysection{Eo\+S\+\_\+tabulated\+\_\+only Class Reference}
+\label{classEoS__tabulated__only}\index{EoS\_tabulated\_only@{EoS\_tabulated\_only}}
+
+
+{\ttfamily \#include $<$eos.\+hpp$>$}
+
+
+
+Inheritance diagram for Eo\+S\+\_\+tabulated\+\_\+only\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classEoS__tabulated__only__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Eo\+S\+\_\+tabulated\+\_\+only\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classEoS__tabulated__only__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEoS__tabulated__only_a0ccdaacfc5db257736ab0d384e9fca89}{Eo\+S\+\_\+tabulated\+\_\+only}} (double ee\mbox{[}$\,$\mbox{]}, double pp\mbox{[}$\,$\mbox{]}, const int len\+\_\+eos)
+\item 
+bool \mbox{\hyperlink{classEoS__tabulated__only_af579680f8bb5b82552beaf1bc162c509}{update\+\_\+eos}} (double ppar\mbox{[}$\,$\mbox{]}, int len\+\_\+par, int extra\+\_\+par, double h\+\_\+max, const char init\+\_\+function\+\_\+type\mbox{[}$\,$\mbox{]})
+\item 
+double \mbox{\hyperlink{classEoS__tabulated__only_ae9ea6758009568703defccb10efd39c9}{eh}} (double h)
+\item 
+double \mbox{\hyperlink{classEoS__tabulated__only_aa0ec85047a3a26a2cc6c03cb818de90b}{ph}} (double h)
+\item 
+double \mbox{\hyperlink{classEoS__tabulated__only_a0402d3251c1ebda625425c13ec88c7bc}{rhoh}} (double h, double p, double e)
+\item 
+double \mbox{\hyperlink{classEoS__tabulated__only_adf05d4502fa3788c1f9bd29cff1188c8}{gamma}} (double h, double p, double e)
+\item 
+void \mbox{\hyperlink{classEoS__tabulated__only_a87c20d202dbfa2cc706b2be1cda873ff}{cal\+\_\+eos\+\_\+table}} (double h\+\_\+max, const char init\+\_\+function\+\_\+type\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em calculate eos tables as list of interpolating functions and store them \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEoS__tabulated__only_a3898378215b67ce22a096b45924899e6}{init\+\_\+interp\+\_\+coeff\+\_\+through\+\_\+ep\+\_\+array}} (double ee\mbox{[}$\,$\mbox{]}, double pp\mbox{[}$\,$\mbox{]}, const int len\+\_\+eos, bool interpolation)
+\begin{DoxyCompactList}\small\item\em transform ep table to get interpolation coefficients (see Appendix B of 10.\+1103/\+Phys\+RevD.86.\+084003) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 220 of file eos.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEoS__tabulated__only_a0ccdaacfc5db257736ab0d384e9fca89}\label{classEoS__tabulated__only_a0ccdaacfc5db257736ab0d384e9fca89}} 
+\index{EoS\_tabulated\_only@{EoS\_tabulated\_only}!EoS\_tabulated\_only@{EoS\_tabulated\_only}}
+\index{EoS\_tabulated\_only@{EoS\_tabulated\_only}!EoS\_tabulated\_only@{EoS\_tabulated\_only}}
+\doxysubsubsection{\texorpdfstring{EoS\_tabulated\_only()}{EoS\_tabulated\_only()}}
+{\footnotesize\ttfamily Eo\+S\+\_\+tabulated\+\_\+only\+::\+Eo\+S\+\_\+tabulated\+\_\+only (\begin{DoxyParamCaption}\item[{double}]{ee\mbox{[}$\,$\mbox{]},  }\item[{double}]{pp\mbox{[}$\,$\mbox{]},  }\item[{const int}]{len\+\_\+eos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 222 of file eos.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEoS__tabulated__only_a87c20d202dbfa2cc706b2be1cda873ff}\label{classEoS__tabulated__only_a87c20d202dbfa2cc706b2be1cda873ff}} 
+\index{EoS\_tabulated\_only@{EoS\_tabulated\_only}!cal\_eos\_table@{cal\_eos\_table}}
+\index{cal\_eos\_table@{cal\_eos\_table}!EoS\_tabulated\_only@{EoS\_tabulated\_only}}
+\doxysubsubsection{\texorpdfstring{cal\_eos\_table()}{cal\_eos\_table()}}
+{\footnotesize\ttfamily void Eo\+S\+\_\+tabulated\+\_\+only\+::cal\+\_\+eos\+\_\+table (\begin{DoxyParamCaption}\item[{double}]{h\+\_\+max,  }\item[{const char}]{init\+\_\+function\+\_\+type\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+calculate eos tables as list of interpolating functions and store them 
+
+
+
+Definition at line 248 of file eos.\+hpp.
+
+
+
+References vverbose.
+
+\mbox{\Hypertarget{classEoS__tabulated__only_ae9ea6758009568703defccb10efd39c9}\label{classEoS__tabulated__only_ae9ea6758009568703defccb10efd39c9}} 
+\index{EoS\_tabulated\_only@{EoS\_tabulated\_only}!eh@{eh}}
+\index{eh@{eh}!EoS\_tabulated\_only@{EoS\_tabulated\_only}}
+\doxysubsubsection{\texorpdfstring{eh()}{eh()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+tabulated\+\_\+only\+::eh (\begin{DoxyParamCaption}\item[{double}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classEoS_a331009fa0cb7867c6b453a781c56fd22}{EoS}}.
+
+
+
+Definition at line 243 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__tabulated__only_adf05d4502fa3788c1f9bd29cff1188c8}\label{classEoS__tabulated__only_adf05d4502fa3788c1f9bd29cff1188c8}} 
+\index{EoS\_tabulated\_only@{EoS\_tabulated\_only}!gamma@{gamma}}
+\index{gamma@{gamma}!EoS\_tabulated\_only@{EoS\_tabulated\_only}}
+\doxysubsubsection{\texorpdfstring{gamma()}{gamma()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+tabulated\+\_\+only\+::gamma (\begin{DoxyParamCaption}\item[{double}]{h,  }\item[{double}]{p,  }\item[{double}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classEoS_a05bfac12f882be3aaa68ae663c048257}{EoS}}.
+
+
+
+Definition at line 246 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__tabulated__only_a3898378215b67ce22a096b45924899e6}\label{classEoS__tabulated__only_a3898378215b67ce22a096b45924899e6}} 
+\index{EoS\_tabulated\_only@{EoS\_tabulated\_only}!init\_interp\_coeff\_through\_ep\_array@{init\_interp\_coeff\_through\_ep\_array}}
+\index{init\_interp\_coeff\_through\_ep\_array@{init\_interp\_coeff\_through\_ep\_array}!EoS\_tabulated\_only@{EoS\_tabulated\_only}}
+\doxysubsubsection{\texorpdfstring{init\_interp\_coeff\_through\_ep\_array()}{init\_interp\_coeff\_through\_ep\_array()}}
+{\footnotesize\ttfamily void Eo\+S\+\_\+tabulated\+\_\+only\+::init\+\_\+interp\+\_\+coeff\+\_\+through\+\_\+ep\+\_\+array (\begin{DoxyParamCaption}\item[{double}]{ee\mbox{[}$\,$\mbox{]},  }\item[{double}]{pp\mbox{[}$\,$\mbox{]},  }\item[{const int}]{len\+\_\+eos,  }\item[{bool}]{interpolation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+transform ep table to get interpolation coefficients (see Appendix B of 10.\+1103/\+Phys\+RevD.86.\+084003) 
+
+
+
+Definition at line 292 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__tabulated__only_aa0ec85047a3a26a2cc6c03cb818de90b}\label{classEoS__tabulated__only_aa0ec85047a3a26a2cc6c03cb818de90b}} 
+\index{EoS\_tabulated\_only@{EoS\_tabulated\_only}!ph@{ph}}
+\index{ph@{ph}!EoS\_tabulated\_only@{EoS\_tabulated\_only}}
+\doxysubsubsection{\texorpdfstring{ph()}{ph()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+tabulated\+\_\+only\+::ph (\begin{DoxyParamCaption}\item[{double}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classEoS_a2924df9d149e460c6c4c4b12ea92ab27}{EoS}}.
+
+
+
+Definition at line 244 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__tabulated__only_a0402d3251c1ebda625425c13ec88c7bc}\label{classEoS__tabulated__only_a0402d3251c1ebda625425c13ec88c7bc}} 
+\index{EoS\_tabulated\_only@{EoS\_tabulated\_only}!rhoh@{rhoh}}
+\index{rhoh@{rhoh}!EoS\_tabulated\_only@{EoS\_tabulated\_only}}
+\doxysubsubsection{\texorpdfstring{rhoh()}{rhoh()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+tabulated\+\_\+only\+::rhoh (\begin{DoxyParamCaption}\item[{double}]{h,  }\item[{double}]{p,  }\item[{double}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classEoS_a9d418d78c384f52516623d37a0383ad5}{EoS}}.
+
+
+
+Definition at line 245 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__tabulated__only_af579680f8bb5b82552beaf1bc162c509}\label{classEoS__tabulated__only_af579680f8bb5b82552beaf1bc162c509}} 
+\index{EoS\_tabulated\_only@{EoS\_tabulated\_only}!update\_eos@{update\_eos}}
+\index{update\_eos@{update\_eos}!EoS\_tabulated\_only@{EoS\_tabulated\_only}}
+\doxysubsubsection{\texorpdfstring{update\_eos()}{update\_eos()}}
+{\footnotesize\ttfamily bool Eo\+S\+\_\+tabulated\+\_\+only\+::update\+\_\+eos (\begin{DoxyParamCaption}\item[{double}]{ppar\mbox{[}$\,$\mbox{]},  }\item[{int}]{len\+\_\+par,  }\item[{int}]{extra\+\_\+par,  }\item[{double}]{h\+\_\+max,  }\item[{const char}]{init\+\_\+function\+\_\+type\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classEoS_a67410571586d25fd9d5ec68720d3cf69}{EoS}}.
+
+
+
+Definition at line 225 of file eos.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+eostool/\mbox{\hyperlink{eos_8hpp}{eos.\+hpp}}\end{DoxyCompactItemize}

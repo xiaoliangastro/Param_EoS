@@ -1,0 +1,254 @@
+\hypertarget{eos__utils_8hpp}{}\doxysection{eostool/eos\+\_\+utils.hpp File Reference}
+\label{eos__utils_8hpp}\index{eostool/eos\_utils.hpp@{eostool/eos\_utils.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$exception$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include \char`\"{}integrate\+\_\+core.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/math/interpolators/makima.\+hpp$>$}\newline
+Include dependency graph for eos\+\_\+utils.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{eos__utils_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{eos__utils_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcontrol__params}{control\+\_\+params}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{eos__utils_8hpp_af43195a886730d98d33538a76ed0cb2c}{fail\+\_\+process\+\_\+find\+\_\+eos\+\_\+prop}}()~for (int i=0; i$<$6; i++) \{\mbox{\hyperlink{global__variable__constants_8hpp_ac67f7e6c3a0652a283aea75c34565a85}{eos\+\_\+props}}\mbox{[}i\mbox{]} = 0.;\} return \mbox{\hyperlink{global__variable__constants_8hpp_ac67f7e6c3a0652a283aea75c34565a85}{eos\+\_\+props}};
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ double $>$ \mbox{\hyperlink{eos__utils_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{eos__utils_8hpp_a938259e0232ab371546807e1c4b9e88a}{init\+\_\+control\+\_\+params}} (\mbox{\hyperlink{structcontrol__params}{control\+\_\+params}} pars)
+\begin{DoxyCompactList}\small\item\em initiate global control parameters \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{eos__utils_8hpp_a961ed00a8117d8a3d8bb6cb08d03f4ae}{create\+\_\+low\+\_\+density\+\_\+eos\+\_\+with\+\_\+ep\+\_\+table}} (double ee\mbox{[}$\,$\mbox{]}, double pp\mbox{[}$\,$\mbox{]}, const int len\+\_\+eos)
+\item 
+bool \mbox{\hyperlink{eos__utils_8hpp_ad115f6a95d37a13af354354cb20b2c35}{update\+\_\+high\+\_\+density\+\_\+eos\+\_\+parameters}} (double ppar\mbox{[}$\,$\mbox{]}, int len\+\_\+par, int extra\+\_\+par, double h\+\_\+max, const char init\+\_\+function\+\_\+type\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em accept important parameters from python script \end{DoxyCompactList}\item 
+double $\ast$ \mbox{\hyperlink{eos__utils_8hpp_a767582317da86f45f95e49d46725ce4b}{find\+\_\+eos\+\_\+properties}} (double known\+\_\+aim, int find\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Python interface function for finding eos properties from h(find\+\_\+type=1), e(find\+\_\+type=2) or rho(find\+\_\+type=3). @params find\+\_\+type must equal to init\+\_\+function\+\_\+type-\/1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{eos__utils_8hpp_a15dd165a72366a31be8a581455aba8d4}{make\+\_\+eos\+\_\+table}} (double h\+\_\+start, double h\+\_\+end, double dh, int precision, char $\ast$f\+\_\+name, const char $\ast$unit=\char`\"{}cgs\char`\"{}, int get\+\_\+type=1)
+\item 
+double \mbox{\hyperlink{eos__utils_8hpp_a460ea10802a17c161eff76718738056b}{interp\+\_\+pe\+\_\+likelihood}} (double $\ast$e\+\_\+org, double $\ast$p\+\_\+org, int size\+\_\+org)
+\item 
+bool \mbox{\hyperlink{eos__utils_8hpp_af26186b13728ccc8a8332ba347bbf321}{integrate\+\_\+eos}} (double h\+\_\+start, double h\+\_\+end, double dh, \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} $\ast$h\+\_\+tb, \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} $\ast$p\+\_\+tb, \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} $\ast$e\+\_\+tb, \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} $\ast$rho\+\_\+tb, \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} $\ast$gamma\+\_\+tb, \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} $\ast$v\+\_\+sq\+\_\+tb, int get\+\_\+type)
+\item 
+bool \mbox{\hyperlink{eos__utils_8hpp_aacefbca547318af00d28242f0e4ea50c}{cool\+\_\+eos}} (double $\ast$hc)
+\item 
+\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \mbox{\hyperlink{eos__utils_8hpp_ab29d6002fcbd41a5e9633d3bf82000a3}{cal\+\_\+eborders}} (\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} params, \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} rho\+\_\+borders)
+\begin{DoxyCompactList}\small\item\em calculate the segement point of the energy denisty in the piecewise approx (see Appendix B of 10.\+1103/\+Phys\+RevD.86.\+084003) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{eos__utils_8hpp_ac779f264d38b23e832e83a8a2c353b0c}{interp\+\_\+pe\+\_\+likelihood\+\_\+precise}} (double $\ast$e\+\_\+org, double $\ast$p\+\_\+org, int size\+\_\+org, double h\+\_\+start, double h\+\_\+end, double dh)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{eos__utils_8hpp_af43195a886730d98d33538a76ed0cb2c}\label{eos__utils_8hpp_af43195a886730d98d33538a76ed0cb2c}} 
+\index{eos\_utils.hpp@{eos\_utils.hpp}!fail\_process\_find\_eos\_prop@{fail\_process\_find\_eos\_prop}}
+\index{fail\_process\_find\_eos\_prop@{fail\_process\_find\_eos\_prop}!eos\_utils.hpp@{eos\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{fail\_process\_find\_eos\_prop}{fail\_process\_find\_eos\_prop}}
+{\footnotesize\ttfamily \#define fail\+\_\+process\+\_\+find\+\_\+eos\+\_\+prop(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~for (int i=0; i$<$6; i++) \{\mbox{\hyperlink{global__variable__constants_8hpp_ac67f7e6c3a0652a283aea75c34565a85}{eos\+\_\+props}}\mbox{[}i\mbox{]} = 0.;\} return \mbox{\hyperlink{global__variable__constants_8hpp_ac67f7e6c3a0652a283aea75c34565a85}{eos\+\_\+props}};}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{eos__utils_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}\label{eos__utils_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}} 
+\index{eos\_utils.hpp@{eos\_utils.hpp}!state\_type@{state\_type}}
+\index{state\_type@{state\_type}!eos\_utils.hpp@{eos\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{state\_type}{state\_type}}
+{\footnotesize\ttfamily typedef std\+::vector$<$ double $>$ \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}}}
+
+
+
+Definition at line 14 of file eos\+\_\+utils.\+hpp.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{eos__utils_8hpp_ab29d6002fcbd41a5e9633d3bf82000a3}\label{eos__utils_8hpp_ab29d6002fcbd41a5e9633d3bf82000a3}} 
+\index{eos\_utils.hpp@{eos\_utils.hpp}!cal\_eborders@{cal\_eborders}}
+\index{cal\_eborders@{cal\_eborders}!eos\_utils.hpp@{eos\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{cal\_eborders()}{cal\_eborders()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} cal\+\_\+eborders (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}}}]{params,  }\item[{\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}}}]{rho\+\_\+borders }\end{DoxyParamCaption})}
+
+
+
+calculate the segement point of the energy denisty in the piecewise approx (see Appendix B of 10.\+1103/\+Phys\+RevD.86.\+084003) 
+
+
+
+Definition at line 178 of file eos\+\_\+utils.\+hpp.
+
+
+
+References ADAPT\+\_\+\+PIECEWISE, e\+\_\+0, p\+\_\+0, param\+\_\+method, PHYSICAL\+\_\+\+SPEC\+\_\+\+PHTR\+\_\+\+CSS, PIECE\+\_\+\+SPEC\+\_\+\+PHTR\+\_\+\+CSS, PIECEWISE\+\_\+\+GAMMA, PIECEWISE\+\_\+\+PRESSURE, rho\+\_\+0, and verbose.
+
+
+
+Referenced by Eo\+S\+\_\+piecewise\+\_\+gamma\+::update\+\_\+eos(), Eo\+S\+\_\+piecewise\+\_\+pressure\+::update\+\_\+eos(), Eo\+S\+\_\+adp\+\_\+pw\+::update\+\_\+eos(), Eo\+S\+\_\+pw\+\_\+sp\+\_\+pt\+\_\+css\+::update\+\_\+eos(), and Eo\+S\+\_\+ph\+\_\+sp\+\_\+pt\+\_\+css\+::update\+\_\+eos().
+
+\mbox{\Hypertarget{eos__utils_8hpp_aacefbca547318af00d28242f0e4ea50c}\label{eos__utils_8hpp_aacefbca547318af00d28242f0e4ea50c}} 
+\index{eos\_utils.hpp@{eos\_utils.hpp}!cool\_eos@{cool\_eos}}
+\index{cool\_eos@{cool\_eos}!eos\_utils.hpp@{eos\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{cool\_eos()}{cool\_eos()}}
+{\footnotesize\ttfamily bool cool\+\_\+eos (\begin{DoxyParamCaption}\item[{double $\ast$}]{hc }\end{DoxyParamCaption})}
+
+
+
+Definition at line 153 of file eos\+\_\+utils.\+hpp.
+
+
+
+References Eo\+S\+::eh(), EOS, Eo\+S\+::gamma(), Eo\+S\+::ph(), Eo\+S\+::suggested\+\_\+hc\+\_\+star, and verbose.
+
+
+
+Referenced by check\+\_\+mmax\+\_\+gd(), check\+\_\+mmax\+\_\+old(), and check\+\_\+mmax\+\_\+pt\+\_\+two\+\_\+branch().
+
+\mbox{\Hypertarget{eos__utils_8hpp_a961ed00a8117d8a3d8bb6cb08d03f4ae}\label{eos__utils_8hpp_a961ed00a8117d8a3d8bb6cb08d03f4ae}} 
+\index{eos\_utils.hpp@{eos\_utils.hpp}!create\_low\_density\_eos\_with\_ep\_table@{create\_low\_density\_eos\_with\_ep\_table}}
+\index{create\_low\_density\_eos\_with\_ep\_table@{create\_low\_density\_eos\_with\_ep\_table}!eos\_utils.hpp@{eos\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{create\_low\_density\_eos\_with\_ep\_table()}{create\_low\_density\_eos\_with\_ep\_table()}}
+{\footnotesize\ttfamily void create\+\_\+low\+\_\+density\+\_\+eos\+\_\+with\+\_\+ep\+\_\+table (\begin{DoxyParamCaption}\item[{double}]{ee\mbox{[}$\,$\mbox{]},  }\item[{double}]{pp\mbox{[}$\,$\mbox{]},  }\item[{const int}]{len\+\_\+eos }\end{DoxyParamCaption})}
+
+
+
+Definition at line 293 of file eos\+\_\+utils.\+hpp.
+
+
+
+References ADAPT\+\_\+\+PIECEWISE, CONS\+\_\+\+CS, EOS, MITBAG\+\_\+\+QUARK\+\_\+\+STAR, param\+\_\+method, PARAM\+\_\+\+MU\+\_\+\+CS, PHYSICAL\+\_\+\+SPEC\+\_\+\+PHTR\+\_\+\+CSS, PIECE\+\_\+\+SPEC\+\_\+\+PHTR\+\_\+\+CSS, PIECEWISE\+\_\+\+GAMMA, PIECEWISE\+\_\+\+PRESSURE, PWG\+\_\+\+PHASE\+\_\+\+TRANS, SPECTRAL\+\_\+\+HBASE, SPECTRAL\+\_\+\+HBASE\+\_\+\+CAUSAL, and TABULATED\+\_\+\+ONLY.
+
+\mbox{\Hypertarget{eos__utils_8hpp_a767582317da86f45f95e49d46725ce4b}\label{eos__utils_8hpp_a767582317da86f45f95e49d46725ce4b}} 
+\index{eos\_utils.hpp@{eos\_utils.hpp}!find\_eos\_properties@{find\_eos\_properties}}
+\index{find\_eos\_properties@{find\_eos\_properties}!eos\_utils.hpp@{eos\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{find\_eos\_properties()}{find\_eos\_properties()}}
+{\footnotesize\ttfamily double $\ast$ find\+\_\+eos\+\_\+properties (\begin{DoxyParamCaption}\item[{double}]{known\+\_\+aim,  }\item[{int}]{find\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Python interface function for finding eos properties from h(find\+\_\+type=1), e(find\+\_\+type=2) or rho(find\+\_\+type=3). @params find\+\_\+type must equal to init\+\_\+function\+\_\+type-\/1. 
+
+
+
+Definition at line 92 of file eos\+\_\+utils.\+hpp.
+
+
+
+References Eo\+S\+::eh(), EOS, eos\+\_\+props, Eo\+S\+::eos\+\_\+table\+\_\+function\+\_\+e\+\_\+base, Eo\+S\+::eos\+\_\+table\+\_\+function\+\_\+rho\+\_\+base, fail\+\_\+process\+\_\+find\+\_\+eos\+\_\+prop, Eo\+S\+::gamma(), Eo\+S\+::ph(), and Eo\+S\+::rhoh().
+
+\mbox{\Hypertarget{eos__utils_8hpp_a938259e0232ab371546807e1c4b9e88a}\label{eos__utils_8hpp_a938259e0232ab371546807e1c4b9e88a}} 
+\index{eos\_utils.hpp@{eos\_utils.hpp}!init\_control\_params@{init\_control\_params}}
+\index{init\_control\_params@{init\_control\_params}!eos\_utils.hpp@{eos\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{init\_control\_params()}{init\_control\_params()}}
+{\footnotesize\ttfamily void init\+\_\+control\+\_\+params (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcontrol__params}{control\+\_\+params}}}]{parameters }\end{DoxyParamCaption})}
+
+
+
+initiate global control parameters 
+
+
+
+Definition at line 277 of file eos\+\_\+utils.\+hpp.
+
+
+
+References control\+\_\+params\+::cal\+\_\+internal\+\_\+structure, cal\+\_\+internal\+\_\+structure, control\+\_\+params\+::check\+\_\+causal, check\+\_\+causal, control\+\_\+params\+::consid\+\_\+const\+\_\+inter\+\_\+step, consid\+\_\+const\+\_\+inter\+\_\+step, control\+\_\+params\+::const\+\_\+inter\+\_\+step, control\+\_\+params\+::max\+\_\+tov\+\_\+mass, maxm\+\_\+tov, control\+\_\+params\+::min\+\_\+tov\+\_\+mass, minm\+\_\+tov, control\+\_\+params\+::param\+\_\+method, param\+\_\+method, sg\+\_\+const\+\_\+step, verbose, control\+\_\+params\+::verbose\+\_\+level, vverbose, and vvverbose.
+
+\mbox{\Hypertarget{eos__utils_8hpp_af26186b13728ccc8a8332ba347bbf321}\label{eos__utils_8hpp_af26186b13728ccc8a8332ba347bbf321}} 
+\index{eos\_utils.hpp@{eos\_utils.hpp}!integrate\_eos@{integrate\_eos}}
+\index{integrate\_eos@{integrate\_eos}!eos\_utils.hpp@{eos\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{integrate\_eos()}{integrate\_eos()}}
+{\footnotesize\ttfamily bool integrate\+\_\+eos (\begin{DoxyParamCaption}\item[{double}]{h\+\_\+start,  }\item[{double}]{h\+\_\+end,  }\item[{double}]{dh,  }\item[{\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} $\ast$}]{h\+\_\+tb,  }\item[{\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} $\ast$}]{p\+\_\+tb,  }\item[{\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} $\ast$}]{e\+\_\+tb,  }\item[{\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} $\ast$}]{rho\+\_\+tb,  }\item[{\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} $\ast$}]{gamma\+\_\+tb,  }\item[{\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} $\ast$}]{v\+\_\+sq\+\_\+tb,  }\item[{int}]{get\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 44 of file eos\+\_\+utils.\+hpp.
+
+
+
+References cal\+\_\+eos(), controlled\+\_\+stepper(), e\+\_\+0, Eo\+S\+::eh(), EOS, Eo\+S\+::gamma(), h\+\_\+0, integrate\+\_\+func(), MITBAG\+\_\+\+QUARK\+\_\+\+STAR, p\+\_\+0, param\+\_\+method, Eo\+S\+::ph(), rho\+\_\+0, and TABULATED\+\_\+\+ONLY.
+
+
+
+Referenced by interp\+\_\+pe\+\_\+likelihood\+\_\+precise(), and make\+\_\+eos\+\_\+table().
+
+\mbox{\Hypertarget{eos__utils_8hpp_a460ea10802a17c161eff76718738056b}\label{eos__utils_8hpp_a460ea10802a17c161eff76718738056b}} 
+\index{eos\_utils.hpp@{eos\_utils.hpp}!interp\_pe\_likelihood@{interp\_pe\_likelihood}}
+\index{interp\_pe\_likelihood@{interp\_pe\_likelihood}!eos\_utils.hpp@{eos\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{interp\_pe\_likelihood()}{interp\_pe\_likelihood()}}
+{\footnotesize\ttfamily double interp\+\_\+pe\+\_\+likelihood (\begin{DoxyParamCaption}\item[{double $\ast$}]{e\+\_\+org,  }\item[{double $\ast$}]{p\+\_\+org,  }\item[{int}]{size\+\_\+org }\end{DoxyParamCaption})}
+
+
+
+Definition at line 224 of file eos\+\_\+utils.\+hpp.
+
+
+
+References EOS, and Eo\+S\+::eos\+\_\+table\+\_\+function\+\_\+e\+\_\+base.
+
+\mbox{\Hypertarget{eos__utils_8hpp_ac779f264d38b23e832e83a8a2c353b0c}\label{eos__utils_8hpp_ac779f264d38b23e832e83a8a2c353b0c}} 
+\index{eos\_utils.hpp@{eos\_utils.hpp}!interp\_pe\_likelihood\_precise@{interp\_pe\_likelihood\_precise}}
+\index{interp\_pe\_likelihood\_precise@{interp\_pe\_likelihood\_precise}!eos\_utils.hpp@{eos\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{interp\_pe\_likelihood\_precise()}{interp\_pe\_likelihood\_precise()}}
+{\footnotesize\ttfamily double interp\+\_\+pe\+\_\+likelihood\+\_\+precise (\begin{DoxyParamCaption}\item[{double $\ast$}]{e\+\_\+org,  }\item[{double $\ast$}]{p\+\_\+org,  }\item[{int}]{size\+\_\+org,  }\item[{double}]{h\+\_\+start,  }\item[{double}]{h\+\_\+end,  }\item[{double}]{dh }\end{DoxyParamCaption})}
+
+
+
+Definition at line 239 of file eos\+\_\+utils.\+hpp.
+
+
+
+References integrate\+\_\+eos().
+
+\mbox{\Hypertarget{eos__utils_8hpp_a15dd165a72366a31be8a581455aba8d4}\label{eos__utils_8hpp_a15dd165a72366a31be8a581455aba8d4}} 
+\index{eos\_utils.hpp@{eos\_utils.hpp}!make\_eos\_table@{make\_eos\_table}}
+\index{make\_eos\_table@{make\_eos\_table}!eos\_utils.hpp@{eos\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{make\_eos\_table()}{make\_eos\_table()}}
+{\footnotesize\ttfamily void make\+\_\+eos\+\_\+table (\begin{DoxyParamCaption}\item[{double}]{h\+\_\+start,  }\item[{double}]{h\+\_\+end,  }\item[{double}]{dh,  }\item[{int}]{precision,  }\item[{char $\ast$}]{f\+\_\+name,  }\item[{const char $\ast$}]{unit = {\ttfamily \char`\"{}cgs\char`\"{}},  }\item[{int}]{get\+\_\+type = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 131 of file eos\+\_\+utils.\+hpp.
+
+
+
+References integrate\+\_\+eos(), p\+\_\+trans, rho\+\_\+trans, and verbose.
+
+\mbox{\Hypertarget{eos__utils_8hpp_ad115f6a95d37a13af354354cb20b2c35}\label{eos__utils_8hpp_ad115f6a95d37a13af354354cb20b2c35}} 
+\index{eos\_utils.hpp@{eos\_utils.hpp}!update\_high\_density\_eos\_parameters@{update\_high\_density\_eos\_parameters}}
+\index{update\_high\_density\_eos\_parameters@{update\_high\_density\_eos\_parameters}!eos\_utils.hpp@{eos\_utils.hpp}}
+\doxysubsubsection{\texorpdfstring{update\_high\_density\_eos\_parameters()}{update\_high\_density\_eos\_parameters()}}
+{\footnotesize\ttfamily bool update\+\_\+high\+\_\+density\+\_\+eos\+\_\+parameters (\begin{DoxyParamCaption}\item[{double}]{ppar\mbox{[}$\,$\mbox{]},  }\item[{int}]{len\+\_\+par,  }\item[{int}]{len\+\_\+border,  }\item[{double}]{h\+\_\+max,  }\item[{const char}]{init\+\_\+function\+\_\+type\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+accept important parameters from python script 
+
+
+
+Definition at line 327 of file eos\+\_\+utils.\+hpp.
+
+
+
+References EOS, and Eo\+S\+::update\+\_\+eos().
+
