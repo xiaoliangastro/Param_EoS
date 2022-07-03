@@ -1,0 +1,166 @@
+\hypertarget{classEoS__pw__sp__pt__css}{}\doxysection{Eo\+S\+\_\+pw\+\_\+sp\+\_\+pt\+\_\+css Class Reference}
+\label{classEoS__pw__sp__pt__css}\index{EoS\_pw\_sp\_pt\_css@{EoS\_pw\_sp\_pt\_css}}
+
+
+{\ttfamily \#include $<$eos.\+hpp$>$}
+
+
+
+Inheritance diagram for Eo\+S\+\_\+pw\+\_\+sp\+\_\+pt\+\_\+css\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classEoS__pw__sp__pt__css__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Eo\+S\+\_\+pw\+\_\+sp\+\_\+pt\+\_\+css\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classEoS__pw__sp__pt__css__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classEoS__pw__sp__pt__css_a04dbf2676faf3086b900ebfa66c86dc6}{update\+\_\+eos}} (double ppar\mbox{[}$\,$\mbox{]}, int len\+\_\+par, int extra\+\_\+par, double h\+\_\+max, const char init\+\_\+function\+\_\+type\mbox{[}$\,$\mbox{]})
+\item 
+double \mbox{\hyperlink{classEoS__pw__sp__pt__css_a250040d72d666d09b5e6c1919b92fdff}{gamma\+\_\+interp}} (double h, double p, double e)
+\begin{DoxyCompactList}\small\item\em Calculate gamma in the piece\+\_\+spec\+\_\+phtr\+\_\+css model. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classEoS__pw__sp__pt__css_a7bbab8cc9acf3e1bd1c374e0f996165a}{check\+\_\+p\+\_\+at\+\_\+rho185}} ()
+\begin{DoxyCompactList}\small\item\em check whether the pressure at the rho=1.\+85\textbackslash{}rho\+\_\+sat satisfies constraint from 10.\+1103/\+Phys\+RevD.80.\+103003 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classEoS__pw__sp__pt__css_a4f73a86e15f3d5e22f99efe469a9a025}{check\+\_\+gamma}} (double start\+\_\+h=\mbox{\hyperlink{global__variable__constants_8hpp_afdd85d40368fa2581d636316d0ef143c}{h\+\_\+0}}, double max\+\_\+check\+\_\+rho=5.)
+\begin{DoxyCompactList}\small\item\em special need of the Gamma in the piece\+\_\+spec\+\_\+phtr\+\_\+css method \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEoS__pw__sp__pt__css_a52ecb84f4178c2e810b146693741cc3e}{Eo\+S\+\_\+hybrid}} (double ee\mbox{[}$\,$\mbox{]}, double pp\mbox{[}$\,$\mbox{]}, const int len\+\_\+eos)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \mbox{\hyperlink{classEoS__pw__sp__pt__css_a90bfdd21f6a49d6c07d1e87bf6fc04d4}{e\+\_\+borders}}
+\item 
+\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \mbox{\hyperlink{classEoS__pw__sp__pt__css_a1784628ce48e3c6db165e014b527c0fa}{rho\+\_\+borders}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 642 of file eos.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEoS__pw__sp__pt__css_a4f73a86e15f3d5e22f99efe469a9a025}\label{classEoS__pw__sp__pt__css_a4f73a86e15f3d5e22f99efe469a9a025}} 
+\index{EoS\_pw\_sp\_pt\_css@{EoS\_pw\_sp\_pt\_css}!check\_gamma@{check\_gamma}}
+\index{check\_gamma@{check\_gamma}!EoS\_pw\_sp\_pt\_css@{EoS\_pw\_sp\_pt\_css}}
+\doxysubsubsection{\texorpdfstring{check\_gamma()}{check\_gamma()}}
+{\footnotesize\ttfamily bool Eo\+S\+\_\+pw\+\_\+sp\+\_\+pt\+\_\+css\+::check\+\_\+gamma (\begin{DoxyParamCaption}\item[{double}]{start\+\_\+h = {\ttfamily \mbox{\hyperlink{global__variable__constants_8hpp_afdd85d40368fa2581d636316d0ef143c}{h\+\_\+0}}},  }\item[{double}]{max\+\_\+check\+\_\+rho = {\ttfamily 5.} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+special need of the Gamma in the piece\+\_\+spec\+\_\+phtr\+\_\+css method 
+
+
+
+Definition at line 708 of file eos.\+hpp.
+
+
+
+References rho\+\_\+sat, and verbose.
+
+\mbox{\Hypertarget{classEoS__pw__sp__pt__css_a7bbab8cc9acf3e1bd1c374e0f996165a}\label{classEoS__pw__sp__pt__css_a7bbab8cc9acf3e1bd1c374e0f996165a}} 
+\index{EoS\_pw\_sp\_pt\_css@{EoS\_pw\_sp\_pt\_css}!check\_p\_at\_rho185@{check\_p\_at\_rho185}}
+\index{check\_p\_at\_rho185@{check\_p\_at\_rho185}!EoS\_pw\_sp\_pt\_css@{EoS\_pw\_sp\_pt\_css}}
+\doxysubsubsection{\texorpdfstring{check\_p\_at\_rho185()}{check\_p\_at\_rho185()}}
+{\footnotesize\ttfamily bool Eo\+S\+\_\+pw\+\_\+sp\+\_\+pt\+\_\+css\+::check\+\_\+p\+\_\+at\+\_\+rho185 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+check whether the pressure at the rho=1.\+85\textbackslash{}rho\+\_\+sat satisfies constraint from 10.\+1103/\+Phys\+RevD.80.\+103003 
+
+
+
+Definition at line 706 of file eos.\+hpp.
+
+
+
+References p\+\_\+trans, and rho\+\_\+sat.
+
+\mbox{\Hypertarget{classEoS__pw__sp__pt__css_a52ecb84f4178c2e810b146693741cc3e}\label{classEoS__pw__sp__pt__css_a52ecb84f4178c2e810b146693741cc3e}} 
+\index{EoS\_pw\_sp\_pt\_css@{EoS\_pw\_sp\_pt\_css}!EoS\_hybrid@{EoS\_hybrid}}
+\index{EoS\_hybrid@{EoS\_hybrid}!EoS\_pw\_sp\_pt\_css@{EoS\_pw\_sp\_pt\_css}}
+\doxysubsubsection{\texorpdfstring{EoS\_hybrid()}{EoS\_hybrid()}}
+{\footnotesize\ttfamily Eo\+S\+\_\+hybrid\+::\+Eo\+S\+\_\+hybrid\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 96 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__pw__sp__pt__css_a250040d72d666d09b5e6c1919b92fdff}\label{classEoS__pw__sp__pt__css_a250040d72d666d09b5e6c1919b92fdff}} 
+\index{EoS\_pw\_sp\_pt\_css@{EoS\_pw\_sp\_pt\_css}!gamma\_interp@{gamma\_interp}}
+\index{gamma\_interp@{gamma\_interp}!EoS\_pw\_sp\_pt\_css@{EoS\_pw\_sp\_pt\_css}}
+\doxysubsubsection{\texorpdfstring{gamma\_interp()}{gamma\_interp()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+pw\+\_\+sp\+\_\+pt\+\_\+css\+::gamma\+\_\+interp (\begin{DoxyParamCaption}\item[{double}]{h,  }\item[{double}]{p,  }\item[{double}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Calculate gamma in the piece\+\_\+spec\+\_\+phtr\+\_\+css model. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classEoS__hybrid_aed0918e0e3b59cc09ad48b0215ef795f}{Eo\+S\+\_\+hybrid}}.
+
+
+
+Definition at line 693 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__pw__sp__pt__css_a04dbf2676faf3086b900ebfa66c86dc6}\label{classEoS__pw__sp__pt__css_a04dbf2676faf3086b900ebfa66c86dc6}} 
+\index{EoS\_pw\_sp\_pt\_css@{EoS\_pw\_sp\_pt\_css}!update\_eos@{update\_eos}}
+\index{update\_eos@{update\_eos}!EoS\_pw\_sp\_pt\_css@{EoS\_pw\_sp\_pt\_css}}
+\doxysubsubsection{\texorpdfstring{update\_eos()}{update\_eos()}}
+{\footnotesize\ttfamily bool Eo\+S\+\_\+pw\+\_\+sp\+\_\+pt\+\_\+css\+::update\+\_\+eos (\begin{DoxyParamCaption}\item[{double}]{ppar\mbox{[}$\,$\mbox{]},  }\item[{int}]{len\+\_\+par,  }\item[{int}]{extra\+\_\+par,  }\item[{double}]{h\+\_\+max,  }\item[{const char}]{init\+\_\+function\+\_\+type\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classEoS_a67410571586d25fd9d5ec68720d3cf69}{EoS}}.
+
+
+
+Definition at line 646 of file eos.\+hpp.
+
+
+
+References cal\+\_\+eborders(), e\+\_\+0, h\+\_\+0, p\+\_\+0, p\+\_\+trans, rho\+\_\+0, rho\+\_\+sat, and verbose.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classEoS__pw__sp__pt__css_a90bfdd21f6a49d6c07d1e87bf6fc04d4}\label{classEoS__pw__sp__pt__css_a90bfdd21f6a49d6c07d1e87bf6fc04d4}} 
+\index{EoS\_pw\_sp\_pt\_css@{EoS\_pw\_sp\_pt\_css}!e\_borders@{e\_borders}}
+\index{e\_borders@{e\_borders}!EoS\_pw\_sp\_pt\_css@{EoS\_pw\_sp\_pt\_css}}
+\doxysubsubsection{\texorpdfstring{e\_borders}{e\_borders}}
+{\footnotesize\ttfamily \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} Eo\+S\+\_\+pw\+\_\+sp\+\_\+pt\+\_\+css\+::e\+\_\+borders}
+
+
+
+Definition at line 644 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__pw__sp__pt__css_a1784628ce48e3c6db165e014b527c0fa}\label{classEoS__pw__sp__pt__css_a1784628ce48e3c6db165e014b527c0fa}} 
+\index{EoS\_pw\_sp\_pt\_css@{EoS\_pw\_sp\_pt\_css}!rho\_borders@{rho\_borders}}
+\index{rho\_borders@{rho\_borders}!EoS\_pw\_sp\_pt\_css@{EoS\_pw\_sp\_pt\_css}}
+\doxysubsubsection{\texorpdfstring{rho\_borders}{rho\_borders}}
+{\footnotesize\ttfamily \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} Eo\+S\+\_\+pw\+\_\+sp\+\_\+pt\+\_\+css\+::rho\+\_\+borders}
+
+
+
+Definition at line 644 of file eos.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+eostool/\mbox{\hyperlink{eos_8hpp}{eos.\+hpp}}\end{DoxyCompactItemize}

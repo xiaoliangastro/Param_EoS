@@ -1,0 +1,142 @@
+\hypertarget{classEoS__tablulated}{}\doxysection{Eo\+S\+\_\+tablulated Class Reference}
+\label{classEoS__tablulated}\index{EoS\_tablulated@{EoS\_tablulated}}
+
+
+{\ttfamily \#include $<$eos.\+hpp$>$}
+
+
+
+Inheritance diagram for Eo\+S\+\_\+tablulated\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEoS__tablulated__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Eo\+S\+\_\+tablulated\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classEoS__tablulated__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classEoS__tablulated_a1f3a14a8badc756034190ddde2642088}{check\+\_\+coeftb\+\_\+idx}} (double h)
+\item 
+double \mbox{\hyperlink{classEoS__tablulated_a39266d26f5d4a5e6825a3ab08402a386}{eh\+\_\+tabulated}} (double h)
+\item 
+double \mbox{\hyperlink{classEoS__tablulated_ab20917257fc0e2f3ad6f17e236baecc9}{ph\+\_\+tabulated}} (double h)
+\item 
+double \mbox{\hyperlink{classEoS__tablulated_a3534686e746e3c7e3483848c0ce90690}{rhoh\+\_\+tabulated}} (double h, double p, double e)
+\item 
+double \mbox{\hyperlink{classEoS__tablulated_aa08d1f0ee930f1939cad5e3f083e9bff}{gamma\+\_\+tabulated}} (double h, double p, double e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+map$<$ double, double\mbox{[}3\mbox{]}$>$\+::iterator \mbox{\hyperlink{classEoS__tablulated_aa1e8614269625a08523d21c79d5b9ded}{coeftb\+\_\+idx}}
+\begin{DoxyCompactList}\small\item\em index iterator-\/get the corresponding interval of h to use corresponding interpolation coefficients. \end{DoxyCompactList}\item 
+map$<$ double, double\mbox{[}3\mbox{]}$>$ \mbox{\hyperlink{classEoS__tablulated_a53d3ec60f7c6e3d2875a143224f89481}{coeftb}}
+\begin{DoxyCompactList}\small\item\em look up table for the coefficient of p, e and c, taking h as key. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 63 of file eos.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEoS__tablulated_a1f3a14a8badc756034190ddde2642088}\label{classEoS__tablulated_a1f3a14a8badc756034190ddde2642088}} 
+\index{EoS\_tablulated@{EoS\_tablulated}!check\_coeftb\_idx@{check\_coeftb\_idx}}
+\index{check\_coeftb\_idx@{check\_coeftb\_idx}!EoS\_tablulated@{EoS\_tablulated}}
+\doxysubsubsection{\texorpdfstring{check\_coeftb\_idx()}{check\_coeftb\_idx()}}
+{\footnotesize\ttfamily void Eo\+S\+\_\+tablulated\+::check\+\_\+coeftb\+\_\+idx (\begin{DoxyParamCaption}\item[{double}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 67 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__tablulated_a39266d26f5d4a5e6825a3ab08402a386}\label{classEoS__tablulated_a39266d26f5d4a5e6825a3ab08402a386}} 
+\index{EoS\_tablulated@{EoS\_tablulated}!eh\_tabulated@{eh\_tabulated}}
+\index{eh\_tabulated@{eh\_tabulated}!EoS\_tablulated@{EoS\_tablulated}}
+\doxysubsubsection{\texorpdfstring{eh\_tabulated()}{eh\_tabulated()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+tablulated\+::eh\+\_\+tabulated (\begin{DoxyParamCaption}\item[{double}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 75 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__tablulated_aa08d1f0ee930f1939cad5e3f083e9bff}\label{classEoS__tablulated_aa08d1f0ee930f1939cad5e3f083e9bff}} 
+\index{EoS\_tablulated@{EoS\_tablulated}!gamma\_tabulated@{gamma\_tabulated}}
+\index{gamma\_tabulated@{gamma\_tabulated}!EoS\_tablulated@{EoS\_tablulated}}
+\doxysubsubsection{\texorpdfstring{gamma\_tabulated()}{gamma\_tabulated()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+tablulated\+::gamma\+\_\+tabulated (\begin{DoxyParamCaption}\item[{double}]{h,  }\item[{double}]{p,  }\item[{double}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 86 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__tablulated_ab20917257fc0e2f3ad6f17e236baecc9}\label{classEoS__tablulated_ab20917257fc0e2f3ad6f17e236baecc9}} 
+\index{EoS\_tablulated@{EoS\_tablulated}!ph\_tabulated@{ph\_tabulated}}
+\index{ph\_tabulated@{ph\_tabulated}!EoS\_tablulated@{EoS\_tablulated}}
+\doxysubsubsection{\texorpdfstring{ph\_tabulated()}{ph\_tabulated()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+tablulated\+::ph\+\_\+tabulated (\begin{DoxyParamCaption}\item[{double}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 81 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__tablulated_a3534686e746e3c7e3483848c0ce90690}\label{classEoS__tablulated_a3534686e746e3c7e3483848c0ce90690}} 
+\index{EoS\_tablulated@{EoS\_tablulated}!rhoh\_tabulated@{rhoh\_tabulated}}
+\index{rhoh\_tabulated@{rhoh\_tabulated}!EoS\_tablulated@{EoS\_tablulated}}
+\doxysubsubsection{\texorpdfstring{rhoh\_tabulated()}{rhoh\_tabulated()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+tablulated\+::rhoh\+\_\+tabulated (\begin{DoxyParamCaption}\item[{double}]{h,  }\item[{double}]{p,  }\item[{double}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 85 of file eos.\+hpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classEoS__tablulated_a53d3ec60f7c6e3d2875a143224f89481}\label{classEoS__tablulated_a53d3ec60f7c6e3d2875a143224f89481}} 
+\index{EoS\_tablulated@{EoS\_tablulated}!coeftb@{coeftb}}
+\index{coeftb@{coeftb}!EoS\_tablulated@{EoS\_tablulated}}
+\doxysubsubsection{\texorpdfstring{coeftb}{coeftb}}
+{\footnotesize\ttfamily map$<$double, double\mbox{[}3\mbox{]}$>$ Eo\+S\+\_\+tablulated\+::coeftb}
+
+
+
+look up table for the coefficient of p, e and c, taking h as key. 
+
+
+
+Definition at line 66 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__tablulated_aa1e8614269625a08523d21c79d5b9ded}\label{classEoS__tablulated_aa1e8614269625a08523d21c79d5b9ded}} 
+\index{EoS\_tablulated@{EoS\_tablulated}!coeftb\_idx@{coeftb\_idx}}
+\index{coeftb\_idx@{coeftb\_idx}!EoS\_tablulated@{EoS\_tablulated}}
+\doxysubsubsection{\texorpdfstring{coeftb\_idx}{coeftb\_idx}}
+{\footnotesize\ttfamily map$<$double, double\mbox{[}3\mbox{]}$>$\+::iterator Eo\+S\+\_\+tablulated\+::coeftb\+\_\+idx}
+
+
+
+index iterator-\/get the corresponding interval of h to use corresponding interpolation coefficients. 
+
+
+
+Definition at line 65 of file eos.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+eostool/\mbox{\hyperlink{eos_8hpp}{eos.\+hpp}}\end{DoxyCompactItemize}

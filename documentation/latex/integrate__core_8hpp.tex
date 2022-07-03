@@ -1,0 +1,316 @@
+\hypertarget{integrate__core_8hpp}{}\doxysection{eostool/integrate\+\_\+core.hpp File Reference}
+\label{integrate__core_8hpp}\index{eostool/integrate\_core.hpp@{eostool/integrate\_core.hpp}}
+{\ttfamily \#include $<$boost/numeric/odeint/stepper/controlled\+\_\+runge\+\_\+kutta.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/numeric/odeint/stepper/runge\+\_\+kutta\+\_\+fehlberg78.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/numeric/odeint/integrate/integrate\+\_\+adaptive.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/numeric/odeint/integrate/integrate\+\_\+const.\+hpp$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include \char`\"{}eos.\+hpp\char`\"{}}\newline
+Include dependency graph for integrate\+\_\+core.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{integrate__core_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{integrate__core_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ double $>$ \mbox{\hyperlink{integrate__core_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}}
+\item 
+typedef runge\+\_\+kutta\+\_\+fehlberg78$<$ \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} $>$ \mbox{\hyperlink{integrate__core_8hpp_a043fb59041d31caa54395ec863e93c63}{error\+\_\+stepper\+\_\+type}}
+\item 
+typedef controlled\+\_\+runge\+\_\+kutta$<$ \mbox{\hyperlink{eos_8hpp_a043fb59041d31caa54395ec863e93c63}{error\+\_\+stepper\+\_\+type}} $>$ \mbox{\hyperlink{integrate__core_8hpp_a316792556e400adc33b04b149de69507}{controlled\+\_\+stepper\+\_\+type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{eos_8hpp_a316792556e400adc33b04b149de69507}{controlled\+\_\+stepper\+\_\+type}} \mbox{\hyperlink{integrate__core_8hpp_a9b79b44e56ac384d23300600cf016e2b}{controlled\+\_\+stepper}} (default\+\_\+error\+\_\+checker$<$ double, range\+\_\+algebra, default\+\_\+operations $>$(\mbox{\hyperlink{global__variable__constants_8hpp_a16e1d4516749bc94e54917326a3d6536}{int\+\_\+abs\+\_\+err}}, \mbox{\hyperlink{global__variable__constants_8hpp_ad67af4ecdf2db9fdb40c0c2b8446718c}{int\+\_\+rel\+\_\+err}}, \mbox{\hyperlink{global__variable__constants_8hpp_a576556671feac86fb7583d3dac705f21}{int\+\_\+a\+\_\+x}}, \mbox{\hyperlink{global__variable__constants_8hpp_ad0cf290ae320f03f9e30083c2db329bf}{int\+\_\+a\+\_\+dxdt}}))
+\item 
+\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \mbox{\hyperlink{integrate__core_8hpp_a0b7bb81f4629a3a900a765d0d9a6f168}{integrate\+\_\+func}} (\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} x0, void func(const \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \&, \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \&, double), double start\+\_\+t, double end\+\_\+t, bool reverse)
+\begin{DoxyCompactList}\small\item\em Integrated portable function to integrate ODE. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{integrate__core_8hpp_ac44351f385d2bf728eb529d1d0a640c2}{cal\+\_\+lambda}} (double \mbox{\hyperlink{global__variable__constants_8hpp_a9e8a46a0e00368ad98642587ca4ebdbe}{C}}, double Y)
+\item 
+double \mbox{\hyperlink{integrate__core_8hpp_a55c49ad0b32fc3d7bdcfc1d07c9021cb}{lambda\+\_\+tilde}} (double m1, double m2, double l1, double l2)
+\item 
+double \mbox{\hyperlink{integrate__core_8hpp_a36f9d85f06e2332267fd04cfd5efbcd7}{dpdh}} (double p, double e)
+\item 
+double \mbox{\hyperlink{integrate__core_8hpp_a1a1838e225377bd7f2e3c713caa541dc}{dedh}} (double p, double e, double Gamma)
+\item 
+double \mbox{\hyperlink{integrate__core_8hpp_aed2763437383ebd8b78bbc28466fdb9b}{dmdh}} (double p, double e, double m, double r)
+\item 
+double \mbox{\hyperlink{integrate__core_8hpp_a80371cb559ff987c3eb4711da75313f8}{drdh}} (double p, double e, double m, double r)
+\item 
+double \mbox{\hyperlink{integrate__core_8hpp_ae1dc7b36c9b1f2921e63389b914a4828}{dydh}} (double p, double e, double m, double r, double y, double Gamma)
+\item 
+void \mbox{\hyperlink{integrate__core_8hpp_a86f802d0af08d9982cd9d828e4ee52ae}{cal\+\_\+eos}} (const \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \&x, \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \&dxdt, double h)
+\item 
+void \mbox{\hyperlink{integrate__core_8hpp_a762c85c4e01f4788d88aa1648aa8c070}{mrl\+\_\+integration\+\_\+system}} (const \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \&x, \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \&dxdt, double h)
+\item 
+\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \mbox{\hyperlink{integrate__core_8hpp_a9bfd97f8b9b041cdbc4cbf75441ad389}{initiate\+\_\+core}} (double hc, double hig=\mbox{\hyperlink{global__variable__constants_8hpp_a71ba863ddea1e939c2e5200e64021c85}{h\+\_\+ig}})
+\begin{DoxyCompactList}\small\item\em Integrate the most central core part of the compact star to avoid singular point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \mbox{\hyperlink{integrate__core_8hpp_a0e40aa6df3488a0cdef3b79eb5935efa}{int\+\_\+whole\+\_\+star}} (double hc, double h\+\_\+surf=\mbox{\hyperlink{global__variable__constants_8hpp_a58246c5c19b9d2fb525df16e3f883723}{h\+\_\+surface}})
+\begin{DoxyCompactList}\small\item\em Integrate the whole structure of the star. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{integrate__core_8hpp_a316792556e400adc33b04b149de69507}\label{integrate__core_8hpp_a316792556e400adc33b04b149de69507}} 
+\index{integrate\_core.hpp@{integrate\_core.hpp}!controlled\_stepper\_type@{controlled\_stepper\_type}}
+\index{controlled\_stepper\_type@{controlled\_stepper\_type}!integrate\_core.hpp@{integrate\_core.hpp}}
+\doxysubsubsection{\texorpdfstring{controlled\_stepper\_type}{controlled\_stepper\_type}}
+{\footnotesize\ttfamily typedef controlled\+\_\+runge\+\_\+kutta$<$ \mbox{\hyperlink{eos_8hpp_a043fb59041d31caa54395ec863e93c63}{error\+\_\+stepper\+\_\+type}} $>$ \mbox{\hyperlink{eos_8hpp_a316792556e400adc33b04b149de69507}{controlled\+\_\+stepper\+\_\+type}}}
+
+
+
+Definition at line 24 of file integrate\+\_\+core.\+hpp.
+
+\mbox{\Hypertarget{integrate__core_8hpp_a043fb59041d31caa54395ec863e93c63}\label{integrate__core_8hpp_a043fb59041d31caa54395ec863e93c63}} 
+\index{integrate\_core.hpp@{integrate\_core.hpp}!error\_stepper\_type@{error\_stepper\_type}}
+\index{error\_stepper\_type@{error\_stepper\_type}!integrate\_core.hpp@{integrate\_core.hpp}}
+\doxysubsubsection{\texorpdfstring{error\_stepper\_type}{error\_stepper\_type}}
+{\footnotesize\ttfamily typedef runge\+\_\+kutta\+\_\+fehlberg78$<$ \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} $>$ \mbox{\hyperlink{eos_8hpp_a043fb59041d31caa54395ec863e93c63}{error\+\_\+stepper\+\_\+type}}}
+
+
+
+Definition at line 23 of file integrate\+\_\+core.\+hpp.
+
+\mbox{\Hypertarget{integrate__core_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}\label{integrate__core_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}} 
+\index{integrate\_core.hpp@{integrate\_core.hpp}!state\_type@{state\_type}}
+\index{state\_type@{state\_type}!integrate\_core.hpp@{integrate\_core.hpp}}
+\doxysubsubsection{\texorpdfstring{state\_type}{state\_type}}
+{\footnotesize\ttfamily typedef std\+::vector$<$ double $>$ \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}}}
+
+
+
+Definition at line 15 of file integrate\+\_\+core.\+hpp.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{integrate__core_8hpp_a86f802d0af08d9982cd9d828e4ee52ae}\label{integrate__core_8hpp_a86f802d0af08d9982cd9d828e4ee52ae}} 
+\index{integrate\_core.hpp@{integrate\_core.hpp}!cal\_eos@{cal\_eos}}
+\index{cal\_eos@{cal\_eos}!integrate\_core.hpp@{integrate\_core.hpp}}
+\doxysubsubsection{\texorpdfstring{cal\_eos()}{cal\_eos()}}
+{\footnotesize\ttfamily void cal\+\_\+eos (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \&}]{x,  }\item[{\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \&}]{dxdt,  }\item[{double}]{h }\end{DoxyParamCaption})}
+
+
+
+Definition at line 67 of file integrate\+\_\+core.\+hpp.
+
+
+
+References dedh(), dpdh(), EOS, and Eo\+S\+::gamma().
+
+
+
+Referenced by Eo\+S\+\_\+hybrid\+::cal\+\_\+eos\+\_\+table(), Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::cal\+\_\+eos\+\_\+table\+\_\+near\+\_\+pqcd(), and integrate\+\_\+eos().
+
+\mbox{\Hypertarget{integrate__core_8hpp_ac44351f385d2bf728eb529d1d0a640c2}\label{integrate__core_8hpp_ac44351f385d2bf728eb529d1d0a640c2}} 
+\index{integrate\_core.hpp@{integrate\_core.hpp}!cal\_lambda@{cal\_lambda}}
+\index{cal\_lambda@{cal\_lambda}!integrate\_core.hpp@{integrate\_core.hpp}}
+\doxysubsubsection{\texorpdfstring{cal\_lambda()}{cal\_lambda()}}
+{\footnotesize\ttfamily double cal\+\_\+lambda (\begin{DoxyParamCaption}\item[{double}]{C,  }\item[{double}]{Y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 34 of file integrate\+\_\+core.\+hpp.
+
+
+
+References C.
+
+
+
+Referenced by find\+\_\+closest\+\_\+global\+\_\+property(), find\+\_\+closest\+\_\+global\+\_\+property\+\_\+with\+\_\+maxm\+\_\+known(), find\+\_\+closest\+\_\+global\+\_\+property\+\_\+with\+\_\+maxm\+\_\+known\+\_\+old(), get\+\_\+mrl(), and make\+\_\+hmrl\+\_\+tool\+\_\+table().
+
+\mbox{\Hypertarget{integrate__core_8hpp_a9b79b44e56ac384d23300600cf016e2b}\label{integrate__core_8hpp_a9b79b44e56ac384d23300600cf016e2b}} 
+\index{integrate\_core.hpp@{integrate\_core.hpp}!controlled\_stepper@{controlled\_stepper}}
+\index{controlled\_stepper@{controlled\_stepper}!integrate\_core.hpp@{integrate\_core.hpp}}
+\doxysubsubsection{\texorpdfstring{controlled\_stepper()}{controlled\_stepper()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{eos_8hpp_a316792556e400adc33b04b149de69507}{controlled\+\_\+stepper\+\_\+type}} controlled\+\_\+stepper (\begin{DoxyParamCaption}\item[{default\+\_\+error\+\_\+checker$<$ double, range\+\_\+algebra, default\+\_\+operations $>$}]{int\+\_\+abs\+\_\+err, int\+\_\+rel\+\_\+err, int\+\_\+a\+\_\+x, int\+\_\+a\+\_\+dxdt }\end{DoxyParamCaption})}
+
+
+
+Referenced by integrate\+\_\+eos(), and integrate\+\_\+func().
+
+\mbox{\Hypertarget{integrate__core_8hpp_a1a1838e225377bd7f2e3c713caa541dc}\label{integrate__core_8hpp_a1a1838e225377bd7f2e3c713caa541dc}} 
+\index{integrate\_core.hpp@{integrate\_core.hpp}!dedh@{dedh}}
+\index{dedh@{dedh}!integrate\_core.hpp@{integrate\_core.hpp}}
+\doxysubsubsection{\texorpdfstring{dedh()}{dedh()}}
+{\footnotesize\ttfamily double dedh (\begin{DoxyParamCaption}\item[{double}]{p,  }\item[{double}]{e,  }\item[{double}]{Gamma }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 46 of file integrate\+\_\+core.\+hpp.
+
+
+
+Referenced by cal\+\_\+eos().
+
+\mbox{\Hypertarget{integrate__core_8hpp_aed2763437383ebd8b78bbc28466fdb9b}\label{integrate__core_8hpp_aed2763437383ebd8b78bbc28466fdb9b}} 
+\index{integrate\_core.hpp@{integrate\_core.hpp}!dmdh@{dmdh}}
+\index{dmdh@{dmdh}!integrate\_core.hpp@{integrate\_core.hpp}}
+\doxysubsubsection{\texorpdfstring{dmdh()}{dmdh()}}
+{\footnotesize\ttfamily double dmdh (\begin{DoxyParamCaption}\item[{double}]{p,  }\item[{double}]{e,  }\item[{double}]{m,  }\item[{double}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 48 of file integrate\+\_\+core.\+hpp.
+
+
+
+Referenced by mrl\+\_\+integration\+\_\+system().
+
+\mbox{\Hypertarget{integrate__core_8hpp_a36f9d85f06e2332267fd04cfd5efbcd7}\label{integrate__core_8hpp_a36f9d85f06e2332267fd04cfd5efbcd7}} 
+\index{integrate\_core.hpp@{integrate\_core.hpp}!dpdh@{dpdh}}
+\index{dpdh@{dpdh}!integrate\_core.hpp@{integrate\_core.hpp}}
+\doxysubsubsection{\texorpdfstring{dpdh()}{dpdh()}}
+{\footnotesize\ttfamily double dpdh (\begin{DoxyParamCaption}\item[{double}]{p,  }\item[{double}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 44 of file integrate\+\_\+core.\+hpp.
+
+
+
+Referenced by cal\+\_\+eos().
+
+\mbox{\Hypertarget{integrate__core_8hpp_a80371cb559ff987c3eb4711da75313f8}\label{integrate__core_8hpp_a80371cb559ff987c3eb4711da75313f8}} 
+\index{integrate\_core.hpp@{integrate\_core.hpp}!drdh@{drdh}}
+\index{drdh@{drdh}!integrate\_core.hpp@{integrate\_core.hpp}}
+\doxysubsubsection{\texorpdfstring{drdh()}{drdh()}}
+{\footnotesize\ttfamily double drdh (\begin{DoxyParamCaption}\item[{double}]{p,  }\item[{double}]{e,  }\item[{double}]{m,  }\item[{double}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 50 of file integrate\+\_\+core.\+hpp.
+
+
+
+Referenced by mrl\+\_\+integration\+\_\+system().
+
+\mbox{\Hypertarget{integrate__core_8hpp_ae1dc7b36c9b1f2921e63389b914a4828}\label{integrate__core_8hpp_ae1dc7b36c9b1f2921e63389b914a4828}} 
+\index{integrate\_core.hpp@{integrate\_core.hpp}!dydh@{dydh}}
+\index{dydh@{dydh}!integrate\_core.hpp@{integrate\_core.hpp}}
+\doxysubsubsection{\texorpdfstring{dydh()}{dydh()}}
+{\footnotesize\ttfamily double dydh (\begin{DoxyParamCaption}\item[{double}]{p,  }\item[{double}]{e,  }\item[{double}]{m,  }\item[{double}]{r,  }\item[{double}]{y,  }\item[{double}]{Gamma }\end{DoxyParamCaption})}
+
+
+
+Definition at line 52 of file integrate\+\_\+core.\+hpp.
+
+
+
+Referenced by mrl\+\_\+integration\+\_\+system().
+
+\mbox{\Hypertarget{integrate__core_8hpp_a9bfd97f8b9b041cdbc4cbf75441ad389}\label{integrate__core_8hpp_a9bfd97f8b9b041cdbc4cbf75441ad389}} 
+\index{integrate\_core.hpp@{integrate\_core.hpp}!initiate\_core@{initiate\_core}}
+\index{initiate\_core@{initiate\_core}!integrate\_core.hpp@{integrate\_core.hpp}}
+\doxysubsubsection{\texorpdfstring{initiate\_core()}{initiate\_core()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} initiate\+\_\+core (\begin{DoxyParamCaption}\item[{double}]{hc,  }\item[{double}]{hig = {\ttfamily \mbox{\hyperlink{global__variable__constants_8hpp_a71ba863ddea1e939c2e5200e64021c85}{h\+\_\+ig}}} }\end{DoxyParamCaption})}
+
+
+
+Integrate the most central core part of the compact star to avoid singular point. 
+
+
+
+Definition at line 149 of file integrate\+\_\+core.\+hpp.
+
+
+
+References Eo\+S\+::eh(), EOS, Eo\+S\+::gamma(), Eo\+S\+::ph(), verbose, and vverbose.
+
+
+
+Referenced by int\+\_\+whole\+\_\+star().
+
+\mbox{\Hypertarget{integrate__core_8hpp_a0e40aa6df3488a0cdef3b79eb5935efa}\label{integrate__core_8hpp_a0e40aa6df3488a0cdef3b79eb5935efa}} 
+\index{integrate\_core.hpp@{integrate\_core.hpp}!int\_whole\_star@{int\_whole\_star}}
+\index{int\_whole\_star@{int\_whole\_star}!integrate\_core.hpp@{integrate\_core.hpp}}
+\doxysubsubsection{\texorpdfstring{int\_whole\_star()}{int\_whole\_star()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} int\+\_\+whole\+\_\+star (\begin{DoxyParamCaption}\item[{double}]{hc,  }\item[{double}]{h\+\_\+surf = {\ttfamily \mbox{\hyperlink{global__variable__constants_8hpp_a58246c5c19b9d2fb525df16e3f883723}{h\+\_\+surface}}} }\end{DoxyParamCaption})}
+
+
+
+Integrate the whole structure of the star. 
+
+Give h\+\_\+c, get m, r and y. \begin{DoxyNote}{Note}
+Radius r in this function should multiply half Schwarzschild radius of the sun. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em hc} & enthalpy at the center of the compact star. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 178 of file integrate\+\_\+core.\+hpp.
+
+
+
+References Eo\+S\+::eh(), EOS, h\+\_\+0, h\+\_\+ig, h\+\_\+surface, initiate\+\_\+core(), integrate\+\_\+func(), MITBAG\+\_\+\+QUARK\+\_\+\+STAR, mrl\+\_\+integration\+\_\+system(), param\+\_\+method, Eo\+S\+::params\+\_\+eos, Eo\+S\+::ph(), and verbose.
+
+
+
+Referenced by check\+\_\+mmax\+\_\+gd(), check\+\_\+mmax\+\_\+old(), check\+\_\+mmax\+\_\+pt\+\_\+two\+\_\+branch(), find\+\_\+closest\+\_\+global\+\_\+property(), find\+\_\+closest\+\_\+global\+\_\+property\+\_\+with\+\_\+maxm\+\_\+known(), find\+\_\+closest\+\_\+global\+\_\+property\+\_\+with\+\_\+maxm\+\_\+known\+\_\+old(), get\+\_\+mr\+\_\+with\+\_\+specific\+\_\+hsurf(), get\+\_\+mrl(), and make\+\_\+hmrl\+\_\+tool\+\_\+table().
+
+\mbox{\Hypertarget{integrate__core_8hpp_a0b7bb81f4629a3a900a765d0d9a6f168}\label{integrate__core_8hpp_a0b7bb81f4629a3a900a765d0d9a6f168}} 
+\index{integrate\_core.hpp@{integrate\_core.hpp}!integrate\_func@{integrate\_func}}
+\index{integrate\_func@{integrate\_func}!integrate\_core.hpp@{integrate\_core.hpp}}
+\doxysubsubsection{\texorpdfstring{integrate\_func()}{integrate\_func()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} integrate\+\_\+func (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}}}]{x0,  }\item[{void }]{funcconst state\+\_\+type \&, state\+\_\+type \&, double,  }\item[{double}]{start\+\_\+t,  }\item[{double}]{end\+\_\+t,  }\item[{bool}]{reverse = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Integrated portable function to integrate ODE. 
+
+
+
+Definition at line 97 of file integrate\+\_\+core.\+hpp.
+
+
+
+References cal\+\_\+internal\+\_\+structure, consid\+\_\+const\+\_\+inter\+\_\+step, controlled\+\_\+stepper(), r\+\_\+trans, sg\+\_\+const\+\_\+step, sg\+\_\+step, structure\+\_\+function\+\_\+h\+\_\+base, and vverbose.
+
+
+
+Referenced by int\+\_\+whole\+\_\+star(), and integrate\+\_\+eos().
+
+\mbox{\Hypertarget{integrate__core_8hpp_a55c49ad0b32fc3d7bdcfc1d07c9021cb}\label{integrate__core_8hpp_a55c49ad0b32fc3d7bdcfc1d07c9021cb}} 
+\index{integrate\_core.hpp@{integrate\_core.hpp}!lambda\_tilde@{lambda\_tilde}}
+\index{lambda\_tilde@{lambda\_tilde}!integrate\_core.hpp@{integrate\_core.hpp}}
+\doxysubsubsection{\texorpdfstring{lambda\_tilde()}{lambda\_tilde()}}
+{\footnotesize\ttfamily double lambda\+\_\+tilde (\begin{DoxyParamCaption}\item[{double}]{m1,  }\item[{double}]{m2,  }\item[{double}]{l1,  }\item[{double}]{l2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 36 of file integrate\+\_\+core.\+hpp.
+
+\mbox{\Hypertarget{integrate__core_8hpp_a762c85c4e01f4788d88aa1648aa8c070}\label{integrate__core_8hpp_a762c85c4e01f4788d88aa1648aa8c070}} 
+\index{integrate\_core.hpp@{integrate\_core.hpp}!mrl\_integration\_system@{mrl\_integration\_system}}
+\index{mrl\_integration\_system@{mrl\_integration\_system}!integrate\_core.hpp@{integrate\_core.hpp}}
+\doxysubsubsection{\texorpdfstring{mrl\_integration\_system()}{mrl\_integration\_system()}}
+{\footnotesize\ttfamily void mrl\+\_\+integration\+\_\+system (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \&}]{x,  }\item[{\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \&}]{dxdt,  }\item[{double}]{h }\end{DoxyParamCaption})}
+
+
+
+Definition at line 81 of file integrate\+\_\+core.\+hpp.
+
+
+
+References dmdh(), drdh(), dydh(), Eo\+S\+::eh(), EOS, Eo\+S\+::gamma(), and Eo\+S\+::ph().
+
+
+
+Referenced by int\+\_\+whole\+\_\+star().
+

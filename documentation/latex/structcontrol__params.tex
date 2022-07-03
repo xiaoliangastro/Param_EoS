@@ -1,0 +1,184 @@
+\hypertarget{structcontrol__params}{}\doxysection{control\+\_\+params Struct Reference}
+\label{structcontrol__params}\index{control\_params@{control\_params}}
+
+
+{\ttfamily \#include $<$eos\+\_\+utils.\+hpp$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{structcontrol__params_a9abee03203f6cbae2dae3b58a35d5634}{min\+\_\+tov\+\_\+mass}}
+\begin{DoxyCompactList}\small\item\em Minimum mass allowed astropysically, used to contrain the \mbox{\hyperlink{classEoS}{EoS}}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structcontrol__params_ac50f6d418f5efafa53906d7d07ff5d0b}{max\+\_\+tov\+\_\+mass}}
+\begin{DoxyCompactList}\small\item\em Maximum mass allowed astropysically, used to contrain the \mbox{\hyperlink{classEoS}{EoS}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structcontrol__params_a9469b6b2b0a9db81114b1b70354c35b3}{check\+\_\+causal}}
+\begin{DoxyCompactList}\small\item\em Some \mbox{\hyperlink{classEoS}{EoS}} do not causal in the maximum mass place, then find the hc where cs=1, the maximum mass in this case is defined by M(hc$\vert$\+\_\+\{cs=1\}). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structcontrol__params_a71c03e2fcb56766bc9919cebe3aebad6}{param\+\_\+method}}
+\begin{DoxyCompactList}\small\item\em Parameterization method. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structcontrol__params_ae01f86fee59cdc28d4709b9fa94a387f}{verbose\+\_\+level}}
+\begin{DoxyCompactList}\small\item\em Verbose level, 0-\/3, more details will be printed if verbose\+\_\+level is larger. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structcontrol__params_a7e4f26963619a8c2567e0c52b3529ebb}{const\+\_\+inter\+\_\+step}}
+\begin{DoxyCompactList}\small\item\em If consider constant integration step, then please give the wanted step size. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structcontrol__params_a24ca3637d21117d985410c0ef7dcdab5}{consid\+\_\+const\+\_\+inter\+\_\+step}}
+\begin{DoxyCompactList}\small\item\em Consider constant integration step or adaptive step size. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structcontrol__params_a43fc47108b34ca93bc49f161b4252a08}{cal\+\_\+internal\+\_\+structure}}
+\begin{DoxyCompactList}\small\item\em whether you want to find the internal structure of the neutron star given central density \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 17 of file eos\+\_\+utils.\+hpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structcontrol__params_a43fc47108b34ca93bc49f161b4252a08}\label{structcontrol__params_a43fc47108b34ca93bc49f161b4252a08}} 
+\index{control\_params@{control\_params}!cal\_internal\_structure@{cal\_internal\_structure}}
+\index{cal\_internal\_structure@{cal\_internal\_structure}!control\_params@{control\_params}}
+\doxysubsubsection{\texorpdfstring{cal\_internal\_structure}{cal\_internal\_structure}}
+{\footnotesize\ttfamily bool control\+\_\+params\+::cal\+\_\+internal\+\_\+structure}
+
+
+
+whether you want to find the internal structure of the neutron star given central density 
+
+
+
+Definition at line 25 of file eos\+\_\+utils.\+hpp.
+
+
+
+Referenced by init\+\_\+control\+\_\+params().
+
+\mbox{\Hypertarget{structcontrol__params_a9469b6b2b0a9db81114b1b70354c35b3}\label{structcontrol__params_a9469b6b2b0a9db81114b1b70354c35b3}} 
+\index{control\_params@{control\_params}!check\_causal@{check\_causal}}
+\index{check\_causal@{check\_causal}!control\_params@{control\_params}}
+\doxysubsubsection{\texorpdfstring{check\_causal}{check\_causal}}
+{\footnotesize\ttfamily bool control\+\_\+params\+::check\+\_\+causal}
+
+
+
+Some \mbox{\hyperlink{classEoS}{EoS}} do not causal in the maximum mass place, then find the hc where cs=1, the maximum mass in this case is defined by M(hc$\vert$\+\_\+\{cs=1\}). 
+
+
+
+Definition at line 20 of file eos\+\_\+utils.\+hpp.
+
+
+
+Referenced by init\+\_\+control\+\_\+params().
+
+\mbox{\Hypertarget{structcontrol__params_a24ca3637d21117d985410c0ef7dcdab5}\label{structcontrol__params_a24ca3637d21117d985410c0ef7dcdab5}} 
+\index{control\_params@{control\_params}!consid\_const\_inter\_step@{consid\_const\_inter\_step}}
+\index{consid\_const\_inter\_step@{consid\_const\_inter\_step}!control\_params@{control\_params}}
+\doxysubsubsection{\texorpdfstring{consid\_const\_inter\_step}{consid\_const\_inter\_step}}
+{\footnotesize\ttfamily bool control\+\_\+params\+::consid\+\_\+const\+\_\+inter\+\_\+step}
+
+
+
+Consider constant integration step or adaptive step size. 
+
+
+
+Definition at line 24 of file eos\+\_\+utils.\+hpp.
+
+
+
+Referenced by init\+\_\+control\+\_\+params().
+
+\mbox{\Hypertarget{structcontrol__params_a7e4f26963619a8c2567e0c52b3529ebb}\label{structcontrol__params_a7e4f26963619a8c2567e0c52b3529ebb}} 
+\index{control\_params@{control\_params}!const\_inter\_step@{const\_inter\_step}}
+\index{const\_inter\_step@{const\_inter\_step}!control\_params@{control\_params}}
+\doxysubsubsection{\texorpdfstring{const\_inter\_step}{const\_inter\_step}}
+{\footnotesize\ttfamily double control\+\_\+params\+::const\+\_\+inter\+\_\+step}
+
+
+
+If consider constant integration step, then please give the wanted step size. 
+
+
+
+Definition at line 23 of file eos\+\_\+utils.\+hpp.
+
+
+
+Referenced by init\+\_\+control\+\_\+params().
+
+\mbox{\Hypertarget{structcontrol__params_ac50f6d418f5efafa53906d7d07ff5d0b}\label{structcontrol__params_ac50f6d418f5efafa53906d7d07ff5d0b}} 
+\index{control\_params@{control\_params}!max\_tov\_mass@{max\_tov\_mass}}
+\index{max\_tov\_mass@{max\_tov\_mass}!control\_params@{control\_params}}
+\doxysubsubsection{\texorpdfstring{max\_tov\_mass}{max\_tov\_mass}}
+{\footnotesize\ttfamily double control\+\_\+params\+::max\+\_\+tov\+\_\+mass}
+
+
+
+Maximum mass allowed astropysically, used to contrain the \mbox{\hyperlink{classEoS}{EoS}}. 
+
+
+
+Definition at line 19 of file eos\+\_\+utils.\+hpp.
+
+
+
+Referenced by init\+\_\+control\+\_\+params().
+
+\mbox{\Hypertarget{structcontrol__params_a9abee03203f6cbae2dae3b58a35d5634}\label{structcontrol__params_a9abee03203f6cbae2dae3b58a35d5634}} 
+\index{control\_params@{control\_params}!min\_tov\_mass@{min\_tov\_mass}}
+\index{min\_tov\_mass@{min\_tov\_mass}!control\_params@{control\_params}}
+\doxysubsubsection{\texorpdfstring{min\_tov\_mass}{min\_tov\_mass}}
+{\footnotesize\ttfamily double control\+\_\+params\+::min\+\_\+tov\+\_\+mass}
+
+
+
+Minimum mass allowed astropysically, used to contrain the \mbox{\hyperlink{classEoS}{EoS}}. 
+
+
+
+Definition at line 18 of file eos\+\_\+utils.\+hpp.
+
+
+
+Referenced by init\+\_\+control\+\_\+params().
+
+\mbox{\Hypertarget{structcontrol__params_a71c03e2fcb56766bc9919cebe3aebad6}\label{structcontrol__params_a71c03e2fcb56766bc9919cebe3aebad6}} 
+\index{control\_params@{control\_params}!param\_method@{param\_method}}
+\index{param\_method@{param\_method}!control\_params@{control\_params}}
+\doxysubsubsection{\texorpdfstring{param\_method}{param\_method}}
+{\footnotesize\ttfamily int control\+\_\+params\+::param\+\_\+method}
+
+
+
+Parameterization method. 
+
+
+
+Definition at line 21 of file eos\+\_\+utils.\+hpp.
+
+
+
+Referenced by init\+\_\+control\+\_\+params().
+
+\mbox{\Hypertarget{structcontrol__params_ae01f86fee59cdc28d4709b9fa94a387f}\label{structcontrol__params_ae01f86fee59cdc28d4709b9fa94a387f}} 
+\index{control\_params@{control\_params}!verbose\_level@{verbose\_level}}
+\index{verbose\_level@{verbose\_level}!control\_params@{control\_params}}
+\doxysubsubsection{\texorpdfstring{verbose\_level}{verbose\_level}}
+{\footnotesize\ttfamily int control\+\_\+params\+::verbose\+\_\+level}
+
+
+
+Verbose level, 0-\/3, more details will be printed if verbose\+\_\+level is larger. 
+
+
+
+Definition at line 22 of file eos\+\_\+utils.\+hpp.
+
+
+
+Referenced by init\+\_\+control\+\_\+params().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+eostool/\mbox{\hyperlink{eos__utils_8hpp}{eos\+\_\+utils.\+hpp}}\end{DoxyCompactItemize}

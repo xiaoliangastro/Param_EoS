@@ -1,0 +1,496 @@
+\hypertarget{classEoS__param__mu__cs}{}\doxysection{Eo\+S\+\_\+param\+\_\+mu\+\_\+cs Class Reference}
+\label{classEoS__param__mu__cs}\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+
+
+{\ttfamily \#include $<$eos.\+hpp$>$}
+
+
+
+Inheritance diagram for Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classEoS__param__mu__cs__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classEoS__param__mu__cs__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classEoS__param__mu__cs_a1b38aa6ba1293cf227bcd54f38013b67}{ph}} (double h)
+\begin{DoxyCompactList}\small\item\em Calculate pressure using h only. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classEoS__param__mu__cs_a8f478cf7b357f9a537e07b7dd3964029}{eh}} (double h)
+\begin{DoxyCompactList}\small\item\em Calculate energy density using h only. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classEoS__param__mu__cs_aea5e1972cfd0889f3e04562b418395db}{rhoh}} (double h, double p, double e)
+\begin{DoxyCompactList}\small\item\em Calculate mass density using h only. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classEoS__param__mu__cs_a214a1e91a60ad2c8d5921f6c5f5e4a8f}{update\+\_\+eos}} (double ppar\mbox{[}$\,$\mbox{]}, int len\+\_\+par, int extra\+\_\+par, double h\+\_\+max, const char init\+\_\+function\+\_\+type\mbox{[}$\,$\mbox{]})
+\item 
+bool \mbox{\hyperlink{classEoS__param__mu__cs_ae394b40ed432986643ec836fb3cc3c50}{eos\+\_\+valid}} ()
+\item 
+double \mbox{\hyperlink{classEoS__param__mu__cs_a1c0292fc0da16fe39f040588456bb080}{gamma\+\_\+interp}} (double h, double p, double e)
+\begin{DoxyCompactList}\small\item\em Calculate gamma in the speed of sound model ~\newline
+ \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classEoS__param__mu__cs_aa31873ca3d2979c8c9f2d88c928345fc}{interpolate\+\_\+cssq}} (double h, \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} hb, \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} pars)
+\item 
+double \mbox{\hyperlink{classEoS__param__mu__cs_addfaedd5d380f607776a8fad1125aa59}{pressure\+\_\+renorm}} (double mu, double x)
+\item 
+double \mbox{\hyperlink{classEoS__param__mu__cs_a33b99d5e603cdc919ef2432419029db3}{number\+\_\+density\+\_\+renorm}} (double mu, double x)
+\item 
+double \mbox{\hyperlink{classEoS__param__mu__cs_a500c26b01aafaf875b73c85462e1d7df}{energy\+\_\+density\+\_\+renorm}} (double mu, double x)
+\item 
+double \mbox{\hyperlink{classEoS__param__mu__cs_a043dbaae3c44f2f6c512d64a5f1ec82d}{cssq\+\_\+renorm}} (double mu, double x)
+\item 
+void \mbox{\hyperlink{classEoS__param__mu__cs_aea5f40ce87cef90b64d3fa7f70fc7238}{cal\+\_\+eos\+\_\+table\+\_\+near\+\_\+pqcd}} (double h\+\_\+max, const char init\+\_\+function\+\_\+type\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em calculate eos tables as list of interpolating functions and store them \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEoS__param__mu__cs_a52ecb84f4178c2e810b146693741cc3e}{Eo\+S\+\_\+hybrid}} (double ee\mbox{[}$\,$\mbox{]}, double pp\mbox{[}$\,$\mbox{]}, const int len\+\_\+eos)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \mbox{\hyperlink{classEoS__param__mu__cs_aab0cb6aab2d13df564dc6bb47ded1615}{h\+\_\+borders}}
+\item 
+double \mbox{\hyperlink{classEoS__param__mu__cs_a6e93c9d2fd2ce495fa0b8a4a049469f2}{eos\+\_\+jump\+\_\+tolerance}}
+\item 
+double \mbox{\hyperlink{classEoS__param__mu__cs_aa839eb55c452448cad8ea8842f49f5a0}{p\+\_\+pqcd\+\_\+N}}
+\item 
+double \mbox{\hyperlink{classEoS__param__mu__cs_acb081570fa5ae34e48768737d62f597a}{e\+\_\+pqcd\+\_\+N}}
+\item 
+double \mbox{\hyperlink{classEoS__param__mu__cs_a82cc605c9bd3725279b1fc9e0c1e2d91}{rho\+\_\+pqcd\+\_\+N}}
+\item 
+double \mbox{\hyperlink{classEoS__param__mu__cs_a6662aa99478dd507183d5a3cb1e9a65e}{cssq\+\_\+pqcd\+\_\+N}}
+\item 
+double \mbox{\hyperlink{classEoS__param__mu__cs_a1abbb7c15e063fe80419fab1df9f723b}{p\+\_\+pqcd\+\_\+\+Nm1}}
+\item 
+double \mbox{\hyperlink{classEoS__param__mu__cs_a2c6b11c2647ebc22ee26848b9270c0a1}{e\+\_\+pqcd\+\_\+\+Nm1}}
+\item 
+double \mbox{\hyperlink{classEoS__param__mu__cs_a10d3a36705f6dddd2ffe6fa945eda1e9}{n\+\_\+pqcd\+\_\+\+Nm1}}
+\item 
+double \mbox{\hyperlink{classEoS__param__mu__cs_a0855f5e62b475e06e1fdf9456ae51d46}{gammap}}
+\item 
+double \mbox{\hyperlink{classEoS__param__mu__cs_ad36c09baa798e80488c3ec6f83ab5746}{qcd\+\_\+x}}
+\item 
+double \mbox{\hyperlink{classEoS__param__mu__cs_a9bca2862520caa94b0bd6a431faec456}{h1}}
+\item 
+double \mbox{\hyperlink{classEoS__param__mu__cs_a211bc853aecab765465f72924de7fceb}{cssq1}}
+\item 
+int \mbox{\hyperlink{classEoS__param__mu__cs_a4e54f938c34d797c1a24c2a072257437}{n\+\_\+seg}}
+\item 
+vector$<$ pchip$<$ \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} $>$ $>$ \mbox{\hyperlink{classEoS__param__mu__cs_af2a42ccfb9a5372709f08df586844238}{eos\+\_\+table\+\_\+function\+\_\+h\+\_\+base\+\_\+near\+\_\+pqcd}}
+\item 
+\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \mbox{\hyperlink{classEoS__param__mu__cs_a7a10463116c21372ba90e69d95eb825c}{eos\+\_\+table\+\_\+h\+\_\+near\+\_\+pqcd}}
+\item 
+\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \mbox{\hyperlink{classEoS__param__mu__cs_a7c8cebbed1b76bb1ec3c346d6488ddbf}{eos\+\_\+table\+\_\+p\+\_\+near\+\_\+pqcd}}
+\item 
+\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \mbox{\hyperlink{classEoS__param__mu__cs_a20b72d43ebadb7e3c633e5ac0cfab2b8}{eos\+\_\+table\+\_\+e\+\_\+near\+\_\+pqcd}}
+\item 
+\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \mbox{\hyperlink{classEoS__param__mu__cs_ac00bc1f337753064ce207c9bf5f84317}{eos\+\_\+table\+\_\+rho\+\_\+near\+\_\+pqcd}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 792 of file eos.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEoS__param__mu__cs_aea5f40ce87cef90b64d3fa7f70fc7238}\label{classEoS__param__mu__cs_aea5f40ce87cef90b64d3fa7f70fc7238}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!cal\_eos\_table\_near\_pqcd@{cal\_eos\_table\_near\_pqcd}}
+\index{cal\_eos\_table\_near\_pqcd@{cal\_eos\_table\_near\_pqcd}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{cal\_eos\_table\_near\_pqcd()}{cal\_eos\_table\_near\_pqcd()}}
+{\footnotesize\ttfamily void Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::cal\+\_\+eos\+\_\+table\+\_\+near\+\_\+pqcd (\begin{DoxyParamCaption}\item[{double}]{h\+\_\+max,  }\item[{const char}]{init\+\_\+function\+\_\+type\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+calculate eos tables as list of interpolating functions and store them 
+
+
+
+Definition at line 919 of file eos.\+hpp.
+
+
+
+References cal\+\_\+eos(), controlled\+\_\+stepper\+\_\+cal\+\_\+eos(), m\+\_\+neutron, Me\+V4\+\_\+to\+\_\+dmls, sg\+\_\+step, and vverbose.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_a043dbaae3c44f2f6c512d64a5f1ec82d}\label{classEoS__param__mu__cs_a043dbaae3c44f2f6c512d64a5f1ec82d}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!cssq\_renorm@{cssq\_renorm}}
+\index{cssq\_renorm@{cssq\_renorm}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{cssq\_renorm()}{cssq\_renorm()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::cssq\+\_\+renorm (\begin{DoxyParamCaption}\item[{double}]{mu,  }\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 914 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_a8f478cf7b357f9a537e07b7dd3964029}\label{classEoS__param__mu__cs_a8f478cf7b357f9a537e07b7dd3964029}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!eh@{eh}}
+\index{eh@{eh}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{eh()}{eh()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::eh (\begin{DoxyParamCaption}\item[{double}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Calculate energy density using h only. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classEoS__hybrid_a67e2d65672f30c6f5ff9aa2518942987}{Eo\+S\+\_\+hybrid}}.
+
+
+
+Definition at line 813 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_a500c26b01aafaf875b73c85462e1d7df}\label{classEoS__param__mu__cs_a500c26b01aafaf875b73c85462e1d7df}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!energy\_density\_renorm@{energy\_density\_renorm}}
+\index{energy\_density\_renorm@{energy\_density\_renorm}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{energy\_density\_renorm()}{energy\_density\_renorm()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::energy\+\_\+density\+\_\+renorm (\begin{DoxyParamCaption}\item[{double}]{mu,  }\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 910 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_a52ecb84f4178c2e810b146693741cc3e}\label{classEoS__param__mu__cs_a52ecb84f4178c2e810b146693741cc3e}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!EoS\_hybrid@{EoS\_hybrid}}
+\index{EoS\_hybrid@{EoS\_hybrid}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{EoS\_hybrid()}{EoS\_hybrid()}}
+{\footnotesize\ttfamily Eo\+S\+\_\+hybrid\+::\+Eo\+S\+\_\+hybrid\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 96 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_ae394b40ed432986643ec836fb3cc3c50}\label{classEoS__param__mu__cs_ae394b40ed432986643ec836fb3cc3c50}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!eos\_valid@{eos\_valid}}
+\index{eos\_valid@{eos\_valid}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{eos\_valid()}{eos\_valid()}}
+{\footnotesize\ttfamily bool Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::eos\+\_\+valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classEoS_a5570ac189088ea31b7103c0f55423960}{EoS}}.
+
+
+
+Definition at line 871 of file eos.\+hpp.
+
+
+
+References verbose.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_a1c0292fc0da16fe39f040588456bb080}\label{classEoS__param__mu__cs_a1c0292fc0da16fe39f040588456bb080}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!gamma\_interp@{gamma\_interp}}
+\index{gamma\_interp@{gamma\_interp}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{gamma\_interp()}{gamma\_interp()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::gamma\+\_\+interp (\begin{DoxyParamCaption}\item[{double}]{h,  }\item[{double}]{p,  }\item[{double}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Calculate gamma in the speed of sound model ~\newline
+ 
+
+
+
+Reimplemented from \mbox{\hyperlink{classEoS__hybrid_aed0918e0e3b59cc09ad48b0215ef795f}{Eo\+S\+\_\+hybrid}}.
+
+
+
+Definition at line 883 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_aa31873ca3d2979c8c9f2d88c928345fc}\label{classEoS__param__mu__cs_aa31873ca3d2979c8c9f2d88c928345fc}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!interpolate\_cssq@{interpolate\_cssq}}
+\index{interpolate\_cssq@{interpolate\_cssq}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{interpolate\_cssq()}{interpolate\_cssq()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::interpolate\+\_\+cssq (\begin{DoxyParamCaption}\item[{double}]{h,  }\item[{\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}}}]{hb,  }\item[{\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}}}]{pars }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 891 of file eos.\+hpp.
+
+
+
+References m\+\_\+neutron.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_a33b99d5e603cdc919ef2432419029db3}\label{classEoS__param__mu__cs_a33b99d5e603cdc919ef2432419029db3}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!number\_density\_renorm@{number\_density\_renorm}}
+\index{number\_density\_renorm@{number\_density\_renorm}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{number\_density\_renorm()}{number\_density\_renorm()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::number\+\_\+density\+\_\+renorm (\begin{DoxyParamCaption}\item[{double}]{mu,  }\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 906 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_a1b38aa6ba1293cf227bcd54f38013b67}\label{classEoS__param__mu__cs_a1b38aa6ba1293cf227bcd54f38013b67}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!ph@{ph}}
+\index{ph@{ph}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{ph()}{ph()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::ph (\begin{DoxyParamCaption}\item[{double}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Calculate pressure using h only. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classEoS__hybrid_aadacda0ab907d9e8457420c7cc8a55e8}{Eo\+S\+\_\+hybrid}}.
+
+
+
+Definition at line 806 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_addfaedd5d380f607776a8fad1125aa59}\label{classEoS__param__mu__cs_addfaedd5d380f607776a8fad1125aa59}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!pressure\_renorm@{pressure\_renorm}}
+\index{pressure\_renorm@{pressure\_renorm}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{pressure\_renorm()}{pressure\_renorm()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::pressure\+\_\+renorm (\begin{DoxyParamCaption}\item[{double}]{mu,  }\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 902 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_aea5e1972cfd0889f3e04562b418395db}\label{classEoS__param__mu__cs_aea5e1972cfd0889f3e04562b418395db}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!rhoh@{rhoh}}
+\index{rhoh@{rhoh}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{rhoh()}{rhoh()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::rhoh (\begin{DoxyParamCaption}\item[{double}]{h,  }\item[{double}]{p,  }\item[{double}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Calculate mass density using h only. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classEoS__hybrid_a884a369454d9ab0dc83697050d2ee8c0}{Eo\+S\+\_\+hybrid}}.
+
+
+
+Definition at line 820 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_a214a1e91a60ad2c8d5921f6c5f5e4a8f}\label{classEoS__param__mu__cs_a214a1e91a60ad2c8d5921f6c5f5e4a8f}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!update\_eos@{update\_eos}}
+\index{update\_eos@{update\_eos}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{update\_eos()}{update\_eos()}}
+{\footnotesize\ttfamily bool Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::update\+\_\+eos (\begin{DoxyParamCaption}\item[{double}]{ppar\mbox{[}$\,$\mbox{]},  }\item[{int}]{len\+\_\+par,  }\item[{int}]{extra\+\_\+par,  }\item[{double}]{h\+\_\+max,  }\item[{const char}]{init\+\_\+function\+\_\+type\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classEoS_a67410571586d25fd9d5ec68720d3cf69}{EoS}}.
+
+
+
+Definition at line 826 of file eos.\+hpp.
+
+
+
+References e\+\_\+0, h\+\_\+0, m\+\_\+neutron, Me\+V4\+\_\+to\+\_\+dmls, p\+\_\+0, rho\+\_\+0, rho\+\_\+sat, and verbose.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classEoS__param__mu__cs_a211bc853aecab765465f72924de7fceb}\label{classEoS__param__mu__cs_a211bc853aecab765465f72924de7fceb}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!cssq1@{cssq1}}
+\index{cssq1@{cssq1}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{cssq1}{cssq1}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::cssq1}
+
+
+
+Definition at line 800 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_a6662aa99478dd507183d5a3cb1e9a65e}\label{classEoS__param__mu__cs_a6662aa99478dd507183d5a3cb1e9a65e}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!cssq\_pqcd\_N@{cssq\_pqcd\_N}}
+\index{cssq\_pqcd\_N@{cssq\_pqcd\_N}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{cssq\_pqcd\_N}{cssq\_pqcd\_N}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::cssq\+\_\+pqcd\+\_\+N}
+
+
+
+Definition at line 797 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_acb081570fa5ae34e48768737d62f597a}\label{classEoS__param__mu__cs_acb081570fa5ae34e48768737d62f597a}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!e\_pqcd\_N@{e\_pqcd\_N}}
+\index{e\_pqcd\_N@{e\_pqcd\_N}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{e\_pqcd\_N}{e\_pqcd\_N}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::e\+\_\+pqcd\+\_\+N}
+
+
+
+Definition at line 797 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_a2c6b11c2647ebc22ee26848b9270c0a1}\label{classEoS__param__mu__cs_a2c6b11c2647ebc22ee26848b9270c0a1}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!e\_pqcd\_Nm1@{e\_pqcd\_Nm1}}
+\index{e\_pqcd\_Nm1@{e\_pqcd\_Nm1}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{e\_pqcd\_Nm1}{e\_pqcd\_Nm1}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::e\+\_\+pqcd\+\_\+\+Nm1}
+
+
+
+Definition at line 798 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_a6e93c9d2fd2ce495fa0b8a4a049469f2}\label{classEoS__param__mu__cs_a6e93c9d2fd2ce495fa0b8a4a049469f2}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!eos\_jump\_tolerance@{eos\_jump\_tolerance}}
+\index{eos\_jump\_tolerance@{eos\_jump\_tolerance}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{eos\_jump\_tolerance}{eos\_jump\_tolerance}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::eos\+\_\+jump\+\_\+tolerance}
+
+
+
+Definition at line 796 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_a20b72d43ebadb7e3c633e5ac0cfab2b8}\label{classEoS__param__mu__cs_a20b72d43ebadb7e3c633e5ac0cfab2b8}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!eos\_table\_e\_near\_pqcd@{eos\_table\_e\_near\_pqcd}}
+\index{eos\_table\_e\_near\_pqcd@{eos\_table\_e\_near\_pqcd}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{eos\_table\_e\_near\_pqcd}{eos\_table\_e\_near\_pqcd}}
+{\footnotesize\ttfamily \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::eos\+\_\+table\+\_\+e\+\_\+near\+\_\+pqcd}
+
+
+
+Definition at line 803 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_af2a42ccfb9a5372709f08df586844238}\label{classEoS__param__mu__cs_af2a42ccfb9a5372709f08df586844238}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!eos\_table\_function\_h\_base\_near\_pqcd@{eos\_table\_function\_h\_base\_near\_pqcd}}
+\index{eos\_table\_function\_h\_base\_near\_pqcd@{eos\_table\_function\_h\_base\_near\_pqcd}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{eos\_table\_function\_h\_base\_near\_pqcd}{eos\_table\_function\_h\_base\_near\_pqcd}}
+{\footnotesize\ttfamily vector$<$ pchip$<$\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}}$>$ $>$ Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::eos\+\_\+table\+\_\+function\+\_\+h\+\_\+base\+\_\+near\+\_\+pqcd}
+
+
+
+Definition at line 802 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_a7a10463116c21372ba90e69d95eb825c}\label{classEoS__param__mu__cs_a7a10463116c21372ba90e69d95eb825c}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!eos\_table\_h\_near\_pqcd@{eos\_table\_h\_near\_pqcd}}
+\index{eos\_table\_h\_near\_pqcd@{eos\_table\_h\_near\_pqcd}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{eos\_table\_h\_near\_pqcd}{eos\_table\_h\_near\_pqcd}}
+{\footnotesize\ttfamily \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::eos\+\_\+table\+\_\+h\+\_\+near\+\_\+pqcd}
+
+
+
+Definition at line 803 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_a7c8cebbed1b76bb1ec3c346d6488ddbf}\label{classEoS__param__mu__cs_a7c8cebbed1b76bb1ec3c346d6488ddbf}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!eos\_table\_p\_near\_pqcd@{eos\_table\_p\_near\_pqcd}}
+\index{eos\_table\_p\_near\_pqcd@{eos\_table\_p\_near\_pqcd}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{eos\_table\_p\_near\_pqcd}{eos\_table\_p\_near\_pqcd}}
+{\footnotesize\ttfamily \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::eos\+\_\+table\+\_\+p\+\_\+near\+\_\+pqcd}
+
+
+
+Definition at line 803 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_ac00bc1f337753064ce207c9bf5f84317}\label{classEoS__param__mu__cs_ac00bc1f337753064ce207c9bf5f84317}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!eos\_table\_rho\_near\_pqcd@{eos\_table\_rho\_near\_pqcd}}
+\index{eos\_table\_rho\_near\_pqcd@{eos\_table\_rho\_near\_pqcd}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{eos\_table\_rho\_near\_pqcd}{eos\_table\_rho\_near\_pqcd}}
+{\footnotesize\ttfamily \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::eos\+\_\+table\+\_\+rho\+\_\+near\+\_\+pqcd}
+
+
+
+Definition at line 803 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_a0855f5e62b475e06e1fdf9456ae51d46}\label{classEoS__param__mu__cs_a0855f5e62b475e06e1fdf9456ae51d46}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!gammap@{gammap}}
+\index{gammap@{gammap}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{gammap}{gammap}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::gammap}
+
+
+
+Definition at line 799 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_a9bca2862520caa94b0bd6a431faec456}\label{classEoS__param__mu__cs_a9bca2862520caa94b0bd6a431faec456}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!h1@{h1}}
+\index{h1@{h1}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{h1}{h1}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::h1}
+
+
+
+Definition at line 800 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_aab0cb6aab2d13df564dc6bb47ded1615}\label{classEoS__param__mu__cs_aab0cb6aab2d13df564dc6bb47ded1615}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!h\_borders@{h\_borders}}
+\index{h\_borders@{h\_borders}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{h\_borders}{h\_borders}}
+{\footnotesize\ttfamily \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::h\+\_\+borders}
+
+
+
+Definition at line 795 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_a10d3a36705f6dddd2ffe6fa945eda1e9}\label{classEoS__param__mu__cs_a10d3a36705f6dddd2ffe6fa945eda1e9}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!n\_pqcd\_Nm1@{n\_pqcd\_Nm1}}
+\index{n\_pqcd\_Nm1@{n\_pqcd\_Nm1}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{n\_pqcd\_Nm1}{n\_pqcd\_Nm1}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::n\+\_\+pqcd\+\_\+\+Nm1}
+
+
+
+Definition at line 798 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_a4e54f938c34d797c1a24c2a072257437}\label{classEoS__param__mu__cs_a4e54f938c34d797c1a24c2a072257437}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!n\_seg@{n\_seg}}
+\index{n\_seg@{n\_seg}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{n\_seg}{n\_seg}}
+{\footnotesize\ttfamily int Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::n\+\_\+seg}
+
+
+
+Definition at line 801 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_aa839eb55c452448cad8ea8842f49f5a0}\label{classEoS__param__mu__cs_aa839eb55c452448cad8ea8842f49f5a0}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!p\_pqcd\_N@{p\_pqcd\_N}}
+\index{p\_pqcd\_N@{p\_pqcd\_N}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{p\_pqcd\_N}{p\_pqcd\_N}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::p\+\_\+pqcd\+\_\+N}
+
+
+
+Definition at line 797 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_a1abbb7c15e063fe80419fab1df9f723b}\label{classEoS__param__mu__cs_a1abbb7c15e063fe80419fab1df9f723b}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!p\_pqcd\_Nm1@{p\_pqcd\_Nm1}}
+\index{p\_pqcd\_Nm1@{p\_pqcd\_Nm1}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{p\_pqcd\_Nm1}{p\_pqcd\_Nm1}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::p\+\_\+pqcd\+\_\+\+Nm1}
+
+
+
+Definition at line 798 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_ad36c09baa798e80488c3ec6f83ab5746}\label{classEoS__param__mu__cs_ad36c09baa798e80488c3ec6f83ab5746}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!qcd\_x@{qcd\_x}}
+\index{qcd\_x@{qcd\_x}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{qcd\_x}{qcd\_x}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::qcd\+\_\+x}
+
+
+
+Definition at line 799 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__param__mu__cs_a82cc605c9bd3725279b1fc9e0c1e2d91}\label{classEoS__param__mu__cs_a82cc605c9bd3725279b1fc9e0c1e2d91}} 
+\index{EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}!rho\_pqcd\_N@{rho\_pqcd\_N}}
+\index{rho\_pqcd\_N@{rho\_pqcd\_N}!EoS\_param\_mu\_cs@{EoS\_param\_mu\_cs}}
+\doxysubsubsection{\texorpdfstring{rho\_pqcd\_N}{rho\_pqcd\_N}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::rho\+\_\+pqcd\+\_\+N}
+
+
+
+Definition at line 797 of file eos.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+eostool/\mbox{\hyperlink{eos_8hpp}{eos.\+hpp}}\end{DoxyCompactItemize}

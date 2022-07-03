@@ -1,0 +1,130 @@
+\hypertarget{classEoS__adp__pw}{}\doxysection{Eo\+S\+\_\+adp\+\_\+pw Class Reference}
+\label{classEoS__adp__pw}\index{EoS\_adp\_pw@{EoS\_adp\_pw}}
+
+
+{\ttfamily \#include $<$eos.\+hpp$>$}
+
+
+
+Inheritance diagram for Eo\+S\+\_\+adp\+\_\+pw\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classEoS__adp__pw__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Eo\+S\+\_\+adp\+\_\+pw\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classEoS__adp__pw__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classEoS__adp__pw_a69100f6f8d546e402e18795f07c49ffd}{update\+\_\+eos}} (double ppar\mbox{[}$\,$\mbox{]}, int len\+\_\+par, int extra\+\_\+par, double h\+\_\+max, const char init\+\_\+function\+\_\+type\mbox{[}$\,$\mbox{]})
+\item 
+double \mbox{\hyperlink{classEoS__adp__pw_a0655b42112361dfd83e353469078d4f3}{gamma\+\_\+interp}} (double h, double p, double e)
+\begin{DoxyCompactList}\small\item\em Calculate gamma in the adaptive piecewise model. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEoS__adp__pw_a52ecb84f4178c2e810b146693741cc3e}{Eo\+S\+\_\+hybrid}} (double ee\mbox{[}$\,$\mbox{]}, double pp\mbox{[}$\,$\mbox{]}, const int len\+\_\+eos)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \mbox{\hyperlink{classEoS__adp__pw_ac7f1f95a6118c14c23a989299b465239}{e\+\_\+borders}}
+\item 
+\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \mbox{\hyperlink{classEoS__adp__pw_a43d240aa39170723e63fa944e0ac2531}{rho\+\_\+borders}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 567 of file eos.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEoS__adp__pw_a52ecb84f4178c2e810b146693741cc3e}\label{classEoS__adp__pw_a52ecb84f4178c2e810b146693741cc3e}} 
+\index{EoS\_adp\_pw@{EoS\_adp\_pw}!EoS\_hybrid@{EoS\_hybrid}}
+\index{EoS\_hybrid@{EoS\_hybrid}!EoS\_adp\_pw@{EoS\_adp\_pw}}
+\doxysubsubsection{\texorpdfstring{EoS\_hybrid()}{EoS\_hybrid()}}
+{\footnotesize\ttfamily Eo\+S\+\_\+hybrid\+::\+Eo\+S\+\_\+hybrid\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 96 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__adp__pw_a0655b42112361dfd83e353469078d4f3}\label{classEoS__adp__pw_a0655b42112361dfd83e353469078d4f3}} 
+\index{EoS\_adp\_pw@{EoS\_adp\_pw}!gamma\_interp@{gamma\_interp}}
+\index{gamma\_interp@{gamma\_interp}!EoS\_adp\_pw@{EoS\_adp\_pw}}
+\doxysubsubsection{\texorpdfstring{gamma\_interp()}{gamma\_interp()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+adp\+\_\+pw\+::gamma\+\_\+interp (\begin{DoxyParamCaption}\item[{double}]{h,  }\item[{double}]{p,  }\item[{double}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Calculate gamma in the adaptive piecewise model. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classEoS__hybrid_aed0918e0e3b59cc09ad48b0215ef795f}{Eo\+S\+\_\+hybrid}}.
+
+
+
+Definition at line 597 of file eos.\+hpp.
+
+
+
+References p\+\_\+0, and rho\+\_\+0.
+
+\mbox{\Hypertarget{classEoS__adp__pw_a69100f6f8d546e402e18795f07c49ffd}\label{classEoS__adp__pw_a69100f6f8d546e402e18795f07c49ffd}} 
+\index{EoS\_adp\_pw@{EoS\_adp\_pw}!update\_eos@{update\_eos}}
+\index{update\_eos@{update\_eos}!EoS\_adp\_pw@{EoS\_adp\_pw}}
+\doxysubsubsection{\texorpdfstring{update\_eos()}{update\_eos()}}
+{\footnotesize\ttfamily bool Eo\+S\+\_\+adp\+\_\+pw\+::update\+\_\+eos (\begin{DoxyParamCaption}\item[{double}]{ppar\mbox{[}$\,$\mbox{]},  }\item[{int}]{len\+\_\+par,  }\item[{int}]{extra\+\_\+par,  }\item[{double}]{h\+\_\+max,  }\item[{const char}]{init\+\_\+function\+\_\+type\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classEoS_a67410571586d25fd9d5ec68720d3cf69}{EoS}}.
+
+
+
+Definition at line 571 of file eos.\+hpp.
+
+
+
+References cal\+\_\+eborders(), p\+\_\+0, and rho\+\_\+0.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classEoS__adp__pw_ac7f1f95a6118c14c23a989299b465239}\label{classEoS__adp__pw_ac7f1f95a6118c14c23a989299b465239}} 
+\index{EoS\_adp\_pw@{EoS\_adp\_pw}!e\_borders@{e\_borders}}
+\index{e\_borders@{e\_borders}!EoS\_adp\_pw@{EoS\_adp\_pw}}
+\doxysubsubsection{\texorpdfstring{e\_borders}{e\_borders}}
+{\footnotesize\ttfamily \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} Eo\+S\+\_\+adp\+\_\+pw\+::e\+\_\+borders}
+
+
+
+Definition at line 569 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__adp__pw_a43d240aa39170723e63fa944e0ac2531}\label{classEoS__adp__pw_a43d240aa39170723e63fa944e0ac2531}} 
+\index{EoS\_adp\_pw@{EoS\_adp\_pw}!rho\_borders@{rho\_borders}}
+\index{rho\_borders@{rho\_borders}!EoS\_adp\_pw@{EoS\_adp\_pw}}
+\doxysubsubsection{\texorpdfstring{rho\_borders}{rho\_borders}}
+{\footnotesize\ttfamily \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} Eo\+S\+\_\+adp\+\_\+pw\+::rho\+\_\+borders}
+
+
+
+Definition at line 569 of file eos.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+eostool/\mbox{\hyperlink{eos_8hpp}{eos.\+hpp}}\end{DoxyCompactItemize}

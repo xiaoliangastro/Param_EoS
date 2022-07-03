@@ -1,0 +1,167 @@
+\hypertarget{eos_8hpp}{}\doxysection{eostool/eos.hpp File Reference}
+\label{eos_8hpp}\index{eostool/eos.hpp@{eostool/eos.hpp}}
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$exception$>$}\newline
+{\ttfamily \#include $<$gsl/gsl\+\_\+errno.\+h$>$}\newline
+{\ttfamily \#include $<$gsl/gsl\+\_\+roots.\+h$>$}\newline
+{\ttfamily \#include $<$boost/math/interpolators/pchip.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/numeric/odeint/stepper/controlled\+\_\+runge\+\_\+kutta.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/numeric/odeint/stepper/runge\+\_\+kutta\+\_\+fehlberg78.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/numeric/odeint/integrate/integrate\+\_\+adaptive.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}global\+\_\+variable\+\_\+constants.\+hpp\char`\"{}}\newline
+Include dependency graph for eos.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{eos_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{eos_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classEoS}{EoS}}
+\item 
+class \mbox{\hyperlink{classEoS__tablulated}{Eo\+S\+\_\+tablulated}}
+\item 
+class \mbox{\hyperlink{classEoS__hybrid}{Eo\+S\+\_\+hybrid}}
+\item 
+class \mbox{\hyperlink{classEoS__tabulated__only}{Eo\+S\+\_\+tabulated\+\_\+only}}
+\item 
+class \mbox{\hyperlink{classEoS__piecewise__gamma}{Eo\+S\+\_\+piecewise\+\_\+gamma}}
+\item 
+class \mbox{\hyperlink{classEoS__piecewise__pressure}{Eo\+S\+\_\+piecewise\+\_\+pressure}}
+\item 
+class \mbox{\hyperlink{classEoS__spectral__hbase}{Eo\+S\+\_\+spectral\+\_\+hbase}}
+\item 
+class \mbox{\hyperlink{classEoS__pwg__pt}{Eo\+S\+\_\+pwg\+\_\+pt}}
+\item 
+class \mbox{\hyperlink{classEoS__MIT__bag}{Eo\+S\+\_\+\+MIT\+\_\+bag}}
+\item 
+struct \mbox{\hyperlink{structEoS__MIT__bag_1_1quark__params}{Eo\+S\+\_\+\+MIT\+\_\+bag\+::quark\+\_\+params}}
+\item 
+class \mbox{\hyperlink{classEoS__adp__pw}{Eo\+S\+\_\+adp\+\_\+pw}}
+\item 
+class \mbox{\hyperlink{classEoS__cons__cs}{Eo\+S\+\_\+cons\+\_\+cs}}
+\item 
+class \mbox{\hyperlink{classEoS__pw__sp__pt__css}{Eo\+S\+\_\+pw\+\_\+sp\+\_\+pt\+\_\+css}}
+\item 
+class \mbox{\hyperlink{classEoS__ph__sp__pt__css}{Eo\+S\+\_\+ph\+\_\+sp\+\_\+pt\+\_\+css}}
+\item 
+class \mbox{\hyperlink{classEoS__param__mu__cs}{Eo\+S\+\_\+param\+\_\+mu\+\_\+cs}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ double $>$ \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}}
+\item 
+typedef runge\+\_\+kutta\+\_\+fehlberg78$<$ \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} $>$ \mbox{\hyperlink{eos_8hpp_a043fb59041d31caa54395ec863e93c63}{error\+\_\+stepper\+\_\+type}}
+\item 
+typedef controlled\+\_\+runge\+\_\+kutta$<$ \mbox{\hyperlink{eos_8hpp_a043fb59041d31caa54395ec863e93c63}{error\+\_\+stepper\+\_\+type}} $>$ \mbox{\hyperlink{eos_8hpp_a316792556e400adc33b04b149de69507}{controlled\+\_\+stepper\+\_\+type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \mbox{\hyperlink{eos_8hpp_ab29d6002fcbd41a5e9633d3bf82000a3}{cal\+\_\+eborders}} (\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} params, \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} rho\+\_\+borders)
+\begin{DoxyCompactList}\small\item\em calculate the segement point of the energy denisty in the piecewise approx (see Appendix B of 10.\+1103/\+Phys\+RevD.86.\+084003) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{eos_8hpp_a86f802d0af08d9982cd9d828e4ee52ae}{cal\+\_\+eos}} (const \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \&x, \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \&dxdt, double h)
+\item 
+\mbox{\hyperlink{eos_8hpp_a316792556e400adc33b04b149de69507}{controlled\+\_\+stepper\+\_\+type}} \mbox{\hyperlink{eos_8hpp_abd7500d6e1127da3a3329934b37559a2}{controlled\+\_\+stepper\+\_\+cal\+\_\+eos}} (default\+\_\+error\+\_\+checker$<$ double, range\+\_\+algebra, default\+\_\+operations $>$(1e-\/15, 1e-\/9, \mbox{\hyperlink{global__variable__constants_8hpp_a576556671feac86fb7583d3dac705f21}{int\+\_\+a\+\_\+x}}, \mbox{\hyperlink{global__variable__constants_8hpp_ad0cf290ae320f03f9e30083c2db329bf}{int\+\_\+a\+\_\+dxdt}}))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{eos_8hpp_a316792556e400adc33b04b149de69507}\label{eos_8hpp_a316792556e400adc33b04b149de69507}} 
+\index{eos.hpp@{eos.hpp}!controlled\_stepper\_type@{controlled\_stepper\_type}}
+\index{controlled\_stepper\_type@{controlled\_stepper\_type}!eos.hpp@{eos.hpp}}
+\doxysubsubsection{\texorpdfstring{controlled\_stepper\_type}{controlled\_stepper\_type}}
+{\footnotesize\ttfamily typedef controlled\+\_\+runge\+\_\+kutta$<$ \mbox{\hyperlink{eos_8hpp_a043fb59041d31caa54395ec863e93c63}{error\+\_\+stepper\+\_\+type}} $>$ \mbox{\hyperlink{eos_8hpp_a316792556e400adc33b04b149de69507}{controlled\+\_\+stepper\+\_\+type}}}
+
+
+
+Definition at line 29 of file eos.\+hpp.
+
+\mbox{\Hypertarget{eos_8hpp_a043fb59041d31caa54395ec863e93c63}\label{eos_8hpp_a043fb59041d31caa54395ec863e93c63}} 
+\index{eos.hpp@{eos.hpp}!error\_stepper\_type@{error\_stepper\_type}}
+\index{error\_stepper\_type@{error\_stepper\_type}!eos.hpp@{eos.hpp}}
+\doxysubsubsection{\texorpdfstring{error\_stepper\_type}{error\_stepper\_type}}
+{\footnotesize\ttfamily typedef runge\+\_\+kutta\+\_\+fehlberg78$<$ \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} $>$ \mbox{\hyperlink{eos_8hpp_a043fb59041d31caa54395ec863e93c63}{error\+\_\+stepper\+\_\+type}}}
+
+
+
+Definition at line 28 of file eos.\+hpp.
+
+\mbox{\Hypertarget{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}\label{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}} 
+\index{eos.hpp@{eos.hpp}!state\_type@{state\_type}}
+\index{state\_type@{state\_type}!eos.hpp@{eos.hpp}}
+\doxysubsubsection{\texorpdfstring{state\_type}{state\_type}}
+{\footnotesize\ttfamily typedef std\+::vector$<$ double $>$ \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}}}
+
+
+
+Definition at line 22 of file eos.\+hpp.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{eos_8hpp_ab29d6002fcbd41a5e9633d3bf82000a3}\label{eos_8hpp_ab29d6002fcbd41a5e9633d3bf82000a3}} 
+\index{eos.hpp@{eos.hpp}!cal\_eborders@{cal\_eborders}}
+\index{cal\_eborders@{cal\_eborders}!eos.hpp@{eos.hpp}}
+\doxysubsubsection{\texorpdfstring{cal\_eborders()}{cal\_eborders()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} cal\+\_\+eborders (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}}}]{params,  }\item[{\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}}}]{rho\+\_\+borders }\end{DoxyParamCaption})}
+
+
+
+calculate the segement point of the energy denisty in the piecewise approx (see Appendix B of 10.\+1103/\+Phys\+RevD.86.\+084003) 
+
+
+
+Definition at line 178 of file eos\+\_\+utils.\+hpp.
+
+
+
+References ADAPT\+\_\+\+PIECEWISE, e\+\_\+0, p\+\_\+0, param\+\_\+method, PHYSICAL\+\_\+\+SPEC\+\_\+\+PHTR\+\_\+\+CSS, PIECE\+\_\+\+SPEC\+\_\+\+PHTR\+\_\+\+CSS, PIECEWISE\+\_\+\+GAMMA, PIECEWISE\+\_\+\+PRESSURE, rho\+\_\+0, and verbose.
+
+
+
+Referenced by Eo\+S\+\_\+piecewise\+\_\+gamma\+::update\+\_\+eos(), Eo\+S\+\_\+piecewise\+\_\+pressure\+::update\+\_\+eos(), Eo\+S\+\_\+adp\+\_\+pw\+::update\+\_\+eos(), Eo\+S\+\_\+pw\+\_\+sp\+\_\+pt\+\_\+css\+::update\+\_\+eos(), and Eo\+S\+\_\+ph\+\_\+sp\+\_\+pt\+\_\+css\+::update\+\_\+eos().
+
+\mbox{\Hypertarget{eos_8hpp_a86f802d0af08d9982cd9d828e4ee52ae}\label{eos_8hpp_a86f802d0af08d9982cd9d828e4ee52ae}} 
+\index{eos.hpp@{eos.hpp}!cal\_eos@{cal\_eos}}
+\index{cal\_eos@{cal\_eos}!eos.hpp@{eos.hpp}}
+\doxysubsubsection{\texorpdfstring{cal\_eos()}{cal\_eos()}}
+{\footnotesize\ttfamily void cal\+\_\+eos (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \&}]{x,  }\item[{\mbox{\hyperlink{eos_8hpp_ac81efbc71a13babc87c8b2fb5546dd4c}{state\+\_\+type}} \&}]{dxdt,  }\item[{double}]{h }\end{DoxyParamCaption})}
+
+
+
+Definition at line 67 of file integrate\+\_\+core.\+hpp.
+
+
+
+References dedh(), dpdh(), EOS, and Eo\+S\+::gamma().
+
+
+
+Referenced by Eo\+S\+\_\+hybrid\+::cal\+\_\+eos\+\_\+table(), Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::cal\+\_\+eos\+\_\+table\+\_\+near\+\_\+pqcd(), and integrate\+\_\+eos().
+
+\mbox{\Hypertarget{eos_8hpp_abd7500d6e1127da3a3329934b37559a2}\label{eos_8hpp_abd7500d6e1127da3a3329934b37559a2}} 
+\index{eos.hpp@{eos.hpp}!controlled\_stepper\_cal\_eos@{controlled\_stepper\_cal\_eos}}
+\index{controlled\_stepper\_cal\_eos@{controlled\_stepper\_cal\_eos}!eos.hpp@{eos.hpp}}
+\doxysubsubsection{\texorpdfstring{controlled\_stepper\_cal\_eos()}{controlled\_stepper\_cal\_eos()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{eos_8hpp_a316792556e400adc33b04b149de69507}{controlled\+\_\+stepper\+\_\+type}} controlled\+\_\+stepper\+\_\+cal\+\_\+eos (\begin{DoxyParamCaption}\item[{default\+\_\+error\+\_\+checker$<$ double, range\+\_\+algebra, default\+\_\+operations $>$}]{1e-\/15, 1e-\/9, int\+\_\+a\+\_\+x, int\+\_\+a\+\_\+dxdt }\end{DoxyParamCaption})}
+
+
+
+Referenced by Eo\+S\+\_\+hybrid\+::cal\+\_\+eos\+\_\+table(), and Eo\+S\+\_\+param\+\_\+mu\+\_\+cs\+::cal\+\_\+eos\+\_\+table\+\_\+near\+\_\+pqcd().
+

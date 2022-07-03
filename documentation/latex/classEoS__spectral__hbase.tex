@@ -1,0 +1,125 @@
+\hypertarget{classEoS__spectral__hbase}{}\doxysection{Eo\+S\+\_\+spectral\+\_\+hbase Class Reference}
+\label{classEoS__spectral__hbase}\index{EoS\_spectral\_hbase@{EoS\_spectral\_hbase}}
+
+
+{\ttfamily \#include $<$eos.\+hpp$>$}
+
+
+
+Inheritance diagram for Eo\+S\+\_\+spectral\+\_\+hbase\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classEoS__spectral__hbase__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Eo\+S\+\_\+spectral\+\_\+hbase\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classEoS__spectral__hbase__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEoS__spectral__hbase_a2b9f9e1c6b10d13af153c369eb502415}{Eo\+S\+\_\+spectral\+\_\+hbase}} (double ee\mbox{[}$\,$\mbox{]}, double pp\mbox{[}$\,$\mbox{]}, const int len\+\_\+eos, bool causal)
+\item 
+bool \mbox{\hyperlink{classEoS__spectral__hbase_a85ec0a757ad54b47a51f63bba0fb8109}{update\+\_\+eos}} (double ppar\mbox{[}$\,$\mbox{]}, int len\+\_\+par, int extra\+\_\+par, double h\+\_\+max, const char init\+\_\+function\+\_\+type\mbox{[}$\,$\mbox{]})
+\item 
+double \mbox{\hyperlink{classEoS__spectral__hbase_a47b39fd6b5a46dc976542a643d162bdb}{gamma\+\_\+interp}} (double h, double p, double e)
+\begin{DoxyCompactList}\small\item\em Calculate gamma in the spectral expansion model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classEoS__spectral__hbase_a3834cf3e22c4479ea0ffcf7e398705ed}{spectral\+\_\+causal}}
+\item 
+double \mbox{\hyperlink{classEoS__spectral__hbase_acf2d248f4843afb0a09d4a2ab376b1bf}{h\+\_\+base}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 392 of file eos.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEoS__spectral__hbase_a2b9f9e1c6b10d13af153c369eb502415}\label{classEoS__spectral__hbase_a2b9f9e1c6b10d13af153c369eb502415}} 
+\index{EoS\_spectral\_hbase@{EoS\_spectral\_hbase}!EoS\_spectral\_hbase@{EoS\_spectral\_hbase}}
+\index{EoS\_spectral\_hbase@{EoS\_spectral\_hbase}!EoS\_spectral\_hbase@{EoS\_spectral\_hbase}}
+\doxysubsubsection{\texorpdfstring{EoS\_spectral\_hbase()}{EoS\_spectral\_hbase()}}
+{\footnotesize\ttfamily Eo\+S\+\_\+spectral\+\_\+hbase\+::\+Eo\+S\+\_\+spectral\+\_\+hbase (\begin{DoxyParamCaption}\item[{double}]{ee\mbox{[}$\,$\mbox{]},  }\item[{double}]{pp\mbox{[}$\,$\mbox{]},  }\item[{const int}]{len\+\_\+eos,  }\item[{bool}]{causal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 396 of file eos.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEoS__spectral__hbase_a47b39fd6b5a46dc976542a643d162bdb}\label{classEoS__spectral__hbase_a47b39fd6b5a46dc976542a643d162bdb}} 
+\index{EoS\_spectral\_hbase@{EoS\_spectral\_hbase}!gamma\_interp@{gamma\_interp}}
+\index{gamma\_interp@{gamma\_interp}!EoS\_spectral\_hbase@{EoS\_spectral\_hbase}}
+\doxysubsubsection{\texorpdfstring{gamma\_interp()}{gamma\_interp()}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+spectral\+\_\+hbase\+::gamma\+\_\+interp (\begin{DoxyParamCaption}\item[{double}]{h,  }\item[{double}]{p,  }\item[{double}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Calculate gamma in the spectral expansion model. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classEoS__hybrid_aed0918e0e3b59cc09ad48b0215ef795f}{Eo\+S\+\_\+hybrid}}.
+
+
+
+Definition at line 415 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__spectral__hbase_a85ec0a757ad54b47a51f63bba0fb8109}\label{classEoS__spectral__hbase_a85ec0a757ad54b47a51f63bba0fb8109}} 
+\index{EoS\_spectral\_hbase@{EoS\_spectral\_hbase}!update\_eos@{update\_eos}}
+\index{update\_eos@{update\_eos}!EoS\_spectral\_hbase@{EoS\_spectral\_hbase}}
+\doxysubsubsection{\texorpdfstring{update\_eos()}{update\_eos()}}
+{\footnotesize\ttfamily bool Eo\+S\+\_\+spectral\+\_\+hbase\+::update\+\_\+eos (\begin{DoxyParamCaption}\item[{double}]{ppar\mbox{[}$\,$\mbox{]},  }\item[{int}]{len\+\_\+par,  }\item[{int}]{extra\+\_\+par,  }\item[{double}]{h\+\_\+max,  }\item[{const char}]{init\+\_\+function\+\_\+type\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classEoS_a67410571586d25fd9d5ec68720d3cf69}{EoS}}.
+
+
+
+Definition at line 399 of file eos.\+hpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classEoS__spectral__hbase_acf2d248f4843afb0a09d4a2ab376b1bf}\label{classEoS__spectral__hbase_acf2d248f4843afb0a09d4a2ab376b1bf}} 
+\index{EoS\_spectral\_hbase@{EoS\_spectral\_hbase}!h\_base@{h\_base}}
+\index{h\_base@{h\_base}!EoS\_spectral\_hbase@{EoS\_spectral\_hbase}}
+\doxysubsubsection{\texorpdfstring{h\_base}{h\_base}}
+{\footnotesize\ttfamily double Eo\+S\+\_\+spectral\+\_\+hbase\+::h\+\_\+base}
+
+
+
+Definition at line 395 of file eos.\+hpp.
+
+\mbox{\Hypertarget{classEoS__spectral__hbase_a3834cf3e22c4479ea0ffcf7e398705ed}\label{classEoS__spectral__hbase_a3834cf3e22c4479ea0ffcf7e398705ed}} 
+\index{EoS\_spectral\_hbase@{EoS\_spectral\_hbase}!spectral\_causal@{spectral\_causal}}
+\index{spectral\_causal@{spectral\_causal}!EoS\_spectral\_hbase@{EoS\_spectral\_hbase}}
+\doxysubsubsection{\texorpdfstring{spectral\_causal}{spectral\_causal}}
+{\footnotesize\ttfamily bool Eo\+S\+\_\+spectral\+\_\+hbase\+::spectral\+\_\+causal}
+
+
+
+Definition at line 394 of file eos.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+eostool/\mbox{\hyperlink{eos_8hpp}{eos.\+hpp}}\end{DoxyCompactItemize}
