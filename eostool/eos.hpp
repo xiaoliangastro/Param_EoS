@@ -13,6 +13,7 @@
 #include<boost/numeric/odeint/stepper/controlled_runge_kutta.hpp>
 #include<boost/numeric/odeint/stepper/runge_kutta_fehlberg78.hpp>
 #include<boost/numeric/odeint/integrate/integrate_adaptive.hpp>
+#include<boost/numeric/odeint/integrate/integrate_const.hpp>
 #include"global_variable_constants.hpp"
 
 
@@ -51,6 +52,7 @@ class EoS{
     	EoS(){}
     	virtual bool eos_valid() { return false; }
     	virtual bool update_eos(double ppar[], int len_par, int extra_par, double h_max, const char init_function_type[]) { return false; }
+    	virtual double eos_messenger(int ask_for_information_type){ return 0; }
     	virtual double ph(double h)=0;
     	virtual double eh(double h)=0;
     	virtual double rhoh(double h, double p, double e)=0;
@@ -139,7 +141,8 @@ class EoS_hybrid: public EoS_tablulated{
 		    vector<state_type> x_o;
 		    eos_table_h.clear(); eos_table_p.clear(); eos_table_e.clear(); eos_table_rho.clear();
 		    try {
-		        integrate_adaptive(controlled_stepper_cal_eos, cal_eos, eos_tb, h_0, h_max, sg_step, push_back_state_and_time(x_o, eos_table_h));
+			    if (consid_const_inter_step) integrate_const(error_stepper_type(), cal_eos, eos_tb, h_0, h_max, sg_const_step, push_back_state_and_time(x_o, eos_table_h));
+		        else integrate_adaptive(controlled_stepper_cal_eos, cal_eos, eos_tb, h_0, h_max, sg_step, push_back_state_and_time(x_o, eos_table_h));
 		        for (int i=0; i<eos_table_h.size(); i++){ eos_table_p.push_back(x_o[i][0]), eos_table_e.push_back(x_o[i][1]), eos_table_rho.push_back(x_o[i][2]); }
 		        if (init_function_type[0]=='1'){
 		            eos_table_function_h_base.clear();
@@ -198,7 +201,8 @@ class EoS_hybrid: public EoS_tablulated{
 		    coeftb[hh[lm1]][0] = pp[lm1], coeftb[hh[lm1]][1] = ee[lm1], coeftb[hh[lm1]][2] = cc[lm1];
 		    coeftb_idx=coeftb.end(); //initialize coeftb_idx
 		    //map<double, double[3]>::iterator id;
-		    //for (id = coeftb.begin(); id!= coeftb.end(); id++) cout<<"indexes:"<<id->second[0]<<"\t\t"<<id->second[1]<<"\t\t"<<id->second[2]<<"\t\t"<<id->first<<endl;
+			//cout<<"fuck here!"<<endl;
+		    //for (id = coeftb.begin(); id!= coeftb.end(); id++) cout<<"indexes:"<<id->first<<"\t\t"<<id->second[0]<<"\t\t"<<id->second[1]<<"\t\t"<<id->second[2]<<endl;
 		}
 };
 
@@ -311,6 +315,8 @@ class EoS_tabulated_only: public EoS_tablulated{
 		    cc[lm1] = cc[lm1-1];
 		    coeftb[hh[lm1]][0] = pp[lm1], coeftb[hh[lm1]][1] = ee[lm1], coeftb[hh[lm1]][2] = cc[lm1];
 		    coeftb_idx=coeftb.end(); //initialize coeftb_idx
+		    //map<double, double[3]>::iterator id;
+		    //for (id = coeftb.begin(); id!= coeftb.end(); id++) cout<<"indexes:"<<id->first<<"\t\t"<<id->second[0]<<"\t\t"<<id->second[1]<<"\t\t"<<id->second[2]<<endl;
 		}
 };
 
@@ -789,13 +795,12 @@ class EoS_ph_sp_pt_css: public EoS_hybrid{
 //----------------------------------------------------------------------------------------------
 
 
-class EoS_param_mu_cs: public EoS_hybrid{
+class EoS_param_mu_cs_deprecated: public EoS_hybrid{
     public:
     	using EoS_hybrid::EoS_hybrid;
     	state_type h_borders;
-    	double eos_jump_tolerance;
+    	double eos_jump_tolerance; // extra_par/100, it means extra_par%%
     	double p_pqcd_N, e_pqcd_N, rho_pqcd_N, cssq_pqcd_N; // pressure, energy density and mass density at where pQCD start
-    	double p_pqcd_Nm1, e_pqcd_Nm1, n_pqcd_Nm1; // pressure, energy density and number density at the junction place
     	double gammap, qcd_x; // gamma of piecewise, x of pqcd
     	double h1, cssq1; // properties of the first piecewise segment
     	int n_seg; // N segments of the speed of sound parameterization
@@ -831,7 +836,7 @@ class EoS_param_mu_cs: public EoS_hybrid{
 	        for (int i=0; i<len_par; i++) h_borders.push_back(ppar[i]);
 	        for (int i=0; i<len_par-1; i++) params_eos.push_back(ppar[i+len_par]);
 	        gammap = ppar[2*len_par-1]; qcd_x = ppar[2*len_par];
-	        eos_jump_tolerance = extra_par; n_seg = len_par;
+	        eos_jump_tolerance = extra_par/100.; n_seg = len_par;
 	        double rho1 = 1.1*rho_sat;
 	        double p1 = p_0*pow((rho1/rho_0), gammap);
 	        double e1 = rho1/rho_0*e_0+(p1-rho1/rho_0*p_0)/(gammap-1.);
@@ -851,10 +856,9 @@ class EoS_param_mu_cs: public EoS_hybrid{
                 else {
                 	cal_eos_table(h_borders[len_par-2], init_function_type);
                 	cal_eos_table_near_pqcd(h_max, init_function_type);// only accept init_function_type=='100'
-                	if (not eos_valid()) {
-                		if (verbose) cout<<"Failed in update eos: pQCD constraint not fulfilled!"<<endl;
-                		ret_val = false;
-                	}
+                	//if (not eos_valid()) {
+                	//	if (verbose) cout<<"Failed in update eos: pQCD constraint not fulfilled!"<<endl;
+                	//	ret_val = false;}
                 }
     	    }
     	    catch (exception &except){
@@ -868,16 +872,17 @@ class EoS_param_mu_cs: public EoS_hybrid{
 	        return ret_val;
 	    }
 
-	    bool eos_valid(){
+	    double get_loglike_consistency_with_pqcd(){
 	    	double delta_p, delta_e, delta_rho;
 	    	delta_p = (eos_table_p.back()-eos_table_p_near_pqcd[0])/eos_table_p.back()*100;
 	    	delta_e = (eos_table_e.back()-eos_table_e_near_pqcd[0])/eos_table_e.back()*100;
 	    	delta_rho = (eos_table_rho.back()-eos_table_rho_near_pqcd[0])/eos_table_rho.back()*100;
 	    	if (verbose) cout<<"delta_p: "<<delta_p<<"%, "<<"delta_e: "<<delta_e<<"%, "<<"delta_rho: "<<delta_rho<<"%, standard: "<<eos_jump_tolerance<<"%."<<endl;
 	    	//cout<<delta_p<<"  "<<delta_e<<"  "<<delta_rho<<endl;
-	    	if (std::max({std::abs(delta_p), std::abs(delta_e), std::abs(delta_rho)})>eos_jump_tolerance) return false;
-	    	else return true;
+	    	return -(pow(delta_p, 2)+pow(delta_e, 2)+pow(delta_rho, 2))/(2*pow(eos_jump_tolerance, 2));
 	    }
+
+	    double eos_messenger(int ask_for_information_type){ return get_loglike_consistency_with_pqcd(); }
 
 		/** @brief Calculate gamma in the speed of sound model  */
 		double gamma_interp(double h, double p, double e){
@@ -957,6 +962,198 @@ class EoS_param_mu_cs: public EoS_hybrid{
 		        	cout<<"For h based only!"<<endl;
 		        	if (h_max>h_borders[n_seg-2]) cout<<"Error occured, this kind of param method do not support rho/e based interpolation functions at density near pQCD!"<<endl;
 		        	// eos higher than h_borders[n_seg-2] must be calculated this way (and h_based only)!
+		        }
+		        if (vverbose) {cout<<"initiate type of interpolation function : "<<string(init_function_type)<<endl;}
+		    }
+		    catch (exception & except) {
+		        cout<<"error encountered in cal_eos_table: "<<except.what()<<endl;
+		        throw;
+		    }
+		}
+};
+
+
+class EoS_param_mu_cs: public EoS_hybrid{
+    public:
+    	using EoS_hybrid::EoS_hybrid;
+    	state_type h_borders;
+    	double cssq_pqcd_N; // speed of sound where pQCD start
+    	double gammap, qcd_x; // gamma of piecewise, x of pqcd
+    	double h1, cssq1; // properties of the first piecewise segment
+    	int n_seg; // N segments of the speed of sound parameterization
+    	
+    	bool update_eos(double ppar[], int len_par, int extra_par, double h_max, const char init_function_type[]){
+    		//transfered ppar: [(N+1)*h_borders, N*cssq, gammap, x]; len_par: N;
+	        //expected params_eos: N*cssq
+	        bool ret_val = true;
+	        params_eos.clear(); h_borders.clear();
+	        for (int i=0; i<len_par+1; i++) h_borders.push_back(ppar[i]);
+	        for (int i=0; i<len_par; i++) params_eos.push_back(ppar[i+1+len_par]);
+	        gammap = ppar[2*len_par+1]; qcd_x = ppar[2*len_par+2]; n_seg = len_par;
+	        double rho1 = 1.1*rho_sat;
+	        double p1 = p_0*pow((rho1/rho_0), gammap);
+	        double e1 = rho1/rho_0*e_0+(p1-rho1/rho_0*p_0)/(gammap-1.);
+	        double mu_N = exp(h_borders[len_par])*m_neutron/1000; // GeV
+	        cssq1 = p1*gammap/(e1+p1);
+	        h1 = log((p1+e1)/rho1);
+	        eos_table_max_h = h_max;
+	        cssq_pqcd_N = cssq_renorm(mu_N, qcd_x);
+    		try{
+    			cal_eos_table(h_max, init_function_type);
+    	    }
+    	    catch (exception &except){
+    	    	cout<<"Failed in update eos: "<<except.what()<<endl;
+    	    	ret_val = false;
+    	    }
+	        if (verbose) cout<<"Border of the piecewise and parameterize speed of sound, h_1: "<<h1<<", cssq1: "<<cssq1<<endl;
+	        return ret_val;
+	    }
+
+		/** @brief Calculate gamma in the speed of sound model  */
+		double gamma_interp(double h, double p, double e){
+		//expected params_eos: gamma1, h_i(N_seg), cssq_i(N_seg); expexted auxiliary_variables: h and cssq at the end of the piecewise
+		    double Gamma;
+		    if (h<=h1) Gamma = gammap;
+		    else Gamma = (e+p)/p*interpolate_cssq(h, h_borders, params_eos);
+		    return Gamma;
+		}
+
+	    double interpolate_cssq(double h, state_type hb, state_type pars){
+		    double cssq;
+		    auto upper = std::lower_bound(hb.begin(), hb.end(), h);
+		    int idx = std::distance(hb.begin(), upper);
+		    if (idx==n_seg+1) cssq = cssq_renorm(exp(h)*m_neutron/1000., qcd_x);
+		    else if (idx==(n_seg)) cssq = ((exp(hb[n_seg])-exp(h))*pars[n_seg-1]+(exp(h)-exp(hb[n_seg-1]))*cssq_pqcd_N)/(exp(hb[n_seg])-exp(hb[n_seg-1]));
+		    else if (idx==0) cssq = ((exp(hb[0])-exp(h))*cssq1+(exp(h)-exp(h1))*pars[0])/(exp(hb[0])-exp(h1));
+		    else cssq = ((exp(hb[idx])-exp(h))*pars[idx-1]+(exp(h)-exp(hb[idx-1]))*pars[idx])/(exp(hb[idx])-exp(hb[idx-1]));
+		    return cssq;
+		}
+
+		double pressure_renorm(double mu, double x){ // see DOI: 10.1088/2041-8205/781/2/L25
+			return pow(mu, 4)/(108*pow(M_PI, 2))*(0.9008-(0.5034*pow(x, -0.3553))/(mu-1.452*pow(x, -0.9101)));
+		}
+
+		double number_density_renorm(double mu, double x){
+			return 4*pressure_renorm(mu, x)/mu+((pow(mu, 4)/(108*pow(M_PI, 2)))*(0.5034*pow(x, -0.3553)))/pow(mu-1.452*pow(x, -0.9101), 2);
+		}
+
+		double energy_density_renorm(double mu, double x){
+			return 3*pressure_renorm(mu, x)+mu*((pow(mu, 4)/(108*pow(M_PI, 2)))*(0.5034*pow(x, -0.3553)))/pow(mu-1.452*pow(x, -0.9101), 2);
+		}
+
+		double cssq_renorm(double mu, double x){
+			return 1./(8-20*pressure_renorm(mu, x)/(mu*number_density_renorm(mu, x))-(2*mu/number_density_renorm(mu, x))*((pow(mu, 4)/(108*pow(M_PI, 2)))*(0.5034*pow(x, -0.3553)))/pow(mu-1.452*pow(x, -0.9101), 3));
+		}
+
+};
+
+class EoS_param_mu_cs_PT: public EoS_param_mu_cs{
+    public:
+    	using EoS_param_mu_cs::EoS_param_mu_cs;
+    	double h_pt, h_pt_end=0, cssq_pt, delta_rho_pt;
+    	
+    	bool update_eos(double ppar[], int len_par, int extra_par, double h_max, const char init_function_type[]){
+    		//transfered ppar: [(N+1)*h_borders, N*cssq, gammap, x]; len_par: N;
+	        //expected params_eos: N*cssq
+	        bool ret_val = true;
+	        params_eos.clear(); h_borders.clear();
+	        for (int i=0; i<len_par+1; i++) h_borders.push_back(ppar[i]);
+	        for (int i=0; i<len_par; i++) params_eos.push_back(ppar[i+1+len_par]);
+	        gammap = ppar[2*len_par+1]; qcd_x = ppar[2*len_par+2]; n_seg = len_par;
+	        h_pt = log((ppar[2*len_par+3])/(m_neutron/1000.)); delta_rho_pt = ppar[2*len_par+4]*rho_sat; cssq_pt = ppar[2*len_par+5];
+	        double rho1 = 1.1*rho_sat;
+	        double p1 = p_0*pow((rho1/rho_0), gammap);
+	        double e1 = rho1/rho_0*e_0+(p1-rho1/rho_0*p_0)/(gammap-1.);
+	        double mu_N = exp(h_borders[len_par])*m_neutron/1000; // GeV
+	        double mu_pt = exp(h_pt)*m_neutron/1000; // GeV
+	        cssq1 = p1*gammap/(e1+p1);
+	        h1 = log((p1+e1)/rho1);
+	        eos_table_max_h = h_max;
+	        cssq_pqcd_N = cssq_renorm(mu_N, qcd_x);
+    		try{
+    			cal_eos_table(h_pt, init_function_type);
+    			double rho_pt = eos_table_function_h_base[2](h_pt);
+    			double delta_mu_pt = (pow(1+delta_rho_pt/rho_pt, cssq_pt)-1)*mu_pt;
+    			h_pt_end = log((delta_mu_pt+mu_pt)/(m_neutron/1000.));
+    			cal_eos_table(h_max, init_function_type);
+    	    }
+    	    catch (exception &except){
+    	    	cout<<"Failed in update eos: "<<except.what()<<endl;
+    	    	ret_val = false;
+    	    }
+	        if (verbose) cout<<"Border of the piecewise and parameterize speed of sound, h_1: "<<h1<<", cssq1: "<<cssq1<<endl;
+	        return ret_val;
+	    }
+
+        double eos_messenger(int ask_for_information_type){ return h_pt_end; }
+
+		/** @brief Calculate gamma in the speed of sound model  */
+		double gamma_interp(double h, double p, double e){
+		//expected params_eos: gamma1, h_i(N_seg), cssq_i(N_seg); expexted auxiliary_variables: h and cssq at the end of the piecewise
+		    double Gamma;
+		    if (h<=h1) Gamma = gammap;
+		    else if (h>h_pt and h<=h_pt_end) Gamma = (e+p)/p*cssq_pt;
+		    else Gamma = (e+p)/p*interpolate_cssq(h, h_borders, params_eos);
+		    return Gamma;
+		}
+
+		/** @brief calculate eos tables as list of interpolating functions and store them */
+		void cal_eos_table(double h_max, const char init_function_type[]){
+		    state_type eos_tb{p_0, e_0, rho_0};
+		    vector<state_type> x_o;
+		    eos_table_h.clear(); eos_table_p.clear(); eos_table_e.clear(); eos_table_rho.clear();
+		    try {
+		    	if (h_max<=h_pt){
+		    		integrate_adaptive(controlled_stepper_cal_eos, cal_eos, eos_tb, h_0, h_max, sg_step, push_back_state_and_time(x_o, eos_table_h));
+		    	}
+		    	else if(h_max<=h_pt_end){ 
+		    		integrate_adaptive(controlled_stepper_cal_eos, cal_eos, eos_tb, h_0, h_pt, sg_step, push_back_state_and_time(x_o, eos_table_h));
+		    		state_type eos_tb1{x_o.back()[0], x_o.back()[1], x_o.back()[2]};
+		    		x_o.pop_back(); eos_table_h.pop_back();
+		    		integrate_adaptive(controlled_stepper_cal_eos, cal_eos, eos_tb1, h_pt, h_max, sg_step, push_back_state_and_time(x_o, eos_table_h));
+		    	}
+		    	else {
+		    		integrate_adaptive(controlled_stepper_cal_eos, cal_eos, eos_tb, h_0, h_pt, sg_step, push_back_state_and_time(x_o, eos_table_h));
+		    		state_type eos_tb1{x_o.back()[0], x_o.back()[1], x_o.back()[2]};
+		    		x_o.pop_back(); eos_table_h.pop_back();
+		    		integrate_adaptive(controlled_stepper_cal_eos, cal_eos, eos_tb1, h_pt, h_pt_end, sg_step, push_back_state_and_time(x_o, eos_table_h));
+		    		state_type eos_tb2{x_o.back()[0], x_o.back()[1], x_o.back()[2]};
+		    		x_o.pop_back(); eos_table_h.pop_back();
+		    		integrate_adaptive(controlled_stepper_cal_eos, cal_eos, eos_tb2, h_pt_end, h_max, sg_step, push_back_state_and_time(x_o, eos_table_h));
+		    	}
+		        for (int i=0; i<eos_table_h.size(); i++){ eos_table_p.push_back(x_o[i][0]), eos_table_e.push_back(x_o[i][1]), eos_table_rho.push_back(x_o[i][2]); }
+		        if (init_function_type[0]=='1'){
+		            eos_table_function_h_base.clear();
+		            state_type h_bk1(eos_table_h), h_bk2(eos_table_h), h_bk3(eos_table_h);
+		            state_type p_bk(eos_table_p), e_bk(eos_table_e), rho_bk(eos_table_rho);
+		            auto function_h_p = pchip(std::move(h_bk1), std::move(p_bk));
+		            auto function_h_e = pchip(std::move(h_bk2), std::move(e_bk));
+		            auto function_h_rho = pchip(std::move(h_bk3), std::move(rho_bk));
+		            eos_table_function_h_base.push_back(function_h_p);
+		            eos_table_function_h_base.push_back(function_h_e);
+		            eos_table_function_h_base.push_back(function_h_rho);
+		        }
+		        if (init_function_type[1]=='1'){
+		            eos_table_function_e_base.clear();
+		            state_type e_bk1(eos_table_e), e_bk2(eos_table_e), e_bk3(eos_table_e);
+		            state_type h_bk(eos_table_h), p_bk(eos_table_p), rho_bk(eos_table_rho);
+		            auto function_e_h = pchip(std::move(e_bk1), std::move(h_bk));
+		            auto function_e_p = pchip(std::move(e_bk2), std::move(p_bk));
+		            auto function_e_rho = pchip(std::move(e_bk3), std::move(rho_bk));
+		            eos_table_function_e_base.push_back(function_e_h);
+		            eos_table_function_e_base.push_back(function_e_p);
+		            eos_table_function_e_base.push_back(function_e_rho);
+		        }
+		        if (init_function_type[2]=='1'){
+		            eos_table_function_rho_base.clear();
+		            state_type rho_bk1(eos_table_rho), rho_bk2(eos_table_rho), rho_bk3(eos_table_rho);
+		            state_type h_bk(eos_table_h), p_bk(eos_table_p), e_bk(eos_table_e);
+		            auto function_rho_h = pchip(std::move(rho_bk1), std::move(h_bk));
+		            auto function_rho_p = pchip(std::move(rho_bk2), std::move(p_bk));
+		            auto function_rho_e = pchip(std::move(rho_bk3), std::move(e_bk));
+		            eos_table_function_rho_base.push_back(function_rho_h);
+		            eos_table_function_rho_base.push_back(function_rho_p);
+		            eos_table_function_rho_base.push_back(function_rho_e);
 		        }
 		        if (vverbose) {cout<<"initiate type of interpolation function : "<<string(init_function_type)<<endl;}
 		    }
