@@ -27,6 +27,7 @@ struct control_params{
 
 
 extern "C"{
+    double eos_messenger(int ask_for_information_type);
     void init_control_params(control_params parameters);
     void create_low_density_eos_with_ep_table(double ee[], double pp[], const int len_eos);
     bool update_high_density_eos_parameters(double ppar[], int len_par, int len_border, double h_max, const char init_function_type[]);
@@ -39,6 +40,11 @@ extern "C"{
 //----------------------------------------------------------------------------------------------
 //                                    EoS calculators
 //----------------------------------------------------------------------------------------------
+
+
+double eos_messenger(int ask_for_information_type){
+    return EOS->eos_messenger(ask_for_information_type);
+}
 
 
 bool integrate_eos(double h_start, double h_end, double dh, state_type *h_tb, state_type *p_tb, state_type *e_tb, \
@@ -317,6 +323,8 @@ void create_low_density_eos_with_ep_table(double ee[], double pp[], const int le
             {EOS = new EoS_ph_sp_pt_css(ee, pp, len_eos); break;}
         case PARAM_MU_CS:
             {EOS = new EoS_param_mu_cs(ee, pp, len_eos); break;}
+        case PARAM_MU_CS_PT:
+            {EOS = new EoS_param_mu_cs_PT(ee, pp, len_eos); break;}
         default:
             {cout<<"Unknown parameterization method: "<<param_method<<endl; exit(1);}
     }

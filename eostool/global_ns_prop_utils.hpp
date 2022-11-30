@@ -11,8 +11,9 @@ extern "C"{
     double* get_mrl(double hc);
     double* calculate_internal_structure(double h);
     double* get_mr_with_specific_hsurf(double hc, double h_surf);
+    bool check_mmax(double *hc, double *M_max, double h_start=EOS->suggested_hc_star+0.08, bool compare_ftype_is_less=true, double jump_size=0.1, bool check_ok=true);
     bool check_mmax_gd(double *hc, double *M_max, double h_start=EOS->suggested_hc_star+0.08, bool compare_ftype_is_less=true, double jump_size=0.1, bool check_ok=true);
-    bool check_mmax_pt_two_branch(double* h1, double* h2, double* h3, double* h_max, double* m1, double* m2, double* m3, double* m_max, double rho_tr, double drho);
+    bool check_mmax_pt_two_branch(double* h1, double* h2, double* h3, double* h_max, double* m1, double* m2, double* m3, double* m_max, double h_pt, double h_pt_end);
     bool find_closest_global_property(double m_aim, double h_i, double h_max, double *h_closest, double *lambda, bool use_user_start_point=false);
     bool find_closest_global_property_with_maxm_known(double known_aim, double h_i, double h_max, double *h_closest, double *unknown, int get_type, bool use_user_start_point=false);
     bool get_unknowns_from_knowns(double known1, double known2, double *unknown1, double *unknown2, double *h_max, int get_type);
@@ -114,7 +115,7 @@ void make_hmrl_tool_table(double minh, double maxh, double dh){
 * @param check_ok Whether to set the (mtov_min, mtov_max) constraint or not.
 * @retval bool whether finding process correctly worked.
 */
-bool check_mmax_old(double *hc, double *M_max, double h_start, bool compare_ftype_is_less, double jump_size, bool check_ok){
+bool check_mmax(double *hc, double *M_max, double h_start, bool compare_ftype_is_less, double jump_size, bool check_ok){
     auto cp_func = [=](double cp1, double cp2){
         if (compare_ftype_is_less) return cp1<cp2;
         else return cp1>cp2;
@@ -287,7 +288,7 @@ bool check_mmax_gd(double *hc, double *M_max, double h_start, bool compare_ftype
 * @param drho The length of mass density of phase transition, to boost the finding process.
 * @retval bool whether finding process correctly worked.
 */
-bool check_mmax_pt_two_branch(double* h1, double* h2, double* h3, double* h_max, double* m1, double* m2, double* m3, double* m_max, double rho_tr, double drho){
+bool check_mmax_pt_two_branch(double* h1, double* h2, double* h3, double* h_max, double* m1, double* m2, double* m3, double* m_max, double h_pt, double h_pt_end){
     double h_tr_start, h_tr_end, jump_size;
     bool ck_tbranch_l=false, ck_tbranch_u=false;
     *h1 = -1, *h2 = -1, *h3 = -1, *h_max = -1, *m1 = 0., *m2 = 0., *m3 = 0., *m_max=0.;
@@ -296,13 +297,13 @@ bool check_mmax_pt_two_branch(double* h1, double* h2, double* h3, double* h_max,
         if (verbose) cout<<message<<endl; \
         return false;
     try {
-        h_tr_start = EOS->eos_table_function_rho_base[0](rho_tr);
-        h_tr_end = EOS->eos_table_function_rho_base[0](rho_tr+drho);
+        h_tr_start = h_pt;//EOS->eos_table_function_rho_base[0](rho_tr);
+        h_tr_end = h_pt_end;//EOS->eos_table_function_rho_base[0](rho_tr+drho);
     }
     catch (exception&) {h_tr_start=0.; h_tr_end=0.;}
     if (check_mmax_gd(h1, m1, 0.05, true, 0.0003, false)){
         if (verbose) cout<<"h_tr_start="<<h_tr_start<<", h_tr_end="<<h_tr_end<<", h_find="<<*h1<<", delta_h="<<h_tr_start-*h1<<endl;
-        if (abs(h_tr_start-*h1)<0.03 or abs(h_tr_end-*h1)<0.03){
+        if (abs(h_tr_start-*h1)<0.05 or abs(h_tr_end-*h1)<0.05){
             ck_tbranch_l = check_mmax_gd(h2, m2, *h1+0.005, false, 0.002, false);
             if (ck_tbranch_l){
                 cout<<"two branches!"<<endl;
@@ -550,7 +551,7 @@ bool find_closest_global_property_with_maxm_known_old(double known_aim, double h
 bool get_unknowns_from_knowns(double known1, double known2, double *unknown1, double *unknown2, double *h_max, int get_type){
     double h1=0., h2=0., M_max=0., L_max=0.;
     *unknown1 = 0.; *unknown2 = 0.; *h_max=0.;
-    if(not check_mmax_gd(h_max, &M_max)) return false;
+    if(not check_mmax(h_max, &M_max)) return false;
     if(get_type==1 or get_type==2){
         if ((known1>M_max) or (known2>M_max)) return false;
     }
