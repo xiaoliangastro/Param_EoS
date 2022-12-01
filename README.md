@@ -51,10 +51,10 @@ double* get_mr_with_specific_hsurf(double hc, double h_surf)
 ```cpp
 bool check_mmax_gd(double *hc, double *M_max, double h_start, bool compare_ftype_is_less, double jump_size, bool check_ok)
 ```
-- **Aim**: find TOV mass *M_max* and central enthalpy related *hc* using a gradient method, both of them are set to 0 if failed
+- **Aim**: find TOV mass *M_max* and central enthalpy *hc* related using a gradient method, both of them are set to 0 if failed
 - h_start: where to start the finding process
 - compare_ftype_is_less: set to true if you want to find the maximum mass, set to false for the minimum (useful only in the case of phase transition where in some cases increase h causes a decrease in mass and you want to know the h in a critical point)
-- jump_size: step size of hc, its a good choice to set to 0.1
+- jump_size: step size of hc, it‘s a good choice to set to 0.1
 - check_ok: whether to check the TOV mass allowed in the range [minm_tov, maxm_tov], return false if not
 
 #### 4. find_closest_global_property_with_maxm_known
