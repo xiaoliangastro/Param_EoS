@@ -115,7 +115,8 @@ enum EoS_type {
     PIECE_SPEC_PHTR_CSS = 10, ///<piecewise+spectral+phase transition+constant speed of sound (see Tang20)
     PHYSICAL_SPEC_PHTR_CSS = 11, ///<physical+spectral+phase transition+constant speed of sound (see Tang21)
     PARAM_MU_CS = 12, ///< parameterize the speed of sound, see https://doi.org/10.1038/s41567-020-0914-9
-    PARAM_MU_CS_PT = 13 ///< parameterize the speed of sound with phase transition, see ?
+    PARAM_MU_CS_PT = 13, ///< parameterize the speed of sound with phase transition, see ?
+    PARAM_MU_CS_MODIFIED = 14 ///< parameterize the speed of sound with the end point of cs fixed by tranformed parameters
 };
 
 

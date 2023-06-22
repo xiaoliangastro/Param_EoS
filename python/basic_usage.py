@@ -5,9 +5,9 @@ import ctypes
 
 
 # function of the script
-cal_single_ns = 0
+cal_single_ns = 1
 find_maximum_mass = 0
-cal_eos_properties = 1
+cal_eos_properties = 0
 
 
 # constant & unit
@@ -20,14 +20,14 @@ e_trans_mevifm3_cactus = 2.88630841e-06    # MeV/fm^3 to cactus
 
 
 # init control parameters
-param_method = 1
+param_method = 9
 # interp_only=1, piecewise=2, piecewise_p=3, spectral=4, spectral_causal=5, causal_sp+phase_trans=6
 # quark_star=7, adapt_piecewise=8, const_cs=9, piece_spec_pt_css=10, phy_spec_pt_css=11, mu_cs=12
 cfunc.my_cpp_struct.min_tov_mass = 0.     # used in EoS constraint only
 cfunc.my_cpp_struct.max_tov_mass = 3.      # used in EoS constraint only
 cfunc.my_cpp_struct.check_causal = True    # check whether the EoS is causal at the maximum mass, if not, cool down to a causal point and the maximum mass is re-defined there
 cfunc.my_cpp_struct.param_method = param_method 
-cfunc.my_cpp_struct.verbose_level = 1 # set to zero to print nothing
+cfunc.my_cpp_struct.verbose_level = 2 # set to zero to print nothing
 cfunc.my_cpp_struct.consid_const_inter_step = False # use constant integration step or not
 cfunc.my_cpp_struct.const_inter_step = 0.#1e-5 # integration step
 cfunc.init_control_params(cfunc.my_cpp_struct)
@@ -39,13 +39,14 @@ cfunc.init_control_params(cfunc.my_cpp_struct)
 
 
 ### Initiate EoS at low density
-pp, ee, _, _ = np.loadtxt("../eos_tables/std_ebase_lowdense_eos.txt").T
+#pp, ee, _, _ = np.loadtxt("../eos_tables/std_ebase_lowdense_eos.txt").T[:, :]
+pp, ee = [0.001/3.], [0.001]
 array_eos = ctypes.c_double*len(pp)
 cfunc.create_low_density_eos_with_ep_table(array_eos(*ee), array_eos(*pp), len(pp))
 
 ### update EoS at high density
 # default parameters
-max_eos_h = 1.05                    # specify the maximum enthalpy of the EoS
+max_eos_h = 10.05                    # specify the maximum enthalpy of the EoS
 init_function_type = b'100'        # use '100' default to save time, if want to find_eos_properties, change it accroding to the rules in the README.md
 if param_method==1:
     extra_par = 0
@@ -110,7 +111,7 @@ elif param_method==9:
     extra_par = 0
     len_pars = 1
     array_wanted = ctypes.c_double*len_pars
-    params = array_wanted(np.sqrt(1./3)) # const cs with a user specified curst
+    params = array_wanted(np.sqrt(1.)) # const cs with a user specified curst
     cfunc.update_high_density_eos_parameters(params, len_pars, extra_par, max_eos_h, init_function_type)
 elif param_method==10:
     extra_par = 0  # whether to check the eos constraint
@@ -191,24 +192,24 @@ if cal_single_ns:
     cfunc.init_control_params(cfunc.my_cpp_struct)
     mrl = cfunc.get_mrl(h_center).contents[:]
     print("M: {}/M_sun, R: {}/km, Lambda: {}".format(*mrl))
-    hss = np.linspace(8.e-3, h_center, 100)
-    # method1: interpolation using the integration steps in get_mrl, TOV integration once
-    ms_interp, rs_interp = [], []
-    for h_surf in hss:
-        # function calculate_internal_structure must be called after get_mrl
-        mr_interp = cfunc.calculate_internal_structure(h_surf).contents[:]
-        ms_interp.append(mr_interp[0]); rs_interp.append(mr_interp[1]);
-    # method2: do the whole TOV integration again and again
-    ms_interg, rs_interg = [], []
-    for h_surf in hss:
-        mr_interg = cfunc.get_mr_with_specific_hsurf(h_center, h_surf).contents[:]
-        ms_interg.append(mr_interg[0]); rs_interg.append(mr_interg[1]);
-    plt.scatter(rs_interg, ms_interg, label='method intergration', s=2, color='r')
-    plt.plot(rs_interp, ms_interp, label='method interpolation', lw=1.5)
-    plt.xlabel(r"$R/\rm km$")
-    plt.ylabel(r"$M/M_{\odot}$")
-    plt.legend()
-    plt.show()
+    #hss = np.linspace(8.e-3, h_center, 100)
+    ## method1: interpolation using the integration steps in get_mrl, TOV integration once
+    #ms_interp, rs_interp = [], []
+    #for h_surf in hss:
+    #    # function calculate_internal_structure must be called after get_mrl
+    #    mr_interp = cfunc.calculate_internal_structure(h_surf).contents[:]
+    #    ms_interp.append(mr_interp[0]); rs_interp.append(mr_interp[1]);
+    ## method2: do the whole TOV integration again and again
+    #ms_interg, rs_interg = [], []
+    #for h_surf in hss:
+    #    mr_interg = cfunc.get_mr_with_specific_hsurf(h_center, h_surf).contents[:]
+    #    ms_interg.append(mr_interg[0]); rs_interg.append(mr_interg[1]);
+    #plt.scatter(rs_interg, ms_interg, label='method intergration', s=2, color='r')
+    #plt.plot(rs_interp, ms_interp, label='method interpolation', lw=1.5)
+    #plt.xlabel(r"$R/\rm km$")
+    #plt.ylabel(r"$M/M_{\odot}$")
+    #plt.legend()
+    #plt.show()
 
 
 if cal_eos_properties:
@@ -226,17 +227,20 @@ if cal_eos_properties:
             gamma = properties[4]; cs_square = properties[5]
             print("\t".join([str(it) for it in [rho, h, p, e, rho, gamma, cs_square]]))
     if find_type==1:
-        hs = np.linspace(8.e-3, max_eos_h, 50)
+        #hs = np.logspace(-3, np.log10(max_eos_h), 50)
+        hs = np.linspace(0.001, max_eos_h, 50)
         show_x, show_y = [], []
         for h in hs:
             properties = cfunc.find_eos_properties(h, find_type).contents[:]
-            show_y.append(properties[2]*rho_trans/rho_sat)
-            #show_y.append(properties[-1])
+            #show_x.append(properties[2]*rho_trans/rho_sat)
             show_x.append(properties[0])
+            show_y.append(properties[2])
         properties_max = cfunc.find_eos_properties(0.72056, find_type).contents[:]
         print("{:e}".format(properties_max[3]*rho_trans))
         #properties_pt = cfunc.find_eos_properties(h_pt, find_type).contents[:]
         #properties_pt_end = cfunc.find_eos_properties(h_pt_end, find_type).contents[:]
         #print((properties_pt_end[3]-properties_pt[3])*rho_trans/rho_sat)
-        plt.plot(show_x, show_y)
+        plt.plot(show_x, show_y, lw=1, c='g')
+        plt.scatter(show_x, show_y, s=3, c='r')
+        #plt.xscale('log')
         plt.show()

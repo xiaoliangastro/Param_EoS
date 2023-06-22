@@ -325,6 +325,8 @@ void create_low_density_eos_with_ep_table(double ee[], double pp[], const int le
             {EOS = new EoS_param_mu_cs(ee, pp, len_eos); break;}
         case PARAM_MU_CS_PT:
             {EOS = new EoS_param_mu_cs_PT(ee, pp, len_eos); break;}
+        case PARAM_MU_CS_MODIFIED:
+            {EOS = new EoS_param_mu_cs_modified(ee, pp, len_eos); break;}
         default:
             {cout<<"Unknown parameterization method: "<<param_method<<endl; exit(1);}
     }

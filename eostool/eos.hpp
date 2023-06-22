@@ -614,7 +614,8 @@ class EoS_adp_pw: public EoS_hybrid{
 //                                     Constant CS Model
 //----------------------------------------------------------------------------------------------
 
-
+// it seems mathematically unstable to join the low density eos with css, which causes a sharp jump in gamma
+// physically they are different EOSs if starting from different points
 class EoS_cons_cs: public EoS_hybrid{
     public:
     	using EoS_hybrid::EoS_hybrid;
@@ -1162,6 +1163,64 @@ class EoS_param_mu_cs_PT: public EoS_param_mu_cs{
 		        throw;
 		    }
 		}
+};
+
+
+class EoS_param_mu_cs_modified: public EoS_hybrid{
+    public:
+    	using EoS_hybrid::EoS_hybrid;
+    	state_type h_borders;
+    	double cssq_pqcd_N; // speed of sound where pQCD start
+    	double gammap; // gamma of piecewise, x of pqcd
+    	double h1, cssq1; // properties of the first piecewise segment
+    	int n_seg; // N segments of the speed of sound parameterization
+    	
+    	bool update_eos(double ppar[], int len_par, int extra_par, double h_max, const char init_function_type[]){
+    		//transfered ppar: [(N+1)*h_borders, N*cssq, gammap, cssq_pqcd_N]; len_par: N;
+	        //expected params_eos: N*cssq
+	        bool ret_val = true;
+	        params_eos.clear(); h_borders.clear();
+	        for (int i=0; i<len_par+1; i++) h_borders.push_back(ppar[i]);
+	        for (int i=0; i<len_par; i++) params_eos.push_back(ppar[i+1+len_par]);
+	        gammap = ppar[2*len_par+1]; n_seg = len_par;
+	        double rho1 = 1.1*rho_sat;
+	        double p1 = p_0*pow((rho1/rho_0), gammap);
+	        double e1 = rho1/rho_0*e_0+(p1-rho1/rho_0*p_0)/(gammap-1.);
+	        cssq1 = p1*gammap/(e1+p1);
+	        h1 = log((p1+e1)/rho1);
+	        eos_table_max_h = h_max;
+	        cssq_pqcd_N = ppar[2*len_par+2];
+    		try{
+    			cal_eos_table(h_max, init_function_type);
+    	    }
+    	    catch (exception &except){
+    	    	cout<<"Failed in update eos: "<<except.what()<<endl;
+    	    	ret_val = false;
+    	    }
+	        if (verbose) cout<<"Border of the piecewise and parameterize speed of sound, h_1: "<<h1<<", cssq1: "<<cssq1<<endl;
+	        return ret_val;
+	    }
+
+		/** @brief Calculate gamma in the speed of sound model  */
+		double gamma_interp(double h, double p, double e){
+		//expected params_eos: gamma1, h_i(N_seg), cssq_i(N_seg); expexted auxiliary_variables: h and cssq at the end of the piecewise
+		    double Gamma;
+		    if (h<=h1) Gamma = gammap;
+		    else Gamma = (e+p)/p*interpolate_cssq(h, h_borders, params_eos);
+		    return Gamma;
+		}
+
+	    double interpolate_cssq(double h, state_type hb, state_type pars){
+		    double cssq;
+		    auto upper = std::lower_bound(hb.begin(), hb.end(), h);
+		    int idx = std::distance(hb.begin(), upper);
+		    if (idx==n_seg+1) cssq = cssq_pqcd_N;
+		    else if (idx==(n_seg)) cssq = ((exp(hb[n_seg])-exp(h))*pars[n_seg-1]+(exp(h)-exp(hb[n_seg-1]))*cssq_pqcd_N)/(exp(hb[n_seg])-exp(hb[n_seg-1]));
+		    else if (idx==0) cssq = ((exp(hb[0])-exp(h))*cssq1+(exp(h)-exp(h1))*pars[0])/(exp(hb[0])-exp(h1));
+		    else cssq = ((exp(hb[idx])-exp(h))*pars[idx-1]+(exp(h)-exp(hb[idx-1]))*pars[idx])/(exp(hb[idx])-exp(hb[idx-1]));
+		    return cssq;
+		}
+
 };
 
 
